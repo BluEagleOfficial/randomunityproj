@@ -32,13 +32,8 @@ public class BoatController : MonoBehaviour
         //     rb.AddRelativeForce(0, 0, vertical * speed * 25);
         // }
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, vertical * speed);
-        
-        if(horizontal != 0)
-        {
-            // rb.AddRelativeForce(cameraObject.transform.rotation.x * horizontal,0,0);
-            rb.MoveRotation(new Quaternion(0,cameraObject.transform.rotation.y,0,0));
-        }
-        // rb.transform.Rotate(new Vector3(0, horizontal * maxRotateSpeed, 0));
+
+        rb.transform.Rotate(new Vector3(0, horizontal * maxRotateSpeed, 0));
         // Vector3 rot = new Vector3(rb.transform.rotation.x, rb.transform.rotation.y + horizontal, rb.transform.rotation.z);
         // rb.transform.rotation = Vector3.MoveTowards(rb.transform.rotation, rot, Time.deltaTime * maxRotateSpeed);
     }
