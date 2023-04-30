@@ -36,7 +36,12 @@ public class BoatAI : MonoBehaviour
     }
     void follow()
     {
-
+        Vector3 rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 100).eulerAngles;
+        rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            rb.AddRelativeForce(0, 0, forceSpeed);
+        }
     }
     void attack()
     {
