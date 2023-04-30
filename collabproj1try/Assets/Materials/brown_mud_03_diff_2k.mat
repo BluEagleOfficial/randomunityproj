@@ -21,20 +21,31 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: brown_mud_03_diff_2k
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ValidKeywords:
-  - _NORMALMAP
+  m_Shader: {fileID: -6465566751694194690, guid: 053815287597b5144a40181b7b7f201c,
+    type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_415f3169b996454085a541e362209a72:
+        m_Texture: {fileID: 2800000, guid: 8ed7084498c680b48a209c833071cb17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6e5879a4a9c249c696e92cae3f9e7f1b:
+        m_Texture: {fileID: 2800000, guid: d1e15643ec0bf6d41ab8c41708a07283, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_85af6dabdc8f4336986984ccc8fbcd0d:
+        m_Texture: {fileID: 2800000, guid: bf5f78d7a445e6c4cb745fef2108658e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: d1e15643ec0bf6d41ab8c41708a07283, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -93,6 +104,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_3abab77d2ceb4b20a1ca9bdc09cacc96: 1
+    - Vector1_53378f9061884a9cba6a5306bfa44961: 35
+    - Vector1_7208ead0b85440eeb4920a79414dd01e: 5
+    - Vector1_a2cba5fbaf6e4055907abddb0ae67d74: 0
+    - Vector1_d4dd94ef306b4a79adc821e819d1feea: 0
+    - Vector1_d7de4db3cd5d4c24a97b4e6b51ce3f53: 0
+    - Vector1_d7de4db3cd5d4c24a97b4e6b51ce3f53_1: 0
+    - Vector1_d7de4db3cd5d4c24a97b4e6b51ce3f53_2: 1
+    - Vector1_d7de4db3cd5d4c24a97b4e6b51ce3f53_3: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -110,6 +130,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
