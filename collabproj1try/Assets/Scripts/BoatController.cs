@@ -14,6 +14,8 @@ public class BoatController : MonoBehaviour
 
     private float horizontal, vertical;
 
+    public Cannon cannon;
+
     void Start()
     {
         cameraObject = GetComponentInChildren<Camera>().gameObject;
@@ -24,6 +26,10 @@ public class BoatController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            cannon.shoot();
+        }
     }
 
     void FixedUpdate()
