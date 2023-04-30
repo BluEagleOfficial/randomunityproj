@@ -708,6 +708,8 @@ GameObject:
   - component: {fileID: 1598003003}
   - component: {fileID: 1598003004}
   - component: {fileID: 1598003005}
+  - component: {fileID: 1598003007}
+  - component: {fileID: 1598003006}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -765,6 +767,34 @@ MonoBehaviour:
   forceSpeed: 10
   maxSpeed: 10
   maxRotateSpeed: 1
+--- !u!114 &1598003006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598003001}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c001a6e9f0e84cb9e4464d97f964a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  h: {fileID: 1598003007}
+--- !u!114 &1598003007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598003001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a012f4643ba06a943a9b0ce95e671eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxhp: 100
+  hp: 100
+  dead: 0
 --- !u!1 &1725024116
 GameObject:
   m_ObjectHideFlags: 0
