@@ -24,6 +24,7 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(-horizontal * speed, rb.velocity.y, -vertical * speed);
+        rb.AddRelativeForce(rb.velocity.x, rb.velocity.y, vertical * speed * 25);
+        rb.transform.Rotate(new Vector3(0, horizontal * speed, 0));
     }
 }
