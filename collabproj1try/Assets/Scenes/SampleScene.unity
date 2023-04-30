@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1598003004}
-  forceSpeed: 10
+  forceSpeed: 25
   maxSpeed: 10
   maxRotateSpeed: 1
 --- !u!114 &1598003006
