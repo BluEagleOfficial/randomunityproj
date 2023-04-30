@@ -8,6 +8,7 @@ public class BoatController : MonoBehaviour
 
     private float speed;
     public float maxSpeed = 10;
+    public float maxRotateSpeed = 1;
 
     private float horizontal, vertical;
 
@@ -24,7 +25,11 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddRelativeForce(rb.velocity.x, rb.velocity.y, vertical * speed * 25);
-        rb.transform.Rotate(new Vector3(0, horizontal * speed, 0));
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            rb.AddRelativeForce(rb.velocity.x, rb.velocity.y, vertical * speed * 25);
+        }
+
+        rb.transform.Rotate(new Vector3(0, horizontal * maxRotateSpeed, 0));
     }
 }
