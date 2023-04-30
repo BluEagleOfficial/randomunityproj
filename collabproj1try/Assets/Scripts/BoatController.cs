@@ -8,6 +8,7 @@ public class BoatController : MonoBehaviour
     private GameObject cameraObject;
 
     private float speed;
+    public float forceSpeed = 1;
     public float maxSpeed = 10;
     public float maxRotateSpeed = 1;
 
@@ -29,11 +30,9 @@ public class BoatController : MonoBehaviour
     {
         if (rb.velocity.magnitude < maxSpeed)
         {
-            rb.AddRelativeForce(0, 0, vertical * speed * 25);
+            rb.AddRelativeForce(0, 0, vertical * forceSpeed);
         }
 
         rb.transform.Rotate(new Vector3(0, horizontal * maxRotateSpeed, 0));
-        // Vector3 rot = new Vector3(rb.transform.rotation.x, rb.transform.rotation.y + horizontal, rb.transform.rotation.z);
-        // rb.transform.rotation = Vector3.MoveTowards(rb.transform.rotation, rot, Time.deltaTime * maxRotateSpeed);
     }
 }
