@@ -54,11 +54,11 @@ Material:
     - _amplitude: 450
     - _metallic: 1
     - _quality: 125
-    - _strength_of_normal_map: 0.2
+    - _strength_of_normal_map: 0.35
     - _waveStrength: 0.025
     m_Colors:
     - _Color: {r: 0.5411765, g: 0.80306345, b: 1, a: 0}
-    - _Tile_Size: {r: 75, g: 75, b: 0, a: 0}
+    - _Tile_Size: {r: 100, g: 100, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3957420246480692183
 MonoBehaviour:
