@@ -27,11 +27,10 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if (rb.velocity.magnitude < maxSpeed)
-        // {
-        //     rb.AddRelativeForce(0, 0, vertical * speed * 25);
-        // }
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, vertical * speed);
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            rb.AddRelativeForce(0, 0, vertical * speed * 25);
+        }
 
         rb.transform.Rotate(new Vector3(0, horizontal * maxRotateSpeed, 0));
         // Vector3 rot = new Vector3(rb.transform.rotation.x, rb.transform.rotation.y + horizontal, rb.transform.rotation.z);
