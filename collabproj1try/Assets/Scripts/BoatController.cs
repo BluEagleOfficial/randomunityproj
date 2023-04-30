@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class BoatController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Rigidbody rb;
+
+    private float speed;
+    public float maxSpeed = 10;
+
+    private float horizontal, vertical;
+
     void Start()
     {
-        
+        speed = maxSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector3(-horizontal * speed, rb.velocity.y, -vertical * speed);
     }
 }
