@@ -52,8 +52,10 @@ Material:
     - _Smoothness: 1
     - _alpha: 0.9
     - _amplitude: 450
+    - _depth: 0.43
     - _metallic: 1
     - _quality: 125
+    - _strength: 2.02
     - _strength_of_normal_map: 0.35
     - _waveStrength: 0.025
     m_Colors:
