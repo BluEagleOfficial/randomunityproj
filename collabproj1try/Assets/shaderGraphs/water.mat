@@ -52,7 +52,7 @@ Material:
     - _Smoothness: 1
     - _alpha: 0.9
     - _amplitude: 450
-    - _depth: 0.43
+    - _depth: 0.14
     - _metallic: 1
     - _quality: 125
     - _strength: 2.02
