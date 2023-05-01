@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class BoatDetect : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class BoatDetect : MonoBehaviour
     [SerializeField] private GameObject buttonPrompt;
     [SerializeField] private GameObject eventObj;
     [SerializeField] private GameObject title;
+    // public event onBoatSelect;
     
     private void OnTriggerStay(Collider col)
     {
