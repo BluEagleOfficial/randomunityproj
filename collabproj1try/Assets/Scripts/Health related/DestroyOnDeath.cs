@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class DestroyOnDeath : MonoBehaviour
 {
-    [SerializeField]
-    Health h;
+    [SerializeField] Health h;
+    [SerializeField] private float timeToDestroy = 20;
+    private float timer;
+
     void Update()
     {
         if (Wyperian.IsNullOrDestroyed(h))
@@ -12,7 +14,17 @@ public class DestroyOnDeath : MonoBehaviour
         }
         if (h.dead)
         {
-            Destroy(this.gameObject);
+            timer += Time.deltaTime;
+
+            if(timer < timeToDestroy)
+            {
+                Rigidbody rb = GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.constraints = RigidbodyConstraints.None;
+                // add some destroy or explosion particles here
+            }
+            else
+                Destroy(this.gameObject);
         }
     }
 }
