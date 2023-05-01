@@ -11,8 +11,10 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
+
+    private bool lockCursor = true;
     
-    // [SerializeField] private GameObject pauseButton;
+    // [SerializeField] private GameObject pauseButton; // these make the buttons auto select so you can use arrow keys or any input to navigate the buttons, will add later if time
     // [SerializeField] private GameObject mainButton;
     
     void Awake()
@@ -22,18 +24,23 @@ public class MenuManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            // if(SceneManager.GetActiveScene().buildIndex == 0)
-            // {
-            //     EventSystem.current.SetSelectedGameObject(mainButton);
-            // }
-            // else
-            //     EventSystem.current.SetSelectedGameObject(pauseButton);
+            if(SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                lockCursor = false;
+                mainMenu.SetActive(true);
+                // EventSystem.current.SetSelectedGameObject(mainButton);
+            }
+            else
+            {
+                lockCursor = true;
+                mainMenu.SetActive(false);
+                // EventSystem.current.SetSelectedGameObject(pauseButton);
+            }
         }
         else
         {
             Destroy(this.gameObject);
         }
-
     }
     
     void Update()
@@ -46,22 +53,35 @@ public class MenuManager : MonoBehaviour
                 GamePaused(gamePaused);
             }
         }
+
+        LockCursor(lockCursor);
+        if(Input.GetKeyDown(KeyCode.L))
+            lockCursor = !lockCursor;
     }
 
     public void LoadScene(int sceneIndex)
     {
         if(sceneIndex == 0)
         {
-            Cursor.lockState = CursorLockMode.None; // keep curson unlocked if in the main menu
+            lockCursor = false; // keep curson unlocked if in the main menu
             mainMenu.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
         else
         {
+            lockCursor = true;
             mainMenu.SetActive(false);
             // EventSystem.current.SetSelectedGameObject(pauseButton);
         }
         SceneManager.LoadSceneAsync(sceneIndex);
+    }
+
+    public void LockCursor(bool LockCursor)
+    {
+        if(LockCursor == true)
+            Cursor.lockState = CursorLockMode.Locked;
+        if(LockCursor == false)
+            Cursor.lockState = CursorLockMode.None;
     }
 
     public void QuitGame()
@@ -82,13 +102,13 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
+        lockCursor = false;
     }
 
     void UnPause()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        lockCursor = true;
     }
 }

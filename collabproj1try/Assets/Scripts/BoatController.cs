@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    private GameObject cameraObject;
+    // private GameObject cameraObject;
 
     private float speed;
     public float forceSpeed = 1;
@@ -18,7 +18,7 @@ public class BoatController : MonoBehaviour
 
     void Start()
     {
-        cameraObject = GetComponentInChildren<Camera>().gameObject;
+        // cameraObject = GetComponentInChildren<Camera>().gameObject; // not using it for this script at the moment
         speed = maxSpeed;
     }
 

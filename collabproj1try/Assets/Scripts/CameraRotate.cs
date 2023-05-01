@@ -11,8 +11,6 @@ public class CameraRotate : MonoBehaviour
     public float maxLimit = 90f;
     public float sensitivity = 100;
 
-    private bool lockCursor = true;
-
     void Start()
     {
         
@@ -25,10 +23,6 @@ public class CameraRotate : MonoBehaviour
         axisY = Input.GetAxisRaw("Mouse Y") * Time.fixedDeltaTime * sensitivity;
         rotX -= axisY;
         rotY += axisX;
-
-        LockCursor(lockCursor);
-        if(Input.GetKeyDown(KeyCode.L))
-            lockCursor = !lockCursor;
     }
 
     void FixedUpdate()
@@ -37,13 +31,5 @@ public class CameraRotate : MonoBehaviour
             rotX = Mathf.Clamp(rotX, minLimit, maxLimit);
 
         this.gameObject.transform.rotation = Quaternion.Euler(rotX, rotY, 0);
-    }
-
-    void LockCursor(bool LockCursor) // moved to cameracontroller script
-    {
-        if(LockCursor == true)
-            Cursor.lockState = CursorLockMode.Locked;
-        if(LockCursor == false)
-            Cursor.lockState = CursorLockMode.None;
     }
 }
