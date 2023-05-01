@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3981650040965398546}
-  speed: 100
+  speed: 250
   damage: 50
   replace: {fileID: 770604584439312975, guid: abd456abaa2a26c4fb51fdbd15a498f8, type: 3}
