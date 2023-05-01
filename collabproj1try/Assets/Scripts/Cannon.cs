@@ -11,14 +11,23 @@ public class Cannon : MonoBehaviour
 
     public float speedOfRot = 5;
 
+    public float shootEvery = 1;
+
+    float timeOfShoot = 0;
+
     void FixedUpdate()
     {
         cannonHead.rotation = Wyperian.lookAtSlowly(cannonHead, aimer.position, Time.deltaTime * speedOfRot * 100);
-
+        timeOfShoot += Time.fixedDeltaTime;
     }
 
     public void shoot()
     {
-        Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
+        if (timeOfShoot > shootEvery)
+        {
+            Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
+            timeOfShoot = 0;
+        }
+
     }
 }

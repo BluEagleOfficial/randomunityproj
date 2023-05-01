@@ -8,6 +8,9 @@ public class BoatAI : MonoBehaviour
     public float maxSpeed = 10;
     public float maxRotateSpeed = 1;
     public Transform enemy;
+    public Cannon canon;
+
+    public Transform aimer;
     void Start()
     {
         enemy = Wyperian.FindClosestEnemy("boat", transform).transform;
@@ -17,6 +20,8 @@ public class BoatAI : MonoBehaviour
 
     [SerializeField]
     float distanceOfFollow = 1000, distanceOfAttack = 100;
+
+
     void FixedUpdate()
     {
         if (Wyperian.IsNullOrDestroyed(enemy))
@@ -30,6 +35,7 @@ public class BoatAI : MonoBehaviour
         }
         if (distance < distanceOfAttack)
         {
+            aimer.position = enemy.position + new Vector3(0, 1, 0);
             attack();
         }
 
@@ -45,6 +51,6 @@ public class BoatAI : MonoBehaviour
     }
     void attack()
     {
-
+        canon.shoot();
     }
 }

@@ -10,6 +10,7 @@ public class bullet : MonoBehaviour
 
     [SerializeField]
     int damage = 50;
+    public GameObject replace;
     void FixedUpdate()
     {
         rb.AddRelativeForce(0, 0, speed);
@@ -19,12 +20,14 @@ public class bullet : MonoBehaviour
         try
         {
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Destroy(this);
+
         }
         catch
         {
 
         }
+        Instantiate(replace, transform.position, Quaternion.identity);
+        Destroy(this);
 
     }
     void OnTriggerStay(Collider other)
@@ -32,11 +35,14 @@ public class bullet : MonoBehaviour
         try
         {
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Destroy(this);
+
         }
         catch
         {
 
         }
+        Instantiate(replace, transform.position, Quaternion.identity);
+        Destroy(this);
+
     }
 }
