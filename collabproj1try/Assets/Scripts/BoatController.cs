@@ -16,6 +16,8 @@ public class BoatController : MonoBehaviour
 
     public Cannon cannon;
 
+    public bool canMove = true;
+
     void Start()
     {
         // cameraObject = GetComponentInChildren<Camera>().gameObject; // not using it for this script at the moment
@@ -34,6 +36,8 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!canMove)
+            return;
         if (rb.velocity.magnitude < maxSpeed)
         {
             rb.AddRelativeForce(0, 0, vertical * forceSpeed);

@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   h: {fileID: 1149140690}
+  bc: {fileID: 0}
   timeToDestroy: 20
 --- !u!54 &321642336
 Rigidbody:
@@ -3627,6 +3628,7 @@ MonoBehaviour:
   maxSpeed: 10
   maxRotateSpeed: 0.5
   cannon: {fileID: 697774793}
+  canMove: 1
 --- !u!114 &1598003006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   h: {fileID: 1598003007}
+  bc: {fileID: 1598003005}
   timeToDestroy: 20
 --- !u!114 &1598003007
 MonoBehaviour:
