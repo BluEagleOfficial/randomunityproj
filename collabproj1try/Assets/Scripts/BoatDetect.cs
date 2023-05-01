@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class BoatDetect : MonoBehaviour
 {
@@ -13,11 +14,23 @@ public class BoatDetect : MonoBehaviour
     [SerializeField] private GameObject eventObj;
     [SerializeField] private GameObject title;
     // public event onBoatSelect;
-    
+    bool isCollision = false;
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (isCollision && Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
     private void OnTriggerStay(Collider col)
     {
-        if(col.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
+            isCollision = true;
             detectedObj = col.gameObject;
             // Debug.Log("boat entered: " + detectedObj);
             buttonPrompt.SetActive(true);
@@ -28,8 +41,9 @@ public class BoatDetect : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        if(col.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
+            isCollision = false;
             detectedObj = null;
             // Debug.Log("boat exited: " + detectedObj);
             buttonPrompt.SetActive(false);
