@@ -13,7 +13,7 @@ public class Cannon : MonoBehaviour
 
     public float shootEvery = 1;
 
-    float timeOfShoot = 0;
+    public float timeOfShoot = 0;
 
     [SerializeField]
     string ignoreTag = "Player";

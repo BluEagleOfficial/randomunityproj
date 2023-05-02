@@ -28,7 +28,7 @@ public class BoatDetect : MonoBehaviour
     }
     private void OnTriggerStay(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("selector"))
         {
             isCollision = true;
             detectedObj = col.gameObject;
@@ -41,7 +41,7 @@ public class BoatDetect : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("selector"))
         {
             isCollision = false;
             detectedObj = null;
