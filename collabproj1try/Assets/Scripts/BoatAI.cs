@@ -8,7 +8,7 @@ public class BoatAI : MonoBehaviour
     public float maxSpeed = 10;
     public float maxRotateSpeed = 1;
     public Transform enemy;
-    public Cannon canon;
+    public Cannon[] cannons;
 
     public Transform aimer;
     void Start()
@@ -51,6 +51,9 @@ public class BoatAI : MonoBehaviour
     }
     void attack()
     {
-        canon.shoot();
+        foreach (var cannon in cannons)
+        {
+            cannon.shoot();
+        }
     }
 }

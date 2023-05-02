@@ -14,7 +14,7 @@ public class BoatController : MonoBehaviour
 
     private float horizontal, vertical;
 
-    public Cannon cannon;
+    public Cannon[] cannons;
 
     public bool canMove = true;
 
@@ -30,13 +30,16 @@ public class BoatController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            cannon.shoot();
+            foreach (var cannon in cannons)
+            {
+                cannon.shoot();
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if(!canMove)
+        if (!canMove)
             return;
         if (rb.velocity.magnitude < maxSpeed)
         {

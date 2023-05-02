@@ -11,38 +11,47 @@ public class bullet : MonoBehaviour
     [SerializeField]
     int damage = 50;
     public GameObject replace;
+
+    public string ignoreTag = "";
     void FixedUpdate()
     {
         rb.AddRelativeForce(0, 0, speed);
     }
     void OnTriggerEnter(Collider other)
     {
-        try
+        if (other.gameObject.tag != ignoreTag)
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            try
+            {
+                other.gameObject.GetComponent<Health>().TakeDamage(damage);
+
+            }
+            catch
+            {
+
+            }
+            Instantiate(replace, transform.position, Quaternion.identity);
+            Destroy(this);
 
         }
-        catch
-        {
-
-        }
-        Instantiate(replace, transform.position, Quaternion.identity);
-        Destroy(this);
-
     }
     void OnTriggerStay(Collider other)
     {
-        try
+        if (other.gameObject.tag != ignoreTag)
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            try
+            {
+                other.gameObject.GetComponent<Health>().TakeDamage(damage);
+
+            }
+            catch
+            {
+
+            }
+            Instantiate(replace, transform.position, Quaternion.identity);
+            Destroy(this);
 
         }
-        catch
-        {
-
-        }
-        Instantiate(replace, transform.position, Quaternion.identity);
-        Destroy(this);
 
     }
 }

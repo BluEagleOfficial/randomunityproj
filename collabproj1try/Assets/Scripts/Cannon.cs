@@ -15,6 +15,9 @@ public class Cannon : MonoBehaviour
 
     float timeOfShoot = 0;
 
+    [SerializeField]
+    string ignoreTag = "Player";
+
     void FixedUpdate()
     {
         cannonHead.rotation = Wyperian.lookAtSlowly(cannonHead, aimer.position, Time.deltaTime * speedOfRot * 100);
@@ -25,7 +28,8 @@ public class Cannon : MonoBehaviour
     {
         if (timeOfShoot > shootEvery)
         {
-            Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
+            GameObject g = Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
+            g.GetComponent<bullet>().ignoreTag = ignoreTag;
             timeOfShoot = 0;
         }
 
