@@ -26,7 +26,7 @@ public class BoatAI : MonoBehaviour
     {
         if (Wyperian.IsNullOrDestroyed(enemy))
         {
-            enemy = Wyperian.FindClosestEnemy("boat", transform).transform;
+            enemy = Wyperian.FindClosestEnemy("Player", transform).transform;
         }
         distance = Vector3.Distance(enemy.position, transform.position);
         if (distance < distanceOfFollow && distance > distanceOfAttack)
