@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b164866ad255f5479b79babc62e9917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: {fileID: 0}
+  hp: {fileID: 6901477453285506114}
   s: {fileID: 6901477453253993703}
 --- !u!114 &6901477453253993704
 MonoBehaviour:
@@ -484,6 +484,7 @@ MonoBehaviour:
   cannonHead: {fileID: 3642208007496190126}
   speedOfRot: 5
   shootEvery: 1
+  timeOfShoot: 0
   ignoreTag: Player
 --- !u!1 &6901477454411400318
 GameObject:

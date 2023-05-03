@@ -15,6 +15,7 @@ public class Cooldown : MonoBehaviour
 
     void Update()
     {
-        i.fillAmount = c.timeOfShoot;
+        // i.fillAmount = c.timeOfShoot - i.fillAmount; // this doesnt work just constatly makes it spasm so i added a fixed value that doesnt change
+        i.fillAmount = -c.timeOfShoot + 1;
     }
 }

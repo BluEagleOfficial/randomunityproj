@@ -13,7 +13,7 @@ public class BoatAI : MonoBehaviour
     public Transform aimer;
     void Start()
     {
-        enemy = Wyperian.FindClosestEnemy("boat", transform).transform;
+        enemy = Wyperian.FindClosestEnemy("Player", transform).transform;
         speed = maxSpeed;
     }
     float distance = 0;

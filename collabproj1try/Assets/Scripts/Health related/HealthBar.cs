@@ -16,6 +16,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        s.maxValue = hp.maxhp;
         s.value = hp.hp;
     }
 }
