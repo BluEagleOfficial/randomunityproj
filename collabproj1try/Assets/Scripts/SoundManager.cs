@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-
+    [SerializeField] private GameObject soundPrefab;
 
     public enum Sound
     {
@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     }
 
     private static Dictionary<Sound, float> soundTimer;
+    private static Dictionary<GameObject, float> soundHolders;
 
     public static void Initialize()
     {
@@ -37,22 +38,27 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public static void PlaySound(AudioClip sound)
+    public void PlaySound(AudioClip sound)
     {
-        GameObject soundHolder = new GameObject("Sound");
-        AudioSource audioSource = soundHolder.AddComponent<AudioSource>();
+        GameObject soundHolder = Instantiate(soundPrefab);
+        AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
+        DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
         audioSource.PlayOneShot(sound);
+        // soundHolders.Add(soundHolder, audioSource.clip.length); // might not need this line anymore
+        d.timeToDestroy = sound.length; // gives no reference error
     }
 
-    public static void PlaySoundAtPosition(AudioClip sound, Vector3 position)
+    public void PlaySoundAtPosition(AudioClip sound, Vector3 position)
     {
-        GameObject soundHolder = new GameObject("Sound");
-        soundHolder.transform.position = position;
-        AudioSource audioSource = soundHolder.AddComponent<AudioSource>();
+        GameObject soundHolder = Instantiate(soundPrefab, position, Quaternion.identity);
+        AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
+        DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
         audioSource.PlayOneShot(sound);
+        // soundHolders.Add(soundHolder, audioSource.clip.length); // might not need this line anymore
+        d.timeToDestroy = sound.length;
     }
 
-    // private static bool CanPlaySound(Sound sound)
+    // private bool CanPlaySound(Sound sound)
     // {
     //     switch (sound) {
     //     default:

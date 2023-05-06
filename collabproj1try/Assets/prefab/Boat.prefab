@@ -149,7 +149,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218693208045}
   cannonHead: {fileID: 857930892044509818}
@@ -473,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220138859284}
   cannonHead: {fileID: 857930891042428544}
@@ -527,6 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930219952754017}
   cannonHead: {fileID: 857930891194407877}
@@ -581,6 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220119042170}
   cannonHead: {fileID: 857930892870663136}
@@ -679,7 +683,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397930219320892800}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 232c001a6e9f0e84cb9e4464d97f964a, type: 3}
   m_Name: 
@@ -694,7 +698,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397930219320892800}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8264cb6e4d21024588bb0f0827d7962, type: 3}
   m_Name: 
@@ -992,6 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220282110242}
   cannonHead: {fileID: 857930891768394719}
@@ -1394,6 +1399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218699996728}
   cannonHead: {fileID: 857930890779344053}
@@ -1448,6 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220245933554}
   cannonHead: {fileID: 857930892829072579}
@@ -1698,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218619329973}
   cannonHead: {fileID: 857930892669037692}
@@ -1752,6 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218813350160}
   cannonHead: {fileID: 857930891367279078}
@@ -1806,6 +1815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218803348309}
   cannonHead: {fileID: 857930892103714129}

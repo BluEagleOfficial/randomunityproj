@@ -29,7 +29,8 @@ public class Cannon : MonoBehaviour
     {
         if (timeOfShoot > shootEvery)
         {
-            SoundManager.PlaySound(cannonShoot);
+            if(cannonShoot != null)
+                SoundManager.Instance.PlaySoundAtPosition(cannonShoot, tip.position);
             GameObject g = Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
             g.GetComponent<bullet>().ignoreTag = ignoreTag;
             timeOfShoot = 0;
