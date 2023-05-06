@@ -44,15 +44,13 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(sound);
     }
 
-    // public static void PlaySound(Sound sound)
-    // {
-    //     if(CanPlaySound(sound))
-    //     {
-    //         GameObject soundHolder = new GameObject("Sound");
-    //         AudioSource audioSource = soundHolder.AddComponent<AudioSource>();
-    //         audioSource.PlayOneShot(GetAudioClip(sound));
-    //     }
-    // }
+    public static void PlaySoundAtPosition(AudioClip sound, Vector3 position)
+    {
+        GameObject soundHolder = new GameObject("Sound");
+        soundHolder.transform.position = position;
+        AudioSource audioSource = soundHolder.AddComponent<AudioSource>();
+        audioSource.PlayOneShot(sound);
+    }
 
     // private static bool CanPlaySound(Sound sound)
     // {
