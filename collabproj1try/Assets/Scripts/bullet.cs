@@ -31,8 +31,8 @@ public class bullet : MonoBehaviour
             {
 
             }
-            if(other.gameObject.layer == 4)
-                Instantiate(waterHitEffects, transform.position, Quaternion.identity);
+            if (other.gameObject.layer == 4)
+                Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
             else
                 Instantiate(hitEffects, transform.position, Quaternion.identity);
             Destroy(this);
@@ -52,8 +52,8 @@ public class bullet : MonoBehaviour
             {
 
             }
-            if(other.gameObject.layer == 4)
-                Instantiate(waterHitEffects, transform.position, Quaternion.identity);
+            if (other.gameObject.layer == 4)
+                Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
             else
                 Instantiate(hitEffects, transform.position, Quaternion.identity);
             Destroy(this);
