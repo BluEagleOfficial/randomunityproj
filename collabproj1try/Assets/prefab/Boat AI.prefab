@@ -183,7 +183,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6901477454069014001
 Transform:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   speedOfRot: 5
   shootEvery: 1
   timeOfShoot: 0
-  ignoreTag: Player
+  ignoreTag: enemy
 --- !u!1 &6901477454411400318
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,46 +856,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: bigboat1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1be3daf952eda2340a993ec168b74ad4,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be3daf952eda2340a993ec168b74ad4, type: 3}
---- !u!1 &164997791701791754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6740984516714099051, guid: 1be3daf952eda2340a993ec168b74ad4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6901477454557021537}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6901477454557021543
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164997791701791754}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3, y: 2.0447876, z: 40.466263}
-  m_Center: {x: 0, y: 0.21336585, z: 25.06979}
---- !u!1 &4713883489770841132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7012688310696697523, guid: 1be3daf952eda2340a993ec168b74ad4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6901477454557021537}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6901477454557021542
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4713883489770841132}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 28.561806, y: 2.183658, z: 17.112017}
-  m_Center: {x: 0, y: 1.9673495, z: 36.177227}
 --- !u!1 &5982910042195638320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1be3daf952eda2340a993ec168b74ad4,
