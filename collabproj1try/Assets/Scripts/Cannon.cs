@@ -25,6 +25,12 @@ public class Cannon : MonoBehaviour
         timeOfShoot += Time.fixedDeltaTime;
     }
 
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.R))
+            SoundManager.Instance.StopSound(cannonShoot);
+    }
+
     public void shoot()
     {
         if (timeOfShoot > shootEvery)
