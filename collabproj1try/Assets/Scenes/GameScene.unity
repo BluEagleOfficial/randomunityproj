@@ -390,7 +390,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!65 &615409356
 BoxCollider:
@@ -841,6 +841,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boat AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901477454069013965, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: walls.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901477454069013965, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: distanceOfAttack
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901477454069013965, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: distanceOfChange
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901477454069013965, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: changeDirectionEvery
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6901477454069014001, guid: 943d8b2918310be4b9b4844414c13e47,
         type: 3}

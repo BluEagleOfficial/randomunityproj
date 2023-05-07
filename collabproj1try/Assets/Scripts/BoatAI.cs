@@ -19,7 +19,12 @@ public class BoatAI : MonoBehaviour
     float distance = 0;
 
     [SerializeField]
-    float distanceOfFollow = 1000, distanceOfAttack = 100;
+    float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100;
+
+    [SerializeField]
+    LayerMask walls;
+
+
 
 
     void FixedUpdate()
@@ -42,12 +47,42 @@ public class BoatAI : MonoBehaviour
     }
     void follow()
     {
-        Vector3 rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 100).eulerAngles;
-        rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
-        if (rb.velocity.magnitude < maxSpeed)
+        Vector3 rot;
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanceOfChange))
         {
-            rb.AddRelativeForce(0, 0, forceSpeed);
+            Debug.Log("hit");
+            rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 1).eulerAngles;
+            rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
+            if (rb.velocity.magnitude < maxSpeed)
+            {
+                rb.AddRelativeForce(0, 0, -forceSpeed);
+            }
+
+            Debug.Log("ehm1");
+            rb.AddRelativeForce(forceSpeed, 0, 0);
+            if (hit.transform.gameObject.layer == walls)
+            {
+
+
+
+            }
         }
+        else
+        {
+            Debug.Log("nohit");
+            rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 100).eulerAngles;
+            rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
+            if (rb.velocity.magnitude < maxSpeed)
+            {
+                rb.AddRelativeForce(0, 0, forceSpeed);
+            }
+            if (rb.velocity.magnitude < 1)
+            {
+                Debug.Log("ehm2");
+                rb.AddRelativeForce(forceSpeed * 10, 0, 0);
+            }
+        }
+
     }
     void attack()
     {
