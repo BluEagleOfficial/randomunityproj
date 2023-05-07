@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   coins: 0
-  ammos: 77
+  Ammo: 10
+  remainingAmmo: 3
   maxHealth: 1000
   health: 1000
   maxSpeed: 10

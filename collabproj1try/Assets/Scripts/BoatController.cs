@@ -31,7 +31,7 @@ public class BoatController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        if(cooldownTimer < shootingCooldown)
+        if (cooldownTimer < shootingCooldown)
             cooldownTimer += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -52,8 +52,13 @@ public class BoatController : MonoBehaviour
                     cannon.shoot();
                 }
             }
-            if(cooldownTimer > shootingCooldown)
+            if (cooldownTimer >= shootingCooldown)
+            {
                 cooldownTimer = 0;
+            }
+
+
+
         }
     }
 
