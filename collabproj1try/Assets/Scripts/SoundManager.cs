@@ -7,23 +7,24 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] private GameObject soundPrefab;
 
-    public enum Sound
-    {
-        BoatMove,
-        CannonShoot,
-        BulletHit,
-        BoatDie,
-        Pickup
-    }
+    // public enum Sound
+    // {
+    //     BoatMove,
+    //     CannonShoot,
+    //     BulletHit,
+    //     BoatDie,
+    //     Pickup
+    // }
 
-    private static Dictionary<Sound, float> soundTimer;
-    private static Dictionary<GameObject, float> soundHolders;
+    // private static Dictionary<Sound, float> soundTimer;
+    public List<AudioSource> soundHolders = new List<AudioSource>();
+    // private static List<AudioClip> soundHolderz = new List<AudioClip>();
 
-    public static void Initialize()
-    {
-        soundTimer = new Dictionary<Sound, float>();
-        soundTimer[Sound.BoatMove] = 0f;
-    }
+    // public static void Initialize()
+    // {
+    //     soundTimer = new Dictionary<Sound, float>();
+    //     soundTimer[Sound.BoatMove] = 0f;
+    // }
 
     void Awake()
     {
@@ -44,8 +45,8 @@ public class SoundManager : MonoBehaviour
         AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
         DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
         audioSource.PlayOneShot(sound);
-        // soundHolders.Add(soundHolder, audioSource.clip.length); // might not need this line anymore
-        d.timeToDestroy = sound.length; // gives no reference error
+        soundHolders.Add(audioSource);
+        d.timeToDestroy = sound.length;
     }
 
     public void PlaySoundAtPosition(AudioClip sound, Vector3 position)
@@ -54,8 +55,37 @@ public class SoundManager : MonoBehaviour
         AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
         DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
         audioSource.PlayOneShot(sound);
-        // soundHolders.Add(soundHolder, audioSource.clip.length); // might not need this line anymore
+        soundHolders.Add(audioSource);
         d.timeToDestroy = sound.length;
+    }
+
+    public void StopSound(AudioClip sound)
+    {
+        for (int i = 0; i < soundHolders.Count; i++)
+        {
+            // AudioSource as = soundHolders[i].GetComponent<AudioSource>();
+
+            if(soundHolders[i].clip == sound)
+            {
+                Debug.Log("DESTROY SOUND " + soundHolders[i].gameObject.name);
+                // Destroy(soundHolders[i].gameObject);
+                // soundHolders[i].enabled = false;
+                soundHolders[i].Stop();
+                soundHolders.RemoveAt(i);
+            }
+        }
+    }
+
+    public bool SoundIsPlaying(AudioClip sound)
+    {
+        for (int i = 0; i < soundHolders.Count; i++)
+        {
+            if(soundHolders[i].clip == sound)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // private bool CanPlaySound(Sound sound)

@@ -295,6 +295,7 @@ MonoBehaviour:
   h: {fileID: 6901477453285506114}
   timeToDestroy: 20
   forceOfDown: 100
+  deathSound: {fileID: 8300000, guid: 7c28f2ad86a08fb41bf631b4c0f750b5, type: 3}
 --- !u!114 &6901477454069013965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
+  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 6901477454752937650}
   tip: {fileID: 6901477452875652296}
   cannonHead: {fileID: 3642208007496190126}

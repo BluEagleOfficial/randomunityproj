@@ -8,12 +8,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Health hp;
     [SerializeField] private Slider s;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         s.maxValue = hp.maxhp;
