@@ -3,8 +3,9 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
+
     // private GameObject cameraObject;
-    public int ammos = 10;
+    public boatInformation information;
     private float speed;
     public float forceSpeed = 1;
     public float maxSpeed = 10;
@@ -30,15 +31,15 @@ public class BoatController : MonoBehaviour
         {
             foreach (var cannon in cannons)
             {
-                if (ammos > 0)
+                if (information.ammos > 0)
                 {
                     cannon.shoot();
                 }
             }
-            ammos -= 1;
-            if (ammos < 0)
+            information.ammos -= 1;
+            if (information.ammos < 0)
             {
-                ammos = 0;
+                information.ammos = 0;
             }
         }
     }
