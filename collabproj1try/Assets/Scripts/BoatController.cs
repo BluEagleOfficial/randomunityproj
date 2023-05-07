@@ -14,7 +14,7 @@ public class BoatController : MonoBehaviour
 
     private float horizontal, vertical;
     public float shootingCooldown = 1;
-    private float timer = 0;
+    public float cooldownTimer = 0;
     public Cannon[] cannons;
 
     public bool canMove = true;
@@ -31,11 +31,12 @@ public class BoatController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        timer += Time.deltaTime;
+        if(cooldownTimer < shootingCooldown)
+            cooldownTimer += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (timer >= shootingCooldown)
+            if (cooldownTimer >= shootingCooldown)
             {
                 information.remainingAmmo -= 1;
             }
@@ -46,14 +47,13 @@ public class BoatController : MonoBehaviour
             }
             foreach (var cannon in cannons)
             {
-                if (information.remainingAmmo > 0 && timer >= shootingCooldown)
+                if (information.remainingAmmo > 0 && cooldownTimer >= shootingCooldown)
                 {
                     cannon.shoot();
                 }
             }
-            timer = 0;
-
-
+            if(cooldownTimer > shootingCooldown)
+                cooldownTimer = 0;
         }
     }
 

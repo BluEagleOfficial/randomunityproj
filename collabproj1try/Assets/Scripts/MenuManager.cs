@@ -10,9 +10,10 @@ public class MenuManager : MonoBehaviour
     public static bool gamePaused;
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject playerHud;
     [SerializeField] private GameObject mainMenu;
 
-    private bool lockCursor = true;
+    private bool lockCursor;
     
     // [SerializeField] private GameObject pauseButton; // these make the buttons auto select so you can use arrow keys or any input to navigate the buttons, will add later if time
     // [SerializeField] private GameObject mainButton;
@@ -27,14 +28,15 @@ public class MenuManager : MonoBehaviour
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
                 lockCursor = false;
-                LockCursor(lockCursor);
                 mainMenu.SetActive(true);
+                playerHud.SetActive(false);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
             }
             else
             {
                 lockCursor = true;
                 mainMenu.SetActive(false);
+                playerHud.SetActive(true);
                 // EventSystem.current.SetSelectedGameObject(pauseButton);
             }
         }
@@ -66,12 +68,14 @@ public class MenuManager : MonoBehaviour
         {
             lockCursor = false; // keep curson unlocked if in the main menu
             mainMenu.SetActive(true);
+            playerHud.SetActive(false);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
         else
         {
             lockCursor = true;
             mainMenu.SetActive(false);
+            playerHud.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(pauseButton);
         }
         GamePaused(false);
