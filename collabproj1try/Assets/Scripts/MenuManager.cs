@@ -10,10 +10,10 @@ public class MenuManager : MonoBehaviour
     public static bool gamePaused;
 
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject playerHud;
     [SerializeField] private GameObject mainMenu;
 
     private bool lockCursor;
+    public int currentScene;
     
     // [SerializeField] private GameObject pauseButton; // these make the buttons auto select so you can use arrow keys or any input to navigate the buttons, will add later if time
     // [SerializeField] private GameObject mainButton;
@@ -25,19 +25,19 @@ public class MenuManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            if(SceneManager.GetActiveScene().buildIndex == 0)
+            currentScene = SceneManager.GetActiveScene().buildIndex;
+
+            if(currentScene == 0)
             {
-                // lockCursor = false;
+                lockCursor = false;
                 Cursor.lockState = CursorLockMode.None;
                 mainMenu.SetActive(true);
-                playerHud.SetActive(false);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
             }
             else
             {
                 lockCursor = true;
                 mainMenu.SetActive(false);
-                playerHud.SetActive(true);
                 // EventSystem.current.SetSelectedGameObject(pauseButton);
             }
         }
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
         {
-            if(SceneManager.GetActiveScene().buildIndex != 0) // dont pause if in the main menu
+            if(currentScene != 0) // dont pause if in the main menu
             {
                 gamePaused = !gamePaused;
                 GamePaused(gamePaused);
@@ -68,19 +68,19 @@ public class MenuManager : MonoBehaviour
         if(sceneIndex == 0)
         {
             lockCursor = false; // keep curson unlocked if in the main menu
+            Cursor.lockState = CursorLockMode.None;
             mainMenu.SetActive(true);
-            playerHud.SetActive(false);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
         else
         {
             lockCursor = true;
             mainMenu.SetActive(false);
-            playerHud.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(pauseButton);
         }
         GamePaused(false);
         SceneManager.LoadSceneAsync(sceneIndex);
+        currentScene = sceneIndex;
     }
 
     public void LockCursor(bool LockCursor)
