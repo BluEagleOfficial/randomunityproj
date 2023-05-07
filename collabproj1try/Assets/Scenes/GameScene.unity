@@ -827,6 +827,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5982910042195638320, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6901477453429491427, guid: 943d8b2918310be4b9b4844414c13e47,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -919,10 +924,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901477454236968959, guid: 943d8b2918310be4b9b4844414c13e47,
         type: 3}
+      propertyPath: ignoreTag
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901477454236968959, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
       propertyPath: cannonShoot
       value: 
       objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6901477454557021542, guid: 943d8b2918310be4b9b4844414c13e47, type: 3}
+    - {fileID: 6901477454557021543, guid: 943d8b2918310be4b9b4844414c13e47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 943d8b2918310be4b9b4844414c13e47, type: 3}
 --- !u!1001 &7397930220541463225
 PrefabInstance:
