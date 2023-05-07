@@ -145,4 +145,5 @@ MonoBehaviour:
   speed: 250
   damage: 10
   replace: {fileID: 770604584439312975, guid: abd456abaa2a26c4fb51fdbd15a498f8, type: 3}
+  hitSound: {fileID: 8300000, guid: eb8a2425eee104b42912bd1b0f635f53, type: 3}
   ignoreTag: 
