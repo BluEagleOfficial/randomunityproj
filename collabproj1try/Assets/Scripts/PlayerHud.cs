@@ -10,18 +10,14 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
 
-    [SerializeField] private Health hp;
     [SerializeField] private BoatController bc;
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Health hp;
 
     void Update()
     {
         healthBar.value = hp.hp;
-        cooldown.fillAmount = cooldown.fillAmount = -bc.cooldownTimer + 1;
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
+        if(bc.information.remainingAmmo > 0)
+            cooldown.fillAmount = cooldown.fillAmount = -bc.cooldownTimer + 1;
     }
 }
