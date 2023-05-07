@@ -917,6 +917,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6901477454236968959, guid: 943d8b2918310be4b9b4844414c13e47,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 943d8b2918310be4b9b4844414c13e47, type: 3}
 --- !u!1001 &7397930220541463225
@@ -926,6 +931,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7397930218703609970, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930218849395194, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930218901525237, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930219240188510, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
     - target: {fileID: 7397930219320892800, guid: 5e8a9fb9be663ab45a569d10d8825d25,
         type: 3}
       propertyPath: m_Name
@@ -986,6 +1011,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7397930219766993751, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
     - target: {fileID: 7397930219978782554, guid: 5e8a9fb9be663ab45a569d10d8825d25,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -996,6 +1026,31 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7397930220270779134, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930220281216812, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930220382573987, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930220572197458, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
+    - target: {fileID: 7397930220718023213, guid: 5e8a9fb9be663ab45a569d10d8825d25,
+        type: 3}
+      propertyPath: cannonShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: af11ff0a34e46d54bac58399f666e14b, type: 3}
     - target: {fileID: 7668455367543672682, guid: 5e8a9fb9be663ab45a569d10d8825d25,
         type: 3}
       propertyPath: m_TagString

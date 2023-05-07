@@ -9,13 +9,8 @@ public class DestroyAfterTime : MonoBehaviour
 
     void Update()
     {
-        if(timer < timeToDestroy)
+        if (timer < timeToDestroy)
             timer += Time.deltaTime;
-        else
-        {
-            if(SoundManager.Instance.soundHolders.Contains(GetComponent<AudioSource>()))
-                SoundManager.Instance.StopSound(GetComponent<AudioSource>().clip);
-            // Destroy(this.gameObject);
-        }
+
     }
 }

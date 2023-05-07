@@ -12,9 +12,6 @@ public class bullet : MonoBehaviour
     int damage = 50;
     public GameObject replace;
 
-    [SerializeField]
-    private AudioClip hitSound;
-
     public string ignoreTag = "";
     void FixedUpdate()
     {
@@ -34,7 +31,6 @@ public class bullet : MonoBehaviour
 
             }
             Instantiate(replace, transform.position, Quaternion.identity);
-            SoundManager.Instance.PlaySoundAtPosition(hitSound, transform.position, Random.Range(10,100), 100);
             Destroy(this);
 
         }

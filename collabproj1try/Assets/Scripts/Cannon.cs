@@ -3,7 +3,6 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    [SerializeField] private AudioClip cannonShoot;
 
     public Transform aimer;
 
@@ -25,18 +24,11 @@ public class Cannon : MonoBehaviour
         timeOfShoot += Time.fixedDeltaTime;
     }
 
-    void Update()
-    {
-        if(Input.GetKey(KeyCode.R))
-            SoundManager.Instance.StopSound(cannonShoot);
-    }
 
     public void shoot()
     {
         if (timeOfShoot > shootEvery)
         {
-            if(cannonShoot != null)
-                SoundManager.Instance.PlaySoundAtPosition(cannonShoot, tip.position);
             GameObject g = Instantiate(bulletPrefab, tip.position, cannonHead.rotation);
             g.GetComponent<bullet>().ignoreTag = ignoreTag;
             timeOfShoot = 0;
