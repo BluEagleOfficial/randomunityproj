@@ -14,7 +14,7 @@ public class BoatController : MonoBehaviour
 
     private float horizontal, vertical;
     public float shootingCooldown = 1;
-    float cooldownTimer = 0;
+    public float cooldownTimer = 0;
     public Cannon[] cannons;
 
     public bool canMove = true;
