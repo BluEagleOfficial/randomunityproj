@@ -26,13 +26,13 @@ public class MenuManager : MonoBehaviour
 
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
-                lockCursor = false;
+                LockCursor(false);
                 mainMenu.SetActive(true);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
             }
             else
             {
-                lockCursor = true;
+                LockCursor(true);
                 mainMenu.SetActive(false);
                 // EventSystem.current.SetSelectedGameObject(pauseButton);
             }
@@ -63,16 +63,17 @@ public class MenuManager : MonoBehaviour
     {
         if(sceneIndex == 0)
         {
-            lockCursor = false; // keep curson unlocked if in the main menu
+            LockCursor(false); // keep curson unlocked if in the main menu
             mainMenu.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
         else
         {
-            lockCursor = true;
+            LockCursor(true);
             mainMenu.SetActive(false);
             // EventSystem.current.SetSelectedGameObject(pauseButton);
         }
+        GamePaused(false);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 
