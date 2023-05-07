@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 770604584439312972}
   - component: {fileID: -5010172184975947615}
   - component: {fileID: 2919549151976818922}
+  - component: {fileID: 6485180975488236144}
   m_Layer: 0
   m_Name: water hit
   m_TagString: Untagged
@@ -4884,7 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95795c2023d02643874a8ebea9486bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyaftersecond: 5
+  destroyaftersecond: 2
 --- !u!82 &2919549151976818922
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4981,3 +4982,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6485180975488236144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770604584439312975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0e22957ccbb184a8a3ee13b1dd47b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 30a3cf110408b1c4da5fb328fad3cb8d, type: 3}
+  asource: {fileID: 2919549151976818922}
+  pitchMin: 0.75
+  pitchMax: 1.25
