@@ -6,25 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
     [SerializeField] private GameObject soundPrefab;
-
-    // public enum Sound
-    // {
-    //     BoatMove,
-    //     CannonShoot,
-    //     BulletHit,
-    //     BoatDie,
-    //     Pickup
-    // }
-
-    // private static Dictionary<Sound, float> soundTimer;
     public List<AudioSource> soundHolders = new List<AudioSource>();
-    // private static List<AudioClip> soundHolderz = new List<AudioClip>();
-
-    // public static void Initialize()
-    // {
-    //     soundTimer = new Dictionary<Sound, float>();
-    //     soundTimer[Sound.BoatMove] = 0f;
-    // }
 
     void Awake()
     {
@@ -77,13 +59,8 @@ public class SoundManager : MonoBehaviour
     {
         for (int i = 0; i < soundHolders.Count; i++)
         {
-            // AudioSource as = soundHolders[i].GetComponent<AudioSource>();
-
             if (soundHolders[i].clip == sound)
             {
-                Debug.Log("DESTROY SOUND " + soundHolders[i].gameObject.name);
-                // Destroy(soundHolders[i].gameObject);
-                // soundHolders[i].enabled = false;
                 soundHolders[i].Stop();
                 soundHolders.RemoveAt(i);
             }
@@ -101,21 +78,4 @@ public class SoundManager : MonoBehaviour
         }
         return false;
     }
-
-    // private bool CanPlaySound(Sound sound)
-    // {
-    //     switch (sound) {
-    //     default:
-    //         return true;
-    //     case Sound.BoatMove:
-    //         if(soundTimer.ContainsKey(sound)) {
-    //             float lastTimePlayed = soundTimer[sound];
-    //             float playerMoveTimerMax = .05f;
-    //             if(lastTimePlayed + playerMoveTimerMax < Time.time) {
-    //                 soundTimer[sound] = Time.time;
-    //                 return true;
-    //             }
-    //         }
-    //     }
-    // }
 }
