@@ -308,7 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218693208045}
   cannonHead: {fileID: 857930892044509818}
@@ -474,7 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220138859284}
   cannonHead: {fileID: 857930891042428544}
@@ -529,7 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930219952754017}
   cannonHead: {fileID: 857930891194407877}
@@ -584,7 +581,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220119042170}
   cannonHead: {fileID: 857930892870663136}
@@ -691,7 +687,8 @@ MonoBehaviour:
   h: {fileID: 7397930220372488756}
   timeToDestroy: 20
   forceOfDown: 1000
-  deathSound: {fileID: 8300000, guid: 7c28f2ad86a08fb41bf631b4c0f750b5, type: 3}
+  DeathEffectsPrefab: {fileID: 770604584439312975, guid: d774594fe05c8f044ba711d675735a3c,
+    type: 3}
 --- !u!114 &7397930219320892806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,7 +994,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220282110242}
   cannonHead: {fileID: 857930891768394719}
@@ -1400,7 +1396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218699996728}
   cannonHead: {fileID: 857930890779344053}
@@ -1455,7 +1450,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930220245933554}
   cannonHead: {fileID: 857930892829072579}
@@ -1706,7 +1700,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218619329973}
   cannonHead: {fileID: 857930892669037692}
@@ -1761,7 +1754,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 0}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218813350160}
   cannonHead: {fileID: 857930891367279078}
@@ -1816,7 +1808,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
     type: 3}
-  cannonShoot: {fileID: 8300000, guid: 64dee6b1492ba184eb2d5a702da31ac8, type: 3}
   aimer: {fileID: 7397930219812109510}
   tip: {fileID: 7397930218803348309}
   cannonHead: {fileID: 857930892103714129}
@@ -3012,7 +3003,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1be3daf952eda2340a993ec168b74ad4,
         type: 3}
       propertyPath: m_TagString
-      value: selector
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6740984516714099051, guid: 1be3daf952eda2340a993ec168b74ad4,
         type: 3}

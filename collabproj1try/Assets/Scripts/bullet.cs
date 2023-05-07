@@ -10,7 +10,8 @@ public class bullet : MonoBehaviour
 
     [SerializeField]
     int damage = 50;
-    public GameObject replace;
+    public GameObject hitEffects;
+    public GameObject waterHitEffects;
 
     public string ignoreTag = "";
     void FixedUpdate()
@@ -30,7 +31,10 @@ public class bullet : MonoBehaviour
             {
 
             }
-            Instantiate(replace, transform.position, Quaternion.identity);
+            if(other.gameObject.layer == 4)
+                Instantiate(waterHitEffects, transform.position, Quaternion.identity);
+            else
+                Instantiate(hitEffects, transform.position, Quaternion.identity);
             Destroy(this);
 
         }
@@ -48,7 +52,10 @@ public class bullet : MonoBehaviour
             {
 
             }
-            Instantiate(replace, transform.position, Quaternion.identity);
+            if(other.gameObject.layer == 4)
+                Instantiate(waterHitEffects, transform.position, Quaternion.identity);
+            else
+                Instantiate(hitEffects, transform.position, Quaternion.identity);
             Destroy(this);
 
         }
