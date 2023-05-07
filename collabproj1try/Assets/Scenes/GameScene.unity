@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 6401079677473992011, guid: e6d98943a93736949855b282361a1145,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6401079677473992011, guid: e6d98943a93736949855b282361a1145,
         type: 3}
@@ -286,7 +286,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -371,7 +371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615409355
 GameObject:
@@ -468,7 +468,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
@@ -517,7 +517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1914471922
 PrefabInstance:
@@ -529,7 +529,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f90bf072836f311439149a9f8c0f516f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f90bf072836f311439149a9f8c0f516f,
         type: 3}
@@ -723,7 +723,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1920102931
 BoxCollider:
@@ -5619,7 +5619,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &6901477454285456016
 PrefabInstance:
@@ -5671,7 +5671,7 @@ PrefabInstance:
     - target: {fileID: 6901477454069014001, guid: 943d8b2918310be4b9b4844414c13e47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6901477454069014001, guid: 943d8b2918310be4b9b4844414c13e47,
         type: 3}
@@ -5772,7 +5772,7 @@ PrefabInstance:
     - target: {fileID: 7397930219320892802, guid: 5e8a9fb9be663ab45a569d10d8825d25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7397930219320892802, guid: 5e8a9fb9be663ab45a569d10d8825d25,
         type: 3}
