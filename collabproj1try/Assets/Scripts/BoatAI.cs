@@ -21,8 +21,6 @@ public class BoatAI : MonoBehaviour
     [SerializeField]
     float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100;
 
-    [SerializeField]
-    LayerMask walls;
 
 
 
@@ -60,12 +58,6 @@ public class BoatAI : MonoBehaviour
 
             Debug.Log("ehm1");
             rb.AddRelativeForce(forceSpeed, 0, 0);
-            if (hit.transform.gameObject.layer == walls)
-            {
-
-
-
-            }
         }
         else
         {
