@@ -27,7 +27,8 @@ public class MenuManager : MonoBehaviour
 
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
-                lockCursor = false;
+                // lockCursor = false;
+                Cursor.lockState = CursorLockMode.None;
                 mainMenu.SetActive(true);
                 playerHud.SetActive(false);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
