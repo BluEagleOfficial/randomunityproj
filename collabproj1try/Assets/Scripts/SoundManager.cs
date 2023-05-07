@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -44,6 +44,7 @@ public class SoundManager : MonoBehaviour
         GameObject soundHolder = Instantiate(soundPrefab);
         AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
         DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
         audioSource.PlayOneShot(sound);
         soundHolders.Add(audioSource);
         d.timeToDestroy = sound.length;
@@ -54,6 +55,19 @@ public class SoundManager : MonoBehaviour
         GameObject soundHolder = Instantiate(soundPrefab, position, Quaternion.identity);
         AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
         DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.PlayOneShot(sound);
+        soundHolders.Add(audioSource);
+        d.timeToDestroy = sound.length;
+    }
+    public void PlaySoundAtPosition(AudioClip sound, Vector3 position, float volume, float distance)
+    {
+        GameObject soundHolder = Instantiate(soundPrefab, position, Quaternion.identity);
+        AudioSource audioSource = soundHolder.GetComponent<AudioSource>();
+        DestroyAfterTime d = soundHolder.GetComponent<DestroyAfterTime>();
+        audioSource.maxDistance = distance;
+        audioSource.volume = volume;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
         audioSource.PlayOneShot(sound);
         soundHolders.Add(audioSource);
         d.timeToDestroy = sound.length;
@@ -65,7 +79,7 @@ public class SoundManager : MonoBehaviour
         {
             // AudioSource as = soundHolders[i].GetComponent<AudioSource>();
 
-            if(soundHolders[i].clip == sound)
+            if (soundHolders[i].clip == sound)
             {
                 Debug.Log("DESTROY SOUND " + soundHolders[i].gameObject.name);
                 // Destroy(soundHolders[i].gameObject);
@@ -80,7 +94,7 @@ public class SoundManager : MonoBehaviour
     {
         for (int i = 0; i < soundHolders.Count; i++)
         {
-            if(soundHolders[i].clip == sound)
+            if (soundHolders[i].clip == sound)
             {
                 return true;
             }
