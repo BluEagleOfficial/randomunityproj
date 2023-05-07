@@ -48,7 +48,7 @@ public class BoatAI : MonoBehaviour
         Vector3 rot;
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanceOfChange))
         {
-            Debug.Log("hit");
+            // Debug.Log("hit");
             rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 1).eulerAngles;
             rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
             if (rb.velocity.magnitude < maxSpeed)
@@ -56,12 +56,12 @@ public class BoatAI : MonoBehaviour
                 rb.AddRelativeForce(0, 0, -forceSpeed);
             }
 
-            Debug.Log("ehm1");
+            // Debug.Log("ehm1");
             rb.AddRelativeForce(forceSpeed, 0, 0);
         }
         else
         {
-            Debug.Log("nohit");
+            // Debug.Log("nohit");
             rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 100).eulerAngles;
             rb.transform.rotation = Quaternion.Euler(0, rot.y, 0);
             if (rb.velocity.magnitude < maxSpeed)
@@ -70,7 +70,7 @@ public class BoatAI : MonoBehaviour
             }
             if (rb.velocity.magnitude < 1)
             {
-                Debug.Log("ehm2");
+                // Debug.Log("ehm2");
                 rb.AddRelativeForce(forceSpeed * 10, 0, 0);
             }
         }
