@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class BoatController : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class BoatController : MonoBehaviour
     public float forceSpeed = 1;
     public float maxSpeed = 10;
     public float maxRotateSpeed = 1;
-
+    
     private float horizontal, vertical;
 
+    public TMP_Text ammoText;
+    public float shootingCooldown = 1;
+    private float timer;
     public Cannon[] cannons;
 
     public bool canMove = true;
@@ -21,25 +25,40 @@ public class BoatController : MonoBehaviour
     {
         // cameraObject = GetComponentInChildren<Camera>().gameObject; // not using it for this script at the moment
         speed = maxSpeed;
+        information.remainingAmmo = information.Ammo;
+        ammoText.text = information.remainingAmmo + " Ammo left";
     }
 
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        if(timer < shootingCooldown)
+            timer += Time.deltaTime;
+        Debug.Log(timer.ToString("F1"));
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             foreach (var cannon in cannons)
             {
-                if (information.ammos > 0)
+                if (information.remainingAmmo > 0 && timer >= shootingCooldown)
                 {
                     cannon.shoot();
+                    timer = 0;
                 }
             }
-            information.ammos -= 1;
-            if (information.ammos < 0)
+
+            if(timer >= shootingCooldown)
             {
-                information.ammos = 0;
+                information.remainingAmmo -= 1;
+                ammoText.text = information.remainingAmmo + " Ammo left";
+            }
+
+            if (information.remainingAmmo < 0)
+            {
+                information.remainingAmmo = 0;
+                ammoText.text = information.remainingAmmo + " Ammo left";
             }
         }
     }

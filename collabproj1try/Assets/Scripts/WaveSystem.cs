@@ -7,6 +7,10 @@ public class WaveSystem : MonoBehaviour
     public int currentWave;
     public int maxWaves;
 
+    public int boatsMultiplier;
+    public bool useTimeLimit;
+    public float timeLimit;
+
     void Start()
     {
         

@@ -4,7 +4,10 @@ using UnityEngine;
 public class boatInformation : ScriptableObject
 {
     public float coins = 0;
-    public int ammos = 10;
+
+    public int Ammo = 10;
+
+    public int remainingAmmo;
 
     public int maxHealth = 1000;
 
