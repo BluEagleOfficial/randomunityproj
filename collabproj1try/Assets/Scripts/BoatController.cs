@@ -51,7 +51,11 @@ public class BoatController : MonoBehaviour
                     cannon.shoot();
                 }
             }
-            timer = 0;
+            if (timer >= shootingCooldown)
+            {
+                timer = 0;
+            }
+
 
 
         }
