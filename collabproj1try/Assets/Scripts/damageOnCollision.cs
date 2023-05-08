@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class damageOnCollision : MonoBehaviour
@@ -8,17 +6,14 @@ public class damageOnCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
-        if(other.CompareTag("Player") || other.CompareTag("enemy"))
+        try
         {
-            try
-            {
-                other.gameObject.GetComponent<Health>().TakeDamage(damageAmmount);
-            }
-            catch
-            {
-
-            }
+            other.gameObject.GetComponent<Health>().TakeDamage(damageAmmount);
         }
+        catch
+        {
+
+        }
+
     }
 }
