@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Flag
+    second: {fileID: 2100000, guid: 220fc309c740abc4fbc28dba70b33bb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wood
     second: {fileID: 2100000, guid: 1a616aa5d96d80e4d95bd433aa7abe94, type: 2}
   materials:
