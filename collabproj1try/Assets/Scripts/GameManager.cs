@@ -6,10 +6,13 @@ public class GameManager : MonoBehaviour
     public MissionBase mission;
 
     public Health playerHealth;
+    public static GameManager Instance;
 
     public bool playerWon;
+    
     void Start()
     {
+        Instance = this;
         mission.StartMission(this);
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
 
