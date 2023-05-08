@@ -31,7 +31,8 @@ public class bullet : MonoBehaviour
                 other.gameObject.GetComponent<Health>().TakeDamage(damage);
                 try
                 {
-                    other.gameObject.GetComponentInParent<Rigidbody>().AddForce(transform.forward * forceApplied, ForceMode.Impulse);
+                    Vector3 forceForS = transform.forward * forceApplied;
+                    other.gameObject.GetComponentInParent<Rigidbody>().AddForce(forceForS, ForceMode.Impulse);
                 }
                 catch
                 {
@@ -62,7 +63,8 @@ public class bullet : MonoBehaviour
                 other.gameObject.GetComponent<Health>().TakeDamage(damage);
                 try
                 {
-                    other.gameObject.GetComponentInParent<Rigidbody>().AddForce(transform.forward * forceApplied, ForceMode.Impulse);
+                    Vector3 forceForS = transform.forward * forceApplied;
+                    other.gameObject.GetComponentInParent<Rigidbody>().AddForce(forceForS, ForceMode.Impulse);
                 }
                 catch
                 {

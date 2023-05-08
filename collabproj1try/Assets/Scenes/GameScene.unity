@@ -595,7 +595,7 @@ MonoBehaviour:
   spawn: {fileID: 4402196590319043281, guid: 5377b6c036ad0fa469bcea506194298b, type: 3}
   min: {x: -250, y: 0, z: -250}
   max: {x: 250, y: 0, z: 250}
-  howMany: 100
+  howMany: 10
 --- !u!4 &645920648
 Transform:
   m_ObjectHideFlags: 0
@@ -740,6 +740,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0e325dbc8cb814a8cb435e4df95852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1807650966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1807650968}
+  - component: {fileID: 1807650967}
+  m_Layer: 0
+  m_Name: gameman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1807650967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807650966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4d51e83927ae24392605a731edbb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mission: {fileID: 11400000, guid: 535e3ccde5e8a24469724fb566453263, type: 2}
+  playerHealth: {fileID: 0}
+  playerWon: 0
+--- !u!4 &1807650968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807650966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.916428, y: 26.92728, z: -53.33234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1914471922
 PrefabInstance:
   m_ObjectHideFlags: 0
