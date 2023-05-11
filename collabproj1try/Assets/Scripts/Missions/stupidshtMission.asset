@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b472e2537cab484cb69569a1522a8ab, type: 3}
   m_Name: stupidshtMission
   m_EditorClassIdentifier: 
-  win: 0
+  title: stupid stuff
+  win: 1
   winTime: 60

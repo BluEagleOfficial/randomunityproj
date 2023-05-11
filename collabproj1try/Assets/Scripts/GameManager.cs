@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject[] prefabs;
 
+    [SerializeField]
+    public string ListOfMissions = "";
+
     void Start()
     {
         Instance = this;

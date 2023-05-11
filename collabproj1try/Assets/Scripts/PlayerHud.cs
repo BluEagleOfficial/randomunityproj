@@ -15,11 +15,13 @@ public class PlayerHud : MonoBehaviour
 
     [SerializeField] private BoatController bc;
     [SerializeField] private Health hp;
-    public List<TMP_Text> missionTexts = new List<TMP_Text>();
+    public TMP_Text missionTexts;
+
+
 
     void Start()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
     }
 
@@ -27,15 +29,17 @@ public class PlayerHud : MonoBehaviour
     {
         healthBar.value = hp.hp;
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
-        if(bc.information.remainingAmmo > 0)
+        if (bc.information.remainingAmmo > 0)
             cooldown.fillAmount = cooldown.fillAmount = -bc.cooldownTimer + 1;
-        if(MenuManager.gamePaused)
+        if (MenuManager.gamePaused)
             cooldown.gameObject.SetActive(false);
         else
             cooldown.gameObject.SetActive(true);
 
+        missionTexts.text = GameManager.Instance.ListOfMissions;
+
         // if(Input.GetKey(KeyCode.K))
-        if(GameManager.Instance.playerWon == true)
+        if (GameManager.Instance.playerWon == true)
         {
             winScreen.SetActive(true);
             // LeanTween.scaleY(winScreen,1,Time.deltaTime); // idk i cant do it, it just gets stuck twitching

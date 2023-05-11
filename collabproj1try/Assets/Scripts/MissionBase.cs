@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public abstract class MissionBase : ScriptableObject
 {
+    public string title;
     public bool win;
     public abstract void StartMission(GameManager gm);
 

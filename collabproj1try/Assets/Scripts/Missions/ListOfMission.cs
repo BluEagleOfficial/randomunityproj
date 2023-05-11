@@ -18,15 +18,35 @@ public class ListOfMission : MissionBase
     int currentmission = 0;
     public override void UpdateMission(GameManager gm)
     {
-        if (missions[currentmission].win && !realWin)
+        if (currentmission > missions.Length)
         {
-            currentmission += 1;
+            currentmission = missions.Length;
+            gm.playerWon = true;
+            realWin = true;
+        }
+        try
+        {
+            if (missions[currentmission].win && !realWin)
+            {
+                currentmission += 1;
+            }
+        }
+        catch
+        {
             if (currentmission > missions.Length)
             {
-                currentmission = missions.Length;
                 gm.playerWon = true;
                 realWin = true;
             }
+
+        }
+
+
+        gm.ListOfMissions = "";
+        foreach (var mis in missions)
+        {
+            gm.ListOfMissions += mis.title;
+            gm.ListOfMissions += Environment.NewLine;
         }
 
     }

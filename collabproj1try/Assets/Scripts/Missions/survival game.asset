@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40435c00196858949b4adfd73c816e2a, type: 3}
   m_Name: survival game
   m_EditorClassIdentifier: 
+  title: survive for 5 seconds
   win: 1
   winTime: 5
