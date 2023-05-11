@@ -8,8 +8,11 @@ public class GameManager : MonoBehaviour
     public Health playerHealth;
     public static GameManager Instance;
 
-    public bool playerWon;
-    
+    public bool playerWon = false;
+
+    [SerializeField]
+    public GameObject[] prefabs;
+
     void Start()
     {
         Instance = this;
@@ -20,6 +23,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         mission.UpdateMission(this);
-        playerWon = mission.win;
     }
 }

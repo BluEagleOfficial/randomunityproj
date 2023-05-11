@@ -23,6 +23,7 @@ public class SurvivalMission : MissionBase
             {
                 win = true;
             }
+
         }
     }
     public override void EndMission(GameManager gm)
