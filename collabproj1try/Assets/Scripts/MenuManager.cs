@@ -30,7 +30,6 @@ public class MenuManager : MonoBehaviour
             if(currentScene == 0)
             {
                 lockCursor = false;
-                Cursor.lockState = CursorLockMode.None;
                 mainMenu.SetActive(true);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
             }
@@ -68,7 +67,6 @@ public class MenuManager : MonoBehaviour
         if(sceneIndex == 0)
         {
             lockCursor = false; // keep curson unlocked if in the main menu
-            Cursor.lockState = CursorLockMode.None;
             mainMenu.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
@@ -80,6 +78,7 @@ public class MenuManager : MonoBehaviour
         }
         GamePaused(false);
         SceneManager.LoadSceneAsync(sceneIndex);
+        
         currentScene = sceneIndex;
     }
 
