@@ -19,7 +19,7 @@ public class BoatAI : MonoBehaviour
     float distance = 0;
 
     [SerializeField]
-    float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100;
+    float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100, distanceOfStop = 50;
 
 
 
@@ -32,7 +32,7 @@ public class BoatAI : MonoBehaviour
             enemy = Wyperian.FindClosestEnemy("Player", transform).transform;
         }
         distance = Vector3.Distance(enemy.position, transform.position);
-        if (distance < distanceOfFollow && distance > distanceOfAttack)
+        if (distance < distanceOfFollow && distance > distanceOfStop)
         {
             follow();
         }

@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 6901477454069013965}
   - component: {fileID: 6901477454069014002}
   m_Layer: 0
-  m_Name: Boat AI
+  m_Name: Medium boat AI
   m_TagString: boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   h: {fileID: 6901477453285506114}
   timeToDestroy: 20
-  forceOfDown: 100
+  forceOfDown: 1000
   DeathEffectsPrefab: {fileID: 770604584439312975, guid: d774594fe05c8f044ba711d675735a3c,
     type: 3}
 --- !u!114 &6901477454069013965
@@ -318,8 +318,9 @@ MonoBehaviour:
   - {fileID: 6901477454236968959}
   aimer: {fileID: 6901477454752937650}
   distanceOfFollow: 1000
-  distanceOfAttack: 50
+  distanceOfAttack: 80
   distanceOfChange: 40
+  distanceOfStop: 50
 --- !u!114 &6901477454069014002
 MonoBehaviour:
   m_ObjectHideFlags: 0
