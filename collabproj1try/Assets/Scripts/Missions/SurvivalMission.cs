@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[Serializable]
 [CreateAssetMenu(fileName = "SurvivalMission", menuName = "Missions/SurvivalMission")]
 public class SurvivalMission : MissionBase
 {
@@ -16,6 +15,7 @@ public class SurvivalMission : MissionBase
     }
     public override void UpdateMission(GameManager gm)
     {
+        Debug.Log("being called");
         timer += Time.deltaTime;
         if (timer > winTime)
         {
@@ -28,5 +28,10 @@ public class SurvivalMission : MissionBase
     }
     public override void EndMission(GameManager gm)
     {
+    }
+    public override void resetData()
+    {
+        win = false;
+        timer = 0;
     }
 }

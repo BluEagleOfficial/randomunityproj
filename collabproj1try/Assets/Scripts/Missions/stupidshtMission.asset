@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: stupidshtMission
   m_EditorClassIdentifier: 
   title: stupid stuff
-  win: 1
-  winTime: 60
+  win: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,16 +16,30 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public string ListOfMissions = "";
-
     void Start()
     {
         Instance = this;
-        mission.StartMission(this);
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
 
+        mission.resetData();
+
+
+        mission.StartMission(this);
+
     }
+
+
     void Update()
     {
         mission.UpdateMission(this);
+
     }
+
+    void OnApplicationQuit()
+    {
+        mission.resetData();
+        mission.EndMission(this);
+    }
+
+
 }

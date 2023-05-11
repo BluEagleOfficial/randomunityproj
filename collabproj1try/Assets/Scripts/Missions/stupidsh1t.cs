@@ -1,13 +1,11 @@
 using System;
 using UnityEngine;
 
-[Serializable]
+
 [CreateAssetMenu(fileName = "stupidshtMission", menuName = "Missions/stupidshtMission")]
 public class stupidsh1t : MissionBase
 {
     float timer = 0;
-
-    public float winTime = 60;
 
 
     public override void StartMission(GameManager gm)
@@ -16,10 +14,15 @@ public class stupidsh1t : MissionBase
     }
     public override void UpdateMission(GameManager gm)
     {
-
+        win = true;
     }
     public override void EndMission(GameManager gm)
     {
-        
+
+    }
+    public override void resetData()
+    {
+        win = false;
+        timer = 0;
     }
 }
