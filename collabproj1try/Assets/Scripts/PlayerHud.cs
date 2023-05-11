@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerHud : MonoBehaviour
 {
+    public static PlayerHud Instance;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
@@ -14,6 +15,13 @@ public class PlayerHud : MonoBehaviour
 
     [SerializeField] private BoatController bc;
     [SerializeField] private Health hp;
+    public List<TMP_Text> missionTexts = new List<TMP_Text>();
+
+    void Start()
+    {
+        if(Instance == null)
+            Instance = this;
+    }
 
     void Update()
     {

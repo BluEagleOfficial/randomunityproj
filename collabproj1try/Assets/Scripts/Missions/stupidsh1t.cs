@@ -20,5 +20,6 @@ public class stupidsh1t : MissionBase
     }
     public override void EndMission(GameManager gm)
     {
+        
     }
 }
