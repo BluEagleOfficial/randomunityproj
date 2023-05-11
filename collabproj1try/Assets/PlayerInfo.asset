@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   Ammo: 40
-  remainingAmmo: 40
+  remainingAmmo: 0
   maxHealth: 1000
   health: 1000
   maxSpeed: 10

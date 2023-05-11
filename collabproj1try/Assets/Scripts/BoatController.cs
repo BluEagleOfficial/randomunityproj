@@ -36,6 +36,14 @@ public class BoatController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+
+            foreach (var cannon in cannons)
+            {
+                if (information.remainingAmmo > 0 && cooldownTimer >= shootingCooldown)
+                {
+                    cannon.shoot();
+                }
+            }
             if (cooldownTimer >= shootingCooldown)
             {
                 information.remainingAmmo -= 1;
@@ -44,13 +52,6 @@ public class BoatController : MonoBehaviour
             if (information.remainingAmmo < 0)
             {
                 information.remainingAmmo = 0;
-            }
-            foreach (var cannon in cannons)
-            {
-                if (information.remainingAmmo > 0 && cooldownTimer >= shootingCooldown)
-                {
-                    cannon.shoot();
-                }
             }
             if (cooldownTimer >= shootingCooldown)
             {
