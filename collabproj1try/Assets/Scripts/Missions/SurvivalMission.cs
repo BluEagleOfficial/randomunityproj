@@ -15,7 +15,6 @@ public class SurvivalMission : MissionBase
     }
     public override void UpdateMission(GameManager gm)
     {
-        Debug.Log("being called");
         timer += Time.deltaTime;
         if (timer > winTime)
         {

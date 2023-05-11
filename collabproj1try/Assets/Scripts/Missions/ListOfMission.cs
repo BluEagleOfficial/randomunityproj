@@ -57,7 +57,6 @@ public class ListOfMission : MissionBase
                 realWin = true;
             }
             missions[currentmission].UpdateMission(gm);
-            Debug.Log(currentmission);
         }
 
 
