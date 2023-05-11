@@ -11,9 +11,11 @@ public class BoatAI : MonoBehaviour
     public Cannon[] cannons;
 
     public Transform aimer;
+
+    public string enemyTag = "Player";
     void Start()
     {
-        enemy = Wyperian.FindClosestEnemy("Player", transform).transform;
+        enemy = Wyperian.FindClosestEnemy(enemyTag, transform).transform;
         speed = maxSpeed;
     }
     float distance = 0;
@@ -29,7 +31,7 @@ public class BoatAI : MonoBehaviour
     {
         if (Wyperian.IsNullOrDestroyed(enemy))
         {
-            enemy = Wyperian.FindClosestEnemy("Player", transform).transform;
+            enemy = Wyperian.FindClosestEnemy(enemyTag, transform).transform;
         }
         distance = Vector3.Distance(enemy.position, transform.position);
         if (distance < distanceOfFollow && distance > distanceOfStop)
