@@ -23,6 +23,16 @@ public class Health : MonoBehaviour
             hp = maxhp;
         }
     }
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void FixedUpdate()
+    {
+        if (hp < 1)
+        {
+            dead = true;
+        }
+    }
 
 
 }
