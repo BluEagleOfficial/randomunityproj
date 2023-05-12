@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Looting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Inventory inv;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.CompareTag("item"))
+        {
+            Debug.Log("picked up");
+        //     ItemBase item = other.GetComponent<Item>();
+        //     inv.wood.howMany += item.wood.howMany;
+        }
     }
 }
