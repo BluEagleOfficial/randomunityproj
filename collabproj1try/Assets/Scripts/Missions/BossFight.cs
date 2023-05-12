@@ -8,8 +8,8 @@ public class BossFight : MissionBase
     float timer = 0;
     [SerializeField] private GameObject BossPrefab;
     private GameObject boss;
-    private Health hp;
 
+    Health hp;
     public override void StartMission(GameManager gm)
     {
         boss = Instantiate(BossPrefab, Vector3.zero, Quaternion.identity);
@@ -17,7 +17,7 @@ public class BossFight : MissionBase
     }
     public override void UpdateMission(GameManager gm)
     {
-        if(hp.dead)
+        if (hp.dead)
             win = true;
     }
     public override void EndMission(GameManager gm)
