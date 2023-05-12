@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c57908193caa5418863791605700b1, type: 3}
-  m_Name: list of missions
+  m_Script: {fileID: 11500000, guid: 1f6beca6f2893334bb31a0b74d9064d5, type: 3}
+  m_Name: bossMission
   m_EditorClassIdentifier: 
-  title: list
+  title: Eliminate the Boss.
   win: 0
-  missions:
-  - {fileID: 11400000, guid: 0e3ffb358cdfb6f489b732df49bb78b9, type: 2}
-  realWin: 0
+  BossPrefab: {fileID: 6227596152277054779, guid: 6f46dadd62e8840429d4613458765c24,
+    type: 3}

@@ -18,9 +18,18 @@ public class MusicPlayer : MonoBehaviour
 
     void Update()
     {
-        if(playRandom)
-            if(!source.isPlaying)
+        if(!source.isPlaying)
+        {
+            if(playRandom)
                 source.PlayOneShot(Musics[Random.Range(0,Musics.Count)]);
+            else
+                source.PlayOneShot(Musics[0]);
+        }
+        
+        if(MenuManager.gamePaused)
+            PauseMusic(source.clip);
+        else
+            ResumeMusic(source.clip);
     }
 
     public void PlayMusic(AudioClip music)
