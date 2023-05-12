@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d947bcb5aa4dbd489bdbb2a7c5a6b3d, type: 3}
   m_Name: inventory
   m_EditorClassIdentifier: 
-  items: []
+  wood: {fileID: 11400000, guid: 148f338c2ca4513418f5c35a6e7a9db7, type: 2}
+  iron: {fileID: 11400000, guid: 64d1cae4f11bdb248b16dcd03b79894f, type: 2}
+  gold: {fileID: 11400000, guid: b63ffd4569d589c43bfbab20f72aa7d1, type: 2}
+  gunPowder: {fileID: 11400000, guid: 689305b31f5589940be94ff45439b49b, type: 2}
