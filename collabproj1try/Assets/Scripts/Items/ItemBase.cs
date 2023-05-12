@@ -11,4 +11,6 @@ public class ItemBase : ScriptableObject
     public Image img;
 
     public string description;
+
+    public int howMany = 0;
 }
