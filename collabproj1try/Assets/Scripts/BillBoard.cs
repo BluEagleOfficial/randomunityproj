@@ -11,10 +11,18 @@ public class BillBoard : MonoBehaviour
     }
     void Update()
     {
-        if (Wyperian.IsNullOrDestroyed(cam))
+        try
         {
-            cam = Camera.current;
+            if (Wyperian.IsNullOrDestroyed(cam))
+            {
+                cam = Camera.current;
+            }
+            transform.LookAt(cam.transform.position);
         }
-        transform.LookAt(cam.transform.position);
+        catch
+        {
+
+        }
+
     }
 }

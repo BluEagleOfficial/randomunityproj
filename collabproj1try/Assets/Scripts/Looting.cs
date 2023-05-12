@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Looting : MonoBehaviour
@@ -8,11 +6,32 @@ public class Looting : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("item"))
+        if (other.CompareTag("item"))
         {
-            Debug.Log("picked up");
-        //     ItemBase item = other.GetComponent<Item>();
-        //     inv.wood.howMany += item.wood.howMany;
+            randomDataOfEnemy rd = other.GetComponent<randomDataOfEnemy>();
+
+            inv.wood.howMany += rd.wood;
+            inv.iron.howMany += rd.iron;
+            inv.gold.howMany += rd.gold;
+            inv.gunPowder.howMany += rd.gunpowder;
+            Destroy(rd.gameObject);
+            Debug.Log("took items");
+
+        }
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("item"))
+        {
+            randomDataOfEnemy rd = other.gameObject.GetComponent<randomDataOfEnemy>();
+
+            inv.wood.howMany += rd.wood;
+            inv.iron.howMany += rd.iron;
+            inv.gold.howMany += rd.gold;
+            inv.gunPowder.howMany += rd.gunpowder;
+            Destroy(rd.gameObject);
+            Debug.Log("took items");
+
         }
     }
 }

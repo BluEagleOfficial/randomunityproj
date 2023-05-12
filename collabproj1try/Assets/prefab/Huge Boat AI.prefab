@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6227596152277054772}
   - component: {fileID: 6227596152277054773}
   - component: {fileID: 6227596152277054778}
+  - component: {fileID: 9112749071326236969}
   m_Layer: 0
   m_Name: Huge Boat AI
   m_TagString: boat
@@ -200,6 +201,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   h: {fileID: 6227596152531773809}
   comp: {fileID: 6227596152277054773}
+--- !u!114 &9112749071326236969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227596152277054779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a1799d8fd6cd3429894462c5ebc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawns:
+  - {fileID: 669673887086622037, guid: 6396c1740c09bde408273b915d4f9fda, type: 3}
+  hp: {fileID: 6227596152531773809}
 --- !u!1 &6227596152338515830
 GameObject:
   m_ObjectHideFlags: 0

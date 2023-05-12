@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 4177688928794105408}
   - component: {fileID: 4177688928794105409}
   - component: {fileID: 4177688928794105470}
+  - component: {fileID: 253780129494932136}
   m_Layer: 0
   m_Name: Small Boat AI
   m_TagString: boat
@@ -449,6 +450,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   h: {fileID: 4177688929725425759}
   comp: {fileID: 4177688928794105409}
+--- !u!114 &253780129494932136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177688928794105471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a1799d8fd6cd3429894462c5ebc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawns:
+  - {fileID: 8061058874353292039, guid: 5b7d4c26e8d6ce344a9d494c1a0d9573, type: 3}
+  hp: {fileID: 4177688929725425759}
 --- !u!1 &4177688928974374116
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +919,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4177688929725425753}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &115755327
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835738825386136840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8536425139288874787, guid: 271f6937f9ddb9d4ab9cf9e4a79791db, type: 3}
 --- !u!114 &4177688929725425759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,20 +948,6 @@ MonoBehaviour:
   maxhp: 200
   hp: 200
   dead: 0
---- !u!64 &115755327
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3835738825386136840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8536425139288874787, guid: 271f6937f9ddb9d4ab9cf9e4a79791db, type: 3}
 --- !u!4 &4499263767705604018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 271f6937f9ddb9d4ab9cf9e4a79791db,

@@ -29,20 +29,28 @@ public class BoatAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Wyperian.IsNullOrDestroyed(enemy))
+        try
         {
-            enemy = Wyperian.FindClosestEnemy(enemyTag, transform).transform;
+            if (Wyperian.IsNullOrDestroyed(enemy))
+            {
+                enemy = Wyperian.FindClosestEnemy(enemyTag, transform).transform;
+            }
+            distance = Vector3.Distance(enemy.position, transform.position);
+            if (distance < distanceOfFollow && distance > distanceOfStop)
+            {
+                follow();
+            }
+            if (distance < distanceOfAttack)
+            {
+                aimer.position = enemy.position + new Vector3(0, 1, 0);
+                attack();
+            }
         }
-        distance = Vector3.Distance(enemy.position, transform.position);
-        if (distance < distanceOfFollow && distance > distanceOfStop)
+        catch
         {
-            follow();
+
         }
-        if (distance < distanceOfAttack)
-        {
-            aimer.position = enemy.position + new Vector3(0, 1, 0);
-            attack();
-        }
+
 
     }
     void follow()

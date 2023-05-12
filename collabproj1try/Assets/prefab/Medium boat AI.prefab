@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 6901477454069013966}
   - component: {fileID: 6901477454069013965}
   - component: {fileID: 6901477454069014002}
+  - component: {fileID: 3781937721101576010}
   m_Layer: 0
   m_Name: Medium boat AI
   m_TagString: boat
@@ -317,6 +318,7 @@ MonoBehaviour:
   cannons:
   - {fileID: 6901477454236968959}
   aimer: {fileID: 6901477454752937650}
+  enemyTag: Player
   distanceOfFollow: 1000
   distanceOfAttack: 80
   distanceOfChange: 40
@@ -335,6 +337,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   h: {fileID: 6901477453285506114}
   comp: {fileID: 6901477454069013965}
+--- !u!114 &3781937721101576010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901477454069013964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a1799d8fd6cd3429894462c5ebc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawns:
+  - {fileID: 3413649589070553870, guid: 8168c71801c988c4f86d746e7c547dbf, type: 3}
+  hp: {fileID: 6901477453285506114}
 --- !u!1 &6901477454148394577
 GameObject:
   m_ObjectHideFlags: 0
