@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         mission.UpdateMission(this);
+        if (playerHealth.dead)
+        {
+            mission.EndMission(this);
+        }
 
     }
 
