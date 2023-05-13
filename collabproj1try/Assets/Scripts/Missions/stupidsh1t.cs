@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "stupidshtMission", menuName = "Missions/stupidshtMission")]
 public class stupidsh1t : MissionBase
 {
-    float timer = 0;
+    // float timer = 0;
 
 
     public override void StartMission(GameManager gm)
@@ -23,6 +23,6 @@ public class stupidsh1t : MissionBase
     public override void resetData()
     {
         win = false;
-        timer = 0;
+        // timer = 0;
     }
 }

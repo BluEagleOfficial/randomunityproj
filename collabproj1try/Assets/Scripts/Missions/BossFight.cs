@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "bossMission", menuName = "Missions/bossMission")]
 public class BossFight : MissionBase
 {
-    float timer = 0;
+    // float timer = 0;
     [SerializeField] private GameObject BossPrefab;
     private GameObject boss;
 
@@ -27,6 +27,6 @@ public class BossFight : MissionBase
     public override void resetData()
     {
         win = false;
-        timer = 0;
+        // timer = 0;
     }
 }

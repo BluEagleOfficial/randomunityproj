@@ -15,7 +15,7 @@ public class ListOfMission : MissionBase
         resetData();
         missions[currentmission].StartMission(gm);
         currentmission = 0;
-        Debug.Log(currentmission);
+        Debug.Log("Current mission: " + currentmission);
     }
 
 
