@@ -8,13 +8,20 @@ public class SurvivalMission : MissionBase
 
     public float winTime = 60;
 
+    public int howManyEnemies = 10;
+
+    public int enemiesBoatLevel = 0;
+
+    public GameObject[] enemies;
+
 
     public override void StartMission(GameManager gm)
     {
-
+        spawner.instance.spawnBoats(howManyEnemies, enemiesBoatLevel);
     }
     public override void UpdateMission(GameManager gm)
     {
+        enemies = GameObject.FindGameObjectsWithTag("enemy");
         timer += Time.deltaTime;
         if (timer > winTime)
         {
@@ -22,7 +29,10 @@ public class SurvivalMission : MissionBase
             {
                 win = true;
             }
-
+        }
+        if (enemies.Length < howManyEnemies)
+        {
+            spawner.instance.spawnBoats(1, enemiesBoatLevel);
         }
     }
     public override void EndMission(GameManager gm)
