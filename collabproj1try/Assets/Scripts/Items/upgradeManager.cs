@@ -20,9 +20,9 @@ public class upgradeManager : MonoBehaviour
 
     public void UpgradeSpeed()
     {
-        if(speedLevel > 9)
+        if (speedLevel > 9)
             return;
-        if(hasEnoughItems(speedCost))
+        if (hasEnoughItems(speedCost))
         {
             speedLevel += 1;
             speedBar.value = speedLevel;
@@ -35,9 +35,9 @@ public class upgradeManager : MonoBehaviour
 
     public void UpgradeDefence()
     {
-        if(defenceLevel > 9)
+        if (defenceLevel > 9)
             return;
-        if(hasEnoughItems(defenceCost))
+        if (hasEnoughItems(defenceCost))
         {
             defenceLevel += 1;
             defenceBar.value = defenceLevel;
@@ -50,9 +50,9 @@ public class upgradeManager : MonoBehaviour
 
     public void UpgradeCannons()
     {
-        if(hasEnoughItems(cannonCost))
+        if (hasEnoughItems(cannonCost))
         {
-            if(cannonsLevel > 9)
+            if (cannonsLevel > 9)
                 return;
 
             cannonsLevel += 1;
@@ -60,7 +60,7 @@ public class upgradeManager : MonoBehaviour
 
             for (int i = 0; i < cannonsLevel; i++)
             {
-                if(!bc.cannons[i].isActiveAndEnabled)
+                if (!bc.cannons[i].isActiveAndEnabled)
                     bc.cannons[i].gameObject.SetActive(true);
             }
             ConsumeItems(cannonCost);
@@ -69,9 +69,9 @@ public class upgradeManager : MonoBehaviour
 
     public void AddAmmo()
     {
-        if(ammoInput.text == "")
+        if (ammoInput.text == "")
             return;
-        if(hasEnoughItems(ammoCost * int.Parse(ammoInput.text)))
+        if (hasEnoughItems(ammoCost * int.Parse(ammoInput.text)))
         {
             info.remainingAmmo += int.Parse(ammoInput.text);
             ConsumeItems(ammoCost * int.Parse(ammoInput.text));
@@ -80,7 +80,7 @@ public class upgradeManager : MonoBehaviour
 
     public void UpdateAmmoCost()
     {
-        if(ammoInput.text != "")
+        if (ammoInput.text != "")
         {
             int multiplier = int.Parse(ammoInput.text);
             AmmoIronText.text = (ammoCost.y * multiplier).ToString();
@@ -105,13 +105,13 @@ public class upgradeManager : MonoBehaviour
 
     public bool hasEnoughItems(Vector4 items)
     {
-        if(inv.wood.howMany < items.x)
+        if (inv.wood.howMany < items.x)
             return false;
-        else if(inv.iron.howMany < items.y)
+        else if (inv.iron.howMany < items.y)
             return false;
-        else if(inv.gold.howMany < items.z)
+        else if (inv.gold.howMany < items.z)
             return false;
-        else if(inv.gunPowder.howMany < items.w)
+        else if (inv.gunPowder.howMany < items.w)
             return false;
         else
             return true;
