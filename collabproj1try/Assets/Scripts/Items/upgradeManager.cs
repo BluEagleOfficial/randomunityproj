@@ -14,7 +14,7 @@ public class upgradeManager : MonoBehaviour
     [SerializeField] private Vector4 speedCost, defenceCost, cannonCost, ammoCost;
 
     [SerializeField] private Slider speedBar, defenceBar, cannonsBar;
-    private int speedLevel = 1, defenceLevel = 1, cannonsLevel = 1;
+    private int speedLevel = 1, defenceLevel = 1, cannonsLevel = 2;
     [SerializeField] private TMP_Text AmmoIronText, AmmoGoldText, AmmoGunpowderText;
     [SerializeField] private TMP_InputField ammoInput;
 
