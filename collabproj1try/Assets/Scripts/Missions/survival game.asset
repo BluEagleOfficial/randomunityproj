@@ -15,3 +15,6 @@ MonoBehaviour:
   title: survive for 60 seconds
   win: 0
   winTime: 60
+  howManyEnemies: 3
+  enemiesBoatLevel: 0
+  enemies: []
