@@ -18,6 +18,7 @@ public class BoatController : MonoBehaviour
     public Cannon[] cannons;
 
     public bool canMove = true;
+    public bool canShoot = true;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class BoatController : MonoBehaviour
         if (cooldownTimer < shootingCooldown)
             cooldownTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
 
             foreach (var cannon in cannons)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
 {
+    public static bool lockCamera;
+
     private float axisX,axisY;
     private float rotX,rotY;
     public bool clampCamera = true;
@@ -27,6 +29,8 @@ public class CameraRotate : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(lockCamera)
+            return;
         if(clampCamera == true)
             rotX = Mathf.Clamp(rotX, minLimit, maxLimit);
 

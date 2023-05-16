@@ -26,10 +26,10 @@ public class MusicPlayer : MonoBehaviour
                 source.PlayOneShot(Musics[0]);
         }
         
-        if(MenuManager.gamePaused)
-            PauseMusic(source.clip);
-        else
-            ResumeMusic(source.clip);
+        // if(MenuManager.gamePaused)
+        //     PauseMusic(source.clip);
+        // else
+        //     ResumeMusic(source.clip);
     }
 
     public void PlayMusic(AudioClip music)

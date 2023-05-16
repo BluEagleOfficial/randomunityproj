@@ -7,6 +7,8 @@ using TMPro;
 public class PlayerHud : MonoBehaviour
 {
     public static PlayerHud Instance;
+    [SerializeField] private GameObject upgradeMenu;
+    private bool upgradeToggle;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
@@ -35,6 +37,9 @@ public class PlayerHud : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        upgradeToggle = false;
+        upgradeMenu.SetActive(false);
         
         // Reset items on start since scriptable objects save the ammount even after exiting play mode
         inv.wood.howMany = 0;
@@ -45,6 +50,22 @@ public class PlayerHud : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            upgradeToggle = !upgradeToggle;
+            upgradeMenu.SetActive(upgradeToggle);
+            MenuManager.Instance.lockCursor = !upgradeToggle;
+            CameraRotate.lockCamera = upgradeToggle;
+            bc.canShoot = !upgradeToggle;
+        }
+
+        if(!MenuManager.gamePaused)
+        {
+            if(upgradeToggle)
+                MenuManager.Instance.lockCursor = !upgradeToggle;
+        }
+        
+
         healthBar.value = hp.hp;
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
         if (bc.information.remainingAmmo > 0)
