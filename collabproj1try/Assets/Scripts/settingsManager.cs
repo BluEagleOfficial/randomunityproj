@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
+using TMPro;
+using UnityEngine.UI;
 
 public class settingsManager : MonoBehaviour
 {
@@ -24,6 +26,22 @@ public class settingsManager : MonoBehaviour
     public int fov;
     public int resolutionScale;
 
+    // UI
+    public TMP_Dropdown resolutionDropdown;
+
+    public Toggle vsyncToggle;
+    public Toggle fullscreenToggle;
+    public Toggle motionBlurToggle;
+    public Toggle showNumbersToggle;
+
+    // public Slider musicVolume;
+    public Slider VolumeSlider;
+    public TMP_InputField fpsLimitInput;
+    public TMP_Dropdown graphicsQualityDropdown;
+    public Slider sensitivitySlider;
+    public Slider fovSlider;
+    public Slider resolutionScaleSlider;
+
     void Start()
     {
         ph = PlayerHud.Instance;
@@ -33,27 +51,27 @@ public class settingsManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F11))
         {
-            ph.fullscreenToggle.isOn = !ph.fullscreenToggle.isOn;
+            fullscreenToggle.isOn = !fullscreenToggle.isOn;
             changeFullscreen();
         }
     }
 
     public void changeVolume()
     {
-        Volume = (int)ph.Volume.value;
+        Volume = (int)Volume.value;
 
         mixer.SetFloat("Master", Volume);
     }
 
     public void changeVsync()
     {
-        vsync = ph.vsyncToggle;
+        vsync = vsyncToggle;
         Debug.Log("vsync is "  + vsync);
     }
 
     public void changeFullscreen()
     {
-        fullscreen = ph.fullscreenToggle;
+        fullscreen = fullscreenToggle;
         if(fullscreen)
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         else
@@ -63,31 +81,31 @@ public class settingsManager : MonoBehaviour
 
     public void changeMotionBlur()
     {
-        motionBlur = ph.motionBlurToggle;
+        motionBlur = motionBlurToggle;
         Debug.Log("motionBlur is "  + motionBlur);
     }
 
     public void changeFpsLimit()
     {
-        fpsLimit = int.Parse(ph.fpsLimit.text);
+        fpsLimit = int.Parse(fpsLimitInput.text);
         Debug.Log("fps limit is "  + fpsLimit);
     }
 
     public void changeSensitivity()
     {
-        sensitivity = (int)ph.sensitivity.value;
+        sensitivity = (int)sensitivitySlider.value;
         Debug.Log("sensitivity is "  + sensitivity);
     }
 
     public void changeFov()
     {
-        fov = (int)ph.fov.value;
+        fov = (int)fovSlider.value;
         Debug.Log("field of view is "  + fov);
     }
 
     public void changeResolutionScale()
     {
-        resolutionScale = (int)ph.resolutionScale.value;
+        resolutionScale = (int)resolutionScaleSlider.value;
         Mathf.Clamp(resolutionScale, 25, 200);
 
         foreach(UniversalRenderPipelineAsset asset in renderAssets)
@@ -100,7 +118,7 @@ public class settingsManager : MonoBehaviour
 
     public void changeGraphicsQuality()
     {
-        graphicsQuality = ph.graphicsQuality.value;
+        graphicsQuality = graphicsQualityDropdown.value;
         QualitySettings.SetQualityLevel(graphicsQuality);
     }
 }

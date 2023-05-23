@@ -33,22 +33,6 @@ public class PlayerHud : MonoBehaviour
 
     // private randomDataOfEnemy prevData;
 
-    // Settings menu stuff //
-    public Resolution resolution;
-
-    public Toggle vsyncToggle;
-    public Toggle fullscreenToggle;
-    public Toggle motionBlurToggle;
-    public Toggle showNumbersToggle;
-
-    // public Slider musicVolume;
-    public Slider Volume;
-    public TMP_InputField fpsLimit;
-    public TMP_Dropdown graphicsQuality;
-    public Slider sensitivity;
-    public Slider fov;
-    public Slider resolutionScale;
-
     void Start()
     {
         if (Instance == null)
