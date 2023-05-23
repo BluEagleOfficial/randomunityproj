@@ -26,12 +26,28 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private TMP_Text goldText;
     [SerializeField] private TMP_Text gunpowderText;
 
-    [SerializeField] private TMP_Text woodNotif;
-    [SerializeField] private TMP_Text ironNotif;
-    [SerializeField] private TMP_Text goldNotif;
-    [SerializeField] private TMP_Text gunpowderNotif;
+    // [SerializeField] private TMP_Text woodNotif; // couldnt get it to work
+    // [SerializeField] private TMP_Text ironNotif;
+    // [SerializeField] private TMP_Text goldNotif;
+    // [SerializeField] private TMP_Text gunpowderNotif;
 
     // private randomDataOfEnemy prevData;
+
+    // Settings menu stuff //
+    public Resolution resolution;
+
+    public Toggle vsyncToggle;
+    public Toggle fullscreenToggle;
+    public Toggle motionBlurToggle;
+    public Toggle showNumbersToggle;
+
+    // public Slider musicVolume;
+    public Slider Volume;
+    public TMP_InputField fpsLimit;
+    public TMP_Dropdown graphicsQuality;
+    public Slider sensitivity;
+    public Slider fov;
+    public Slider resolutionScale;
 
     void Start()
     {
