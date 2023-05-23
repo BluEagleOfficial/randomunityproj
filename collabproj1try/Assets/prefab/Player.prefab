@@ -578,10 +578,6 @@ MonoBehaviour:
   ironText: {fileID: 1270087399}
   goldText: {fileID: 2123856112}
   gunpowderText: {fileID: 1028357296}
-  woodNotif: {fileID: 1154790914}
-  ironNotif: {fileID: 1032799843}
-  goldNotif: {fileID: 428719521}
-  gunpowderNotif: {fileID: 2147253997}
 --- !u!1 &125398542
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +897,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 1
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

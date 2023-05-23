@@ -15,11 +15,12 @@ public class settingsManager : MonoBehaviour
 
     public bool vsync;
     public bool fullscreen = true;
-    public bool motionBlur;
+    // public bool motionBlur;
     // [Tooltip("enable to show hp numbers on healthbar")] public bool showNumbers;
 
     // public int musicVolume;
-    public int Volume = 100;
+    public int SoundVolume = 100;
+    public int MusicVolume = 100;
     public int fpsLimit = 60;
     public int graphicsQuality;
     public int sensitivity;
@@ -31,12 +32,12 @@ public class settingsManager : MonoBehaviour
 
     public Toggle vsyncToggle;
     public Toggle fullscreenToggle;
-    public Toggle motionBlurToggle;
-    public Toggle showNumbersToggle;
+    // public Toggle motionBlurToggle;
+    // public Toggle showNumbersToggle;
 
-    // public Slider musicVolume;
-    public Slider VolumeSlider;
-    public TMP_InputField fpsLimitInput;
+    public Slider soundSlider;
+    public Slider musicSlider;
+    public Slider fpsLimitSlider;
     public TMP_Dropdown graphicsQualityDropdown;
     public Slider sensitivitySlider;
     public Slider fovSlider;
@@ -56,11 +57,18 @@ public class settingsManager : MonoBehaviour
         }
     }
 
-    public void changeVolume()
+    public void changeSoundVolume()
     {
-        Volume = (int)Volume.value;
+        SoundVolume = (int)soundSlider.value;
 
-        mixer.SetFloat("Master", Volume);
+        mixer.SetFloat("Master", SoundVolume);
+    }
+
+    public void changeMusicVolume()
+    {
+        MusicVolume = (int)musicSlider.value;
+
+        mixer.SetFloat("Music", MusicVolume);
     }
 
     public void changeVsync()
@@ -76,18 +84,19 @@ public class settingsManager : MonoBehaviour
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         else
             Screen.fullScreenMode = FullScreenMode.Windowed;
-        Debug.Log("game is "  + fullscreen);
+        Debug.Log("game fullscreen is "  + fullscreen);
     }
 
-    public void changeMotionBlur()
-    {
-        motionBlur = motionBlurToggle;
-        Debug.Log("motionBlur is "  + motionBlur);
-    }
+    // public void changeMotionBlur()
+    // {
+    //     motionBlur = motionBlurToggle;
+    //     Debug.Log("motionBlur is "  + motionBlur);
+    // }
 
     public void changeFpsLimit()
     {
-        fpsLimit = int.Parse(fpsLimitInput.text);
+        fpsLimit = (int)fpsLimitSlider.value + 30; // as explained below, compensating
+        Mathf.Clamp(fpsLimit, 30, 240);
         Debug.Log("fps limit is "  + fpsLimit);
     }
 
@@ -105,8 +114,8 @@ public class settingsManager : MonoBehaviour
 
     public void changeResolutionScale()
     {
-        resolutionScale = (int)resolutionScaleSlider.value;
-        Mathf.Clamp(resolutionScale, 25, 200);
+        resolutionScale = (int)resolutionScaleSlider.value + 25; // since the min value of the slider is not equal to min scale value, compensating
+        Mathf.Clamp(resolutionScale, 30, 200);
 
         foreach(UniversalRenderPipelineAsset asset in renderAssets)
         {
@@ -120,5 +129,12 @@ public class settingsManager : MonoBehaviour
     {
         graphicsQuality = graphicsQualityDropdown.value;
         QualitySettings.SetQualityLevel(graphicsQuality);
+    }
+
+    public void changeScreenResolution()
+    {
+        // resolution = resolutionDropdown.value.ToString();
+        // Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
+        Debug.Log("changed resolution to option nr. " + resolutionDropdown.value);
     }
 }
