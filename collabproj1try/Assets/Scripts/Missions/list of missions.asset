@@ -15,5 +15,6 @@ MonoBehaviour:
   title: list
   win: 0
   missions:
+  - {fileID: 11400000, guid: cde514df42cab794fb4898c200c56cf9, type: 2}
   - {fileID: 11400000, guid: 0e3ffb358cdfb6f489b732df49bb78b9, type: 2}
   realWin: 0

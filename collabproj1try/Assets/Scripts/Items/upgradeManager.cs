@@ -105,15 +105,18 @@ public class upgradeManager : MonoBehaviour
 
     public bool hasEnoughItems(Vector4 items)
     {
-        if (inv.wood.howMany < items.x)
+        if (
+        inv.wood.howMany <= items.x ||
+        inv.iron.howMany <= items.y ||
+        inv.gold.howMany <= items.z ||
+        inv.gunPowder.howMany <= items.w
+        )
+        {
             return false;
-        else if (inv.iron.howMany < items.y)
-            return false;
-        else if (inv.gold.howMany < items.z)
-            return false;
-        else if (inv.gunPowder.howMany < items.w)
-            return false;
+        }
         else
+        {
             return true;
+        }
     }
 }
