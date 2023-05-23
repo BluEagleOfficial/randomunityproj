@@ -11,6 +11,7 @@ public class settingsManager : MonoBehaviour
     private PlayerHud ph;
     [SerializeField] private AudioMixer mixer;
     public Resolution resolution;
+    [SerializeField]
     UniversalRenderPipelineAsset[] renderAssets;
 
     public bool vsync;
@@ -50,7 +51,7 @@ public class settingsManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F11))
+        if (Input.GetKeyDown(KeyCode.F11))
         {
             fullscreenToggle.isOn = !fullscreenToggle.isOn;
             changeFullscreen();
@@ -64,6 +65,18 @@ public class settingsManager : MonoBehaviour
         mixer.SetFloat("Master", SoundVolume);
     }
 
+    public void changeAll()
+    {
+        changeFov();
+        changeSoundVolume();
+        changeFpsLimit();
+        changeGraphicsQuality();
+        changeMusicVolume();
+        changeResolutionScale();
+        changeSensitivity();
+        changeVsync();
+    }
+
     public void changeMusicVolume()
     {
         MusicVolume = (int)musicSlider.value;
@@ -73,18 +86,18 @@ public class settingsManager : MonoBehaviour
 
     public void changeVsync()
     {
-        vsync = vsyncToggle;
-        Debug.Log("vsync is "  + vsync);
+        vsync = vsyncToggle.isOn;
+        Debug.Log("vsync is " + vsync);
     }
 
     public void changeFullscreen()
     {
-        fullscreen = fullscreenToggle;
-        if(fullscreen)
+        fullscreen = fullscreenToggle.isOn;
+        if (fullscreen)
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         else
             Screen.fullScreenMode = FullScreenMode.Windowed;
-        Debug.Log("game fullscreen is "  + fullscreen);
+        Debug.Log("game fullscreen is " + fullscreen);
     }
 
     // public void changeMotionBlur()
@@ -97,19 +110,19 @@ public class settingsManager : MonoBehaviour
     {
         fpsLimit = (int)fpsLimitSlider.value + 30; // as explained below, compensating
         Mathf.Clamp(fpsLimit, 30, 240);
-        Debug.Log("fps limit is "  + fpsLimit);
+        Debug.Log("fps limit is " + fpsLimit);
     }
 
     public void changeSensitivity()
     {
         sensitivity = (int)sensitivitySlider.value;
-        Debug.Log("sensitivity is "  + sensitivity);
+        Debug.Log("sensitivity is " + sensitivity);
     }
 
     public void changeFov()
     {
         fov = (int)fovSlider.value;
-        Debug.Log("field of view is "  + fov);
+        Debug.Log("field of view is " + fov);
     }
 
     public void changeResolutionScale()
@@ -117,12 +130,12 @@ public class settingsManager : MonoBehaviour
         resolutionScale = (int)resolutionScaleSlider.value + 25; // since the min value of the slider is not equal to min scale value, compensating
         Mathf.Clamp(resolutionScale, 30, 200);
 
-        foreach(UniversalRenderPipelineAsset asset in renderAssets)
+        foreach (UniversalRenderPipelineAsset asset in renderAssets)
         {
-            asset.renderScale = resolutionScale / 100;
+            asset.renderScale = (float)resolutionScale / 100;
         }
-        
-        Debug.Log("resolution scale is "  + resolutionScale);
+
+        Debug.Log("resolution scale is " + resolutionScale);
     }
 
     public void changeGraphicsQuality()

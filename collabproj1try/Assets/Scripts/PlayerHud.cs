@@ -40,7 +40,7 @@ public class PlayerHud : MonoBehaviour
 
         upgradeToggle = false;
         upgradeMenu.SetActive(false);
-        
+
         // Reset items on start since scriptable objects save the ammount even after exiting play mode
         inv.wood.howMany = 0;
         inv.iron.howMany = 0;
@@ -50,7 +50,7 @@ public class PlayerHud : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             upgradeToggle = !upgradeToggle;
             upgradeMenu.SetActive(upgradeToggle);
@@ -59,12 +59,12 @@ public class PlayerHud : MonoBehaviour
             bc.canShoot = !upgradeToggle;
         }
 
-        if(!MenuManager.gamePaused)
+        if (!MenuManager.gamePaused)
         {
-            if(upgradeToggle)
+            if (upgradeToggle)
                 MenuManager.Instance.lockCursor = !upgradeToggle;
         }
-        
+
 
         healthBar.value = hp.hp;
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
@@ -90,7 +90,7 @@ public class PlayerHud : MonoBehaviour
         //     //     return;
         //     // else
         //     //     prevData = loot.randomEnemyData;
-            
+
         //     if(loot.randomEnemyData.wood != 0)
         //     {
         //         // woodNotif.enabled = true;
