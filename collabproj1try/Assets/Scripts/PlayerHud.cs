@@ -13,6 +13,7 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject deathScreen;
     // [SerializeField] private float animationSmoothness = 5;
 
     [SerializeField] private BoatController bc;
@@ -54,16 +55,19 @@ public class PlayerHud : MonoBehaviour
         {
             upgradeToggle = !upgradeToggle;
             upgradeMenu.SetActive(upgradeToggle);
-            MenuManager.Instance.lockCursor = !upgradeToggle;
+            if(upgradeToggle)
+                MenuManager.Instance.lockCursor = false;
+            else
+                MenuManager.Instance.lockCursor = true;
             CameraRotate.lockCamera = upgradeToggle;
             bc.canShoot = !upgradeToggle;
         }
 
-        if (!MenuManager.gamePaused)
-        {
-            if (upgradeToggle)
-                MenuManager.Instance.lockCursor = !upgradeToggle;
-        }
+        // if (!MenuManager.gamePaused)
+        // {
+        //     if (upgradeToggle)
+        //         MenuManager.Instance.lockCursor = !upgradeToggle;
+        // }
 
 
         healthBar.value = hp.hp;
@@ -83,6 +87,38 @@ public class PlayerHud : MonoBehaviour
         ironText.text = inv.iron.howMany.ToString();
         goldText.text = inv.gold.howMany.ToString();
         gunpowderText.text = inv.gunPowder.howMany.ToString();
+
+        if(hp.dead)
+        {
+            deathScreen.SetActive(true);
+            MenuManager.Instance.lockCursor = false;
+
+            if(Input.GetKeyDown(KeyCode.R))
+                Retry();
+            if(Input.GetKeyDown(KeyCode.Escape))
+                Quit();
+        }
+
+        // if(Input.GetKey(KeyCode.K))
+        if (GameManager.Instance.playerWon == true)
+        {
+            winScreen.SetActive(true);
+            MenuManager.Instance.lockCursor = false;
+
+            if(Input.GetKeyDown(KeyCode.R))
+                Retry();
+            if(Input.GetKeyDown(KeyCode.Escape))
+                Quit();
+            // LeanTween.scaleY(winScreen,1,Time.deltaTime); // idk i cant do it, it just gets stuck twitching
+            // winScreen.transform.localScale = Vector3.MoveTowards(new Vector3(1,0,1), Vector3.one, animationSmoothness * Time.deltaTime);
+        }
+        else
+        {
+            // winScreen.transform.localScale = Vector3.MoveTowards(Vector3.one, new Vector3(1,0,1), animationSmoothness * Time.deltaTime);
+            // if(winScreen.transform.localScale == new Vector3(1,0,1))
+            winScreen.SetActive(false);
+            MenuManager.Instance.lockCursor = true;
+        }
 
         // if(loot.randomEnemyData != null) // i tried making some really cool "+30" text that fades out and goes up
         // {
@@ -112,19 +148,15 @@ public class PlayerHud : MonoBehaviour
         //         gunpowderNotif.text = loot.randomEnemyData.gunpowder.ToString();
         //     }
         // }
+    }
 
-        // if(Input.GetKey(KeyCode.K))
-        if (GameManager.Instance.playerWon == true)
-        {
-            winScreen.SetActive(true);
-            // LeanTween.scaleY(winScreen,1,Time.deltaTime); // idk i cant do it, it just gets stuck twitching
-            // winScreen.transform.localScale = Vector3.MoveTowards(new Vector3(1,0,1), Vector3.one, animationSmoothness * Time.deltaTime);
-        }
-        else
-        {
-            // winScreen.transform.localScale = Vector3.MoveTowards(Vector3.one, new Vector3(1,0,1), animationSmoothness * Time.deltaTime);
-            // if(winScreen.transform.localScale == new Vector3(1,0,1))
-            winScreen.SetActive(false);
-        }
+    public void Retry()
+    {
+        MenuManager.Instance.LoadScene(MenuManager.Instance.currentScene);
+    }
+
+    public void Quit() // to main menu
+    {
+        MenuManager.Instance.LoadScene(0);
     }
 }

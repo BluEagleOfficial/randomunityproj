@@ -26,7 +26,7 @@ public class settingsManager : MonoBehaviour
     public int graphicsQuality;
     public int sensitivity;
     public int fov;
-    public int resolutionScale;
+    public int resolutionScale = 100;
 
     // UI
     public TMP_Dropdown resolutionDropdown;
