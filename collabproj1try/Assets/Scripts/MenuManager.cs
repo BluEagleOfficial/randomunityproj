@@ -30,6 +30,7 @@ public class MenuManager : MonoBehaviour
             if(currentScene == 0)
             {
                 lockCursor = false;
+                LockCursor(lockCursor);
                 mainMenu.SetActive(true);
                 // EventSystem.current.SetSelectedGameObject(mainButton);
             }
@@ -48,18 +49,23 @@ public class MenuManager : MonoBehaviour
     
     void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
         {
             if(currentScene != 0) // dont pause if in the main menu
             {
                 gamePaused = !gamePaused;
                 GamePaused(gamePaused);
+                lockCursor = false;
             }
         }
 
-        LockCursor(lockCursor);
+        if(currentScene == 0)
+            lockCursor = false;
+
         if(Input.GetKeyDown(KeyCode.L))
             lockCursor = !lockCursor;
+        LockCursor(lockCursor);
     }
 
     public void LoadScene(int sceneIndex)
@@ -67,6 +73,7 @@ public class MenuManager : MonoBehaviour
         if(sceneIndex == 0)
         {
             lockCursor = false; // keep curson unlocked if in the main menu
+            
             mainMenu.SetActive(true);
             // EventSystem.current.SetSelectedGameObject(mainButton);
         }
