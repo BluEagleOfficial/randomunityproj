@@ -51,10 +51,19 @@ public class PlayerHud : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !MenuManager.gamePaused)
         {
             upgradeToggle = !upgradeToggle;
             upgradeMenu.SetActive(upgradeToggle);
+            if (upgradeToggle)
+            {
+                MenuManager.Instance.lockCursor = false;
+            }
+            else
+            {
+                MenuManager.Instance.lockCursor = true;
+            }
+
             CameraRotate.lockCamera = upgradeToggle;
             bc.canShoot = !upgradeToggle;
         }

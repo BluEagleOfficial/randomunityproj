@@ -52,12 +52,25 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
         {
-            if (currentScene != 0) // dont pause if in the main menu
+            if (pauseMenu.activeSelf)
             {
-                gamePaused = !gamePaused;
-                GamePaused(gamePaused);
-                lockCursor = !lockCursor;
+                if (currentScene != 0) // dont pause if in the main menu
+                {
+                    gamePaused = !gamePaused;
+                    GamePaused(gamePaused);
+                    lockCursor = true;
+                }
             }
+            else
+            {
+                if (currentScene != 0) // dont pause if in the main menu
+                {
+                    gamePaused = !gamePaused;
+                    GamePaused(gamePaused);
+                    lockCursor = false;
+                }
+            }
+
         }
 
         if (currentScene == 0)
