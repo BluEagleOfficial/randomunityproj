@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285b98e785b2be34496c41755b515578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8822374742265376003, guid: 1aba1beb264668442b4fde6f566ef041,
+  bulletPrefab: {fileID: 8822374742265376003, guid: aaf1bd125f08dda49ab35dba5b76c3d3,
     type: 3}
   aimer: {fileID: 4177688928054017221}
   tip: {fileID: 4177688929701772772}
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4177688928794105411}
   forceSpeed: 25
-  maxSpeed: 10
+  maxSpeed: 13
   maxRotateSpeed: 0.5
   enemy: {fileID: 0}
   cannons:
