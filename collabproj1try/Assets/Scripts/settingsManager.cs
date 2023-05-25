@@ -5,11 +5,13 @@ using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class settingsManager : MonoBehaviour
 {
     [Header("Components")]
     private PlayerHud ph;
+    private CameraRotate camRot;
     [SerializeField] private AudioMixer soundMixer;
     [SerializeField] private AudioMixer musicMixer;
     public Resolution resolution;
@@ -25,9 +27,9 @@ public class settingsManager : MonoBehaviour
     public int SoundVolume = 100;
     public int MusicVolume = 100;
     public int fpsLimit = 60;
-    public int graphicsQuality;
-    public int sensitivity;
-    public int fov;
+    public int graphicsQuality = 2;
+    public int sensitivity = 100;
+    public int fov = 60;
     public int resolutionScale = 100;
 
     [Space]
@@ -57,6 +59,7 @@ public class settingsManager : MonoBehaviour
     void Start()
     {
         ph = PlayerHud.Instance;
+        camRot = Camera.main.GetComponentInParent<CameraRotate>();
         TimeSpan timeSpan = TimeSpan.FromSeconds(70);
         string timeString = timeSpan.ToString("mm\\:ss"); // Output: 01:10
     }
@@ -85,7 +88,7 @@ public class settingsManager : MonoBehaviour
     public void changeSoundVolume()
     {
         SoundVolume = (int)soundSlider.value;
-        soundText.text = Mathf.Abs(SoundVolume * 5).ToString() + "%";
+        soundText.text = Mathf.Abs((-SoundVolume * 5) - 100).ToString() + "%";
         soundMixer.SetFloat("Sound", SoundVolume);
         if(soundSlider.value <= -20)
             soundMixer.SetFloat("Sound", -80);
@@ -94,7 +97,7 @@ public class settingsManager : MonoBehaviour
     public void changeMusicVolume()
     {
         MusicVolume = (int)musicSlider.value;
-        musicText.text = Mathf.Abs(musicSlider.value * 5).ToString() + "%";
+        musicText.text = MathF.Abs((-MusicVolume * 5) - 100).ToString() + "%";
         musicMixer.SetFloat("Music", MusicVolume);
         if(musicSlider.value <= -20)
             musicMixer.SetFloat("Music", -80);
@@ -103,7 +106,10 @@ public class settingsManager : MonoBehaviour
     public void changeVsync()
     {
         vsync = vsyncToggle.isOn;
-        Debug.Log("vsync is " + vsync);
+        if(vsync)
+            QualitySettings.vSyncCount = 2;
+        else
+            QualitySettings.vSyncCount = 0;
     }
 
     public void changeFullscreen()
@@ -113,7 +119,6 @@ public class settingsManager : MonoBehaviour
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         else
             Screen.fullScreenMode = FullScreenMode.Windowed;
-        Debug.Log("game fullscreen is " + fullscreen);
     }
 
     // public void changeMotionBlur()
@@ -125,11 +130,10 @@ public class settingsManager : MonoBehaviour
     public void changeFpsLimit()
     {
         fpsLimit = (int)fpsLimitSlider.value;
-        fpsLimitText.text = (fpsLimitSlider.value).ToString() + " fps"; 
-        // Mathf.Clamp(fpsLimit, 30, 240);
-        Debug.Log("fps limit is " + fpsLimit);
+        fpsLimitText.text = (fpsLimitSlider.value).ToString() + " fps";
+        Application.targetFrameRate = fpsLimit;
         if(fpsLimitSlider.value >= 240)
-            Debug.Log("unlimited fps");
+            Application.targetFrameRate = -1;
             
     }
 
@@ -137,28 +141,25 @@ public class settingsManager : MonoBehaviour
     {
         sensitivity = (int)sensitivitySlider.value;
         sensitivityText.text = sensitivitySlider.value.ToString();
-        Debug.Log("sensitivity is " + sensitivity);
+        camRot.sensitivity = sensitivity;
     }
 
     public void changeFov()
     {
         fov = (int)fovSlider.value;
         fovText.text = fovSlider.value.ToString();
-        Debug.Log("field of view is " + fov);
+        Camera.main.fieldOfView = fov;
     }
 
     public void changeResolutionScale()
     {
         resolutionScale = (int)resolutionScaleSlider.value;
         resolutionScaleText.text = (resolutionScaleSlider.value).ToString();
-        // Mathf.Clamp(resolutionScale, 25, 200);
 
         foreach (UniversalRenderPipelineAsset asset in renderAssets)
         {
             asset.renderScale = (float)resolutionScale / 100;
         }
-
-        Debug.Log("resolution scale is " + resolutionScale);
     }
 
     public void changeGraphicsQuality()
@@ -171,6 +172,6 @@ public class settingsManager : MonoBehaviour
     {
         // resolution = resolutionDropdown.value.ToString();
         // Screen.SetResolution(1920,1080,FullScreenMode.FullScreenWindow);
-        Debug.Log("changed resolution to option nr. " + resolutionDropdown.value);
+        // Debug.Log("changed resolution to option nr. " + resolutionDropdown.value);
     }
 }
