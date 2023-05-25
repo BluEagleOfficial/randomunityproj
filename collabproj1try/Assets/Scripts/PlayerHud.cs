@@ -55,7 +55,7 @@ public class PlayerHud : MonoBehaviour
         {
             upgradeToggle = !upgradeToggle;
             upgradeMenu.SetActive(upgradeToggle);
-            if(upgradeToggle)
+            if (upgradeToggle)
                 MenuManager.Instance.lockCursor = false;
             else
                 MenuManager.Instance.lockCursor = true;
@@ -88,14 +88,14 @@ public class PlayerHud : MonoBehaviour
         goldText.text = inv.gold.howMany.ToString();
         gunpowderText.text = inv.gunPowder.howMany.ToString();
 
-        if(hp.dead)
+        if (hp.dead)
         {
             deathScreen.SetActive(true);
             MenuManager.Instance.lockCursor = false;
 
-            if(Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
                 Retry();
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
                 Quit();
         }
 
@@ -105,12 +105,11 @@ public class PlayerHud : MonoBehaviour
             winScreen.SetActive(true);
             MenuManager.Instance.lockCursor = false;
 
-            if(Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
                 Retry();
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
                 Quit();
-            // LeanTween.scaleY(winScreen,1,Time.deltaTime); // idk i cant do it, it just gets stuck twitching
-            // winScreen.transform.localScale = Vector3.MoveTowards(new Vector3(1,0,1), Vector3.one, animationSmoothness * Time.deltaTime);
+
         }
         else
         {
