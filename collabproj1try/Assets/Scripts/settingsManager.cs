@@ -47,6 +47,8 @@ public class settingsManager : MonoBehaviour
     void Start()
     {
         ph = PlayerHud.Instance;
+        TimeSpan timeSpan = TimeSpan.FromSeconds(70);
+        string timeString = timeSpan.ToString("mm\\:ss"); // Output: 01:10
     }
 
     void Update()
