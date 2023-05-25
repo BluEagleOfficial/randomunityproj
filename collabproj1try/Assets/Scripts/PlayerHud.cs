@@ -55,10 +55,6 @@ public class PlayerHud : MonoBehaviour
         {
             upgradeToggle = !upgradeToggle;
             upgradeMenu.SetActive(upgradeToggle);
-            if (upgradeToggle)
-                MenuManager.Instance.lockCursor = false;
-            else
-                MenuManager.Instance.lockCursor = true;
             CameraRotate.lockCamera = upgradeToggle;
             bc.canShoot = !upgradeToggle;
         }
@@ -113,10 +109,7 @@ public class PlayerHud : MonoBehaviour
         }
         else
         {
-            // winScreen.transform.localScale = Vector3.MoveTowards(Vector3.one, new Vector3(1,0,1), animationSmoothness * Time.deltaTime);
-            // if(winScreen.transform.localScale == new Vector3(1,0,1))
             winScreen.SetActive(false);
-            MenuManager.Instance.lockCursor = true;
         }
 
         // if(loot.randomEnemyData != null) // i tried making some really cool "+30" text that fades out and goes up

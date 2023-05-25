@@ -56,7 +56,7 @@ public class MenuManager : MonoBehaviour
             {
                 gamePaused = !gamePaused;
                 GamePaused(gamePaused);
-                lockCursor = false;
+                lockCursor = !lockCursor;
             }
         }
 
