@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SurvivalMission", menuName = "Missions/SurvivalMission")]
 public class SurvivalMission : MissionBase
 {
-    float timer = 0;
 
     public float winTime = 60;
 

@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class settingsManager : MonoBehaviour
 {
     private PlayerHud ph;
-    [SerializeField] private AudioMixer mixer;
+    [SerializeField] private AudioMixer soundMixer;
+    [SerializeField] private AudioMixer musicMixer;
     public Resolution resolution;
     [SerializeField]
     UniversalRenderPipelineAsset[] renderAssets;
@@ -60,13 +61,6 @@ public class settingsManager : MonoBehaviour
         }
     }
 
-    public void changeSoundVolume()
-    {
-        SoundVolume = (int)soundSlider.value;
-
-        mixer.SetFloat("Master", SoundVolume);
-    }
-
     public void changeAll()
     {
         changeFov();
@@ -79,11 +73,20 @@ public class settingsManager : MonoBehaviour
         changeVsync();
     }
 
+    public void changeSoundVolume()
+    {
+        SoundVolume = (int)soundSlider.value;
+        soundMixer.SetFloat("Sound", SoundVolume);
+        if(soundSlider.value <= -20)
+            soundMixer.SetFloat("Sound", -80);
+    }
+
     public void changeMusicVolume()
     {
         MusicVolume = (int)musicSlider.value;
-
-        mixer.SetFloat("Music", MusicVolume);
+        musicMixer.SetFloat("Music", MusicVolume);
+        if(musicSlider.value <= -20)
+            musicMixer.SetFloat("Music", -80);
     }
 
     public void changeVsync()

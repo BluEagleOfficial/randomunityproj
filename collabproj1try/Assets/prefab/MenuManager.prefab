@@ -2916,7 +2916,8 @@ AudioSource:
   m_GameObject: {fileID: 423171735}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d72d656619ec69b43aa00e6f5bbe2d56,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.25
@@ -12137,10 +12138,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1067048538}
   m_HandleRect: {fileID: 2017605917}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -20
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -15917,7 +15918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9047384ebfa47d44993116fdc2c0c75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: edd23b51b6a332a43ae819777cb6a30a, type: 2}
+  soundMixer: {fileID: 24100000, guid: edd23b51b6a332a43ae819777cb6a30a, type: 2}
+  musicMixer: {fileID: 24100000, guid: d72d656619ec69b43aa00e6f5bbe2d56, type: 2}
   renderAssets:
   - {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
   - {fileID: 11400000, guid: e1260c1148f6143b28bae5ace5e9c5d1, type: 2}
@@ -17121,10 +17123,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 5319802462640343216}
   m_HandleRect: {fileID: 2665505621957327902}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -20
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
