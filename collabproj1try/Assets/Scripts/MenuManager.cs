@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
             }
             else
             {
+                SceneManager.activeSceneChanged+=SceneManager_activeSceneChanged;
                 lockCursor = true;
                 mainMenu.SetActive(false);
                 // EventSystem.current.SetSelectedGameObject(pauseButton);
@@ -100,6 +101,15 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadSceneAsync(sceneIndex);
 
         currentScene = sceneIndex;
+    }
+
+    public void SceneManager_activeSceneChanged(Scene arg1, Scene arg2)
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        if(currentScene != 0)
+        {
+            lockCursor = true;
+        }
     }
 
     public void LockCursor(bool LockCursor)

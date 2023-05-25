@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class PlayerHud : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
+    [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject deathScreen;
     // [SerializeField] private float animationSmoothness = 5;
@@ -88,6 +90,10 @@ public class PlayerHud : MonoBehaviour
 
         missionTexts.text = GameManager.Instance.ListOfMissions;
 
+        TimeSpan time = TimeSpan.FromSeconds((double)GameManager.Instance.mission.timer);
+        string timeString = time.ToString("mm\\:ss");
+        timerText.text = timeString;
+
         woodText.text = inv.wood.howMany.ToString();
         ironText.text = inv.iron.howMany.ToString();
         goldText.text = inv.gold.howMany.ToString();
@@ -153,6 +159,7 @@ public class PlayerHud : MonoBehaviour
 
     public void Retry()
     {
+        MenuManager.Instance.lockCursor = true;
         MenuManager.Instance.LoadScene(MenuManager.Instance.currentScene);
     }
 

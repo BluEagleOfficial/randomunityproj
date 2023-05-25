@@ -24,6 +24,7 @@ public class ListOfMission : MissionBase
     {
         if (!realWin)
         {
+            timer = missions[currentmission].timer;
             howManyWins = 0;
             gm.ListOfMissions = "";
             if (currentmission >= missions.Length)
