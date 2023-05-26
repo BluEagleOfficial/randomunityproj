@@ -71,12 +71,9 @@ public class settingsManager : MonoBehaviour
             fullscreenToggle.isOn = !fullscreenToggle.isOn;
             changeFullscreen();
         }
-        updateAll();
+
         if(!MenuManager.gamePaused)
             this.gameObject.SetActive(false);
-    }
-    void updateAll(){
-        changeGraphicsQuality();
     }
 
     public void changeAll()
@@ -171,7 +168,6 @@ public class settingsManager : MonoBehaviour
     public void changeGraphicsQuality()
     {
         graphicsQuality = graphicsQualityDropdown.value;
-        // graphicsQualityDropdown.captionText.text = graphicsQualityDropdown.itemText.text;
         QualitySettings.SetQualityLevel(graphicsQuality);
     }
 
