@@ -15,6 +15,16 @@ public class spawner : MonoBehaviour
     {
         instance = this;
     }
+    public GameObject[] spawnBoatsWithReturn(int howMany, int indexOfBoat)
+    {
+        GameObject[] listOfBoats = new GameObject[howMany];
+        for (int i = 0; i < howMany; i++)
+        {
+            Vector3 pos = new Vector3(Random.Range(minRange.x, maxRange.x), Random.Range(minRange.y, maxRange.y), Random.Range(minRange.z, maxRange.z));
+            listOfBoats[i] = Instantiate(boats[indexOfBoat], pos, Quaternion.identity);
+        }
+        return listOfBoats;
+    }
     public void spawnBoats(int howMany, int indexOfBoat)
     {
         for (int i = 0; i < howMany; i++)

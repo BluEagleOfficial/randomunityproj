@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: list of missions
   m_EditorClassIdentifier: 
   title: list
+  timer: 0
   win: 0
   missions:
   - {fileID: 11400000, guid: cde514df42cab794fb4898c200c56cf9, type: 2}

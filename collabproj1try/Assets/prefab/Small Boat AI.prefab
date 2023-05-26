@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4177688928794105411}
   forceSpeed: 25
-  maxSpeed: 13
+  maxSpeed: 40
   maxRotateSpeed: 0.5
   enemy: {fileID: 0}
   cannons:

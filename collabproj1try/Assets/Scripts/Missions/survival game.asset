@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40435c00196858949b4adfd73c816e2a, type: 3}
   m_Name: survival game
   m_EditorClassIdentifier: 
-  title: survive for 180 seconds
+  title: Survive For 3 Minutes
+  timer: 0
   win: 0
   winTime: 180
-  howManyEnemies: 4
+  howManyEnemies: 1
   enemiesBoatLevel: 0
-  enemies: []
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
