@@ -72,7 +72,7 @@ public class settingsManager : MonoBehaviour
             changeFullscreen();
         }
 
-        if(!MenuManager.gamePaused)
+        if (!MenuManager.gamePaused)
             this.gameObject.SetActive(false);
     }
 
@@ -93,7 +93,7 @@ public class settingsManager : MonoBehaviour
         SoundVolume = (int)soundSlider.value;
         soundText.text = Mathf.Abs((-SoundVolume * 5) - 100).ToString() + "%";
         soundMixer.SetFloat("Sound", SoundVolume);
-        if(soundSlider.value <= -20)
+        if (soundSlider.value <= -20)
             soundMixer.SetFloat("Sound", -80);
     }
 
@@ -102,14 +102,14 @@ public class settingsManager : MonoBehaviour
         MusicVolume = (int)musicSlider.value;
         musicText.text = MathF.Abs((-MusicVolume * 5) - 100).ToString() + "%";
         musicMixer.SetFloat("Music", MusicVolume);
-        if(musicSlider.value <= -20)
+        if (musicSlider.value <= -20)
             musicMixer.SetFloat("Music", -80);
     }
 
     public void changeVsync()
     {
         vsync = vsyncToggle.isOn;
-        if(vsync)
+        if (vsync)
             QualitySettings.vSyncCount = 2;
         else
             QualitySettings.vSyncCount = 0;
@@ -135,9 +135,9 @@ public class settingsManager : MonoBehaviour
         fpsLimit = (int)fpsLimitSlider.value;
         fpsLimitText.text = (fpsLimitSlider.value).ToString() + " fps";
         Application.targetFrameRate = fpsLimit;
-        if(fpsLimitSlider.value >= 240)
+        if (fpsLimitSlider.value >= 240)
             Application.targetFrameRate = -1;
-            
+
     }
 
     public void changeSensitivity()
