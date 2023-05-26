@@ -71,6 +71,9 @@ public class settingsManager : MonoBehaviour
             fullscreenToggle.isOn = !fullscreenToggle.isOn;
             changeFullscreen();
         }
+
+        if(!MenuManager.gamePaused)
+            this.gameObject.SetActive(false);
     }
 
     public void changeAll()

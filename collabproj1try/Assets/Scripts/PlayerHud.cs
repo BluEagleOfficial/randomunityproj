@@ -76,7 +76,6 @@ public class PlayerHud : MonoBehaviour
         //         MenuManager.Instance.lockCursor = !upgradeToggle;
         // }
 
-
         healthBar.value = hp.hp;
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
         if (bc.information.remainingAmmo > 0)
@@ -84,9 +83,21 @@ public class PlayerHud : MonoBehaviour
 
         // if pause menu is active hide the crosshair and cooldown so it doesnt appear on top
         if (MenuManager.gamePaused)
+        {
             cooldown.gameObject.SetActive(false);
+            
+            if(upgradeToggle == true)
+            {
+                upgradeToggle = false;
+                upgradeMenu.SetActive(upgradeToggle);
+                CameraRotate.lockCamera = upgradeToggle;
+                bc.canShoot = !upgradeToggle;
+            }
+        }
         else
+        {
             cooldown.gameObject.SetActive(true);
+        }
 
         missionTexts.text = GameManager.Instance.ListOfMissions;
 
