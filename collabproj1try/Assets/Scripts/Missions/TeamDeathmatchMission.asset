@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b37725d7c70e3347bf1ed04c69cf17a, type: 3}
+  m_Name: TeamDeathmatchMission
+  m_EditorClassIdentifier: 
+  title: Eliminate The Opponents
+  timer: 0
+  win: 0
+  timeLeft: 900
+  howManyEnemies: 5
+  howManyAllies: 4
+  minEnemyRange: {x: -200, y: 0, z: -200}
+  maxEnemyRange: {x: 200, y: 0, z: 0}
+  minAllyRange: {x: -200, y: 0, z: 200}
+  maxAllyRange: {x: 200, y: 0, z: 0}
+  enemyPrefabs:
+  - {fileID: 4177688928794105471, guid: c2667221cfe5fa043a5c2cf8aba42e8b, type: 3}
+  - {fileID: 6901477454069013964, guid: 6e6c9500adc28ef41a84d34620cc8f44, type: 3}
+  - {fileID: 6227596152277054779, guid: 0ffcbf47470613e4c83ec1bab141a175, type: 3}
+  allyPrefabs:
+  - {fileID: 4177688928794105471, guid: a24a40b9302eee74c8e0ac1a79429132, type: 3}
+  - {fileID: 6901477454069013964, guid: 3db71ce56e00727428a5be6e44d94a4f, type: 3}
+  - {fileID: 6227596152277054779, guid: 6740d9256e1afdd45826c0c5de4d5f88, type: 3}
+  enemies: []
