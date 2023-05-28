@@ -38,12 +38,14 @@ public class TeamDeathmatchMission : MissionBase
         enemies = GameObject.FindGameObjectsWithTag("enemy");
 
         timer += Time.deltaTime;
+        if (enemies.Length <= 0 && gm.playerHealth.dead == false)
+        {
+            win = true;
+        }
+
         if (timer > timeLeft)
         {
-            if (enemies.Length <= 0 && gm.playerHealth.dead == false)
-            {
-                win = true;
-            }
+            
         }
     }
     public override void EndMission(GameManager gm)
