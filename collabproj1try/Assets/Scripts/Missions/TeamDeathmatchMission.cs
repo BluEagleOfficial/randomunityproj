@@ -10,8 +10,8 @@ public class TeamDeathmatchMission : MissionBase
     public int howManyEnemies = 5;
     public int howManyAllies = 4;
 
-    public Vector3 minEnemyRange = new Vector3(-200,0,-200), maxEnemyRange = new Vector3(200,0,0);
-    public Vector3 minAllyRange = new Vector3(-200,0,200), maxAllyRange = new Vector3(200,0,0);
+    public Vector3 minEnemyRange = new Vector3(-200, 0, -200), maxEnemyRange = new Vector3(200, 0, 0);
+    public Vector3 minAllyRange = new Vector3(-200, 0, 200), maxAllyRange = new Vector3(200, 0, 0);
     public List<GameObject> enemyPrefabs = new List<GameObject>();
     public List<GameObject> allyPrefabs = new List<GameObject>();
 
@@ -21,14 +21,14 @@ public class TeamDeathmatchMission : MissionBase
     {
         for (int i = 0; i < howManyEnemies; i++)
         {
-            int randomNumber = Random.Range(0,2);
+            int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
             Instantiate(enemyPrefabs[randomNumber], pos, Quaternion.identity);
         }
 
         for (int i = 0; i < howManyAllies; i++)
         {
-            int randomNumber = Random.Range(0,2);
+            int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minAllyRange.x, maxAllyRange.x), Random.Range(minAllyRange.y, maxAllyRange.y), Random.Range(minAllyRange.z, maxAllyRange.z));
             Instantiate(allyPrefabs[randomNumber], pos, Quaternion.identity);
         }
