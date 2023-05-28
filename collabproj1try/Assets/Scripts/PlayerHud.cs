@@ -11,6 +11,7 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private GameObject upgradeMenu;
     private bool upgradeToggle;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private TMP_Text healthText;
     [SerializeField] private Image cooldown;
     [SerializeField] private TMP_Text ammoCounter;
     [SerializeField] private TMP_Text timerText;
@@ -77,6 +78,7 @@ public class PlayerHud : MonoBehaviour
         // }
 
         healthBar.value = hp.hp;
+        healthText.text = hp.hp.ToString() + " Hp";
         ammoCounter.text = bc.information.remainingAmmo.ToString() + " Ammo left";
         if (bc.information.remainingAmmo > 0)
             cooldown.fillAmount = cooldown.fillAmount = -bc.cooldownTimer + 1;
