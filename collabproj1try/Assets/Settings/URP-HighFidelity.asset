@@ -24,8 +24,8 @@ MonoBehaviour:
   m_OpaqueDownsampling: 1
   m_SupportsTerrainHoles: 0
   m_StoreActionsOptimization: 0
-  m_SupportsHDR: 1
-  m_MSAA: 4
+  m_SupportsHDR: 0
+  m_MSAA: 2
   m_RenderScale: 0.388
   m_UpscalingFilter: 3
   m_FsrOverrideSharpness: 0
@@ -33,8 +33,8 @@ MonoBehaviour:
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 4096
-  m_AdditionalLightsRenderingMode: 1
-  m_AdditionalLightsPerObjectLimit: 8
+  m_AdditionalLightsRenderingMode: 0
+  m_AdditionalLightsPerObjectLimit: 0
   m_AdditionalLightShadowsSupported: 1
   m_AdditionalLightsShadowmapResolution: 4096
   m_AdditionalLightsShadowResolutionTierLow: 128
