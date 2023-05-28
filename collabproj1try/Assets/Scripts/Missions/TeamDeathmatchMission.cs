@@ -35,7 +35,7 @@ public class TeamDeathmatchMission : MissionBase
     }
     public override void UpdateMission(GameManager gm)
     {
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
+        enemies = GameObject.FindGameObjectsWithTag("boat");
 
         timer += Time.deltaTime;
         if (enemies.Length <= 0 && gm.playerHealth.dead == false)
@@ -45,7 +45,7 @@ public class TeamDeathmatchMission : MissionBase
 
         if (timer > timeLeft)
         {
-            
+
         }
     }
     public override void EndMission(GameManager gm)

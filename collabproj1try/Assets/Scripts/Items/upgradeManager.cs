@@ -11,7 +11,7 @@ public class upgradeManager : MonoBehaviour
     [SerializeField] private Inventory inv;
     [SerializeField] private boatInformation info;
 
-    [SerializeField] private Vector4 speedCost, defenceCost, cannonCost, ammoCost;
+    [SerializeField] private Vector4 speedCost, defenceCost, cannonCost, ammoCost, repairCost;
 
     [SerializeField] private Slider speedBar, defenceBar, cannonsBar;
     private int speedLevel = 1, defenceLevel = 1, cannonsLevel = 2;
@@ -75,6 +75,19 @@ public class upgradeManager : MonoBehaviour
         {
             info.remainingAmmo += int.Parse(ammoInput.text);
             ConsumeItems(ammoCost * int.Parse(ammoInput.text));
+        }
+    }
+
+    public void Repair(int ammount)
+    {
+        if (hasEnoughItems(repairCost))
+        {
+            if(hp.hp >= hp.maxhp)
+                return;
+            if(ammount == 0)
+                ammount = 25;
+            hp.healHp(ammount);
+            ConsumeItems(repairCost);
         }
     }
 
