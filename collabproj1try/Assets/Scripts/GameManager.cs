@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public string ListOfMissions = "";
-    void Start()
+
+    void Awake()
     {
         Instance = this;
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
 
 
         mission.StartMission(this);
-
     }
 
 

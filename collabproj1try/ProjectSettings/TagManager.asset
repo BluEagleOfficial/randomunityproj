@@ -9,6 +9,7 @@ TagManager:
   - selector
   - item
   - GameManager
+  - protect
   layers:
   - Default
   - TransparentFX
