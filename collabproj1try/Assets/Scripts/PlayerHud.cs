@@ -87,8 +87,8 @@ public class PlayerHud : MonoBehaviour
         if (MenuManager.gamePaused)
         {
             cooldown.gameObject.SetActive(false);
-            
-            if(upgradeToggle == true)
+
+            if (upgradeToggle == true)
             {
                 upgradeToggle = false;
                 upgradeMenu.SetActive(upgradeToggle);
@@ -101,7 +101,7 @@ public class PlayerHud : MonoBehaviour
             cooldown.gameObject.SetActive(true);
         }
 
-        missionTexts.text = GameManager.Instance.ListOfMissions;
+        missionTexts.text = GameManager.Instance.currentMissionTitle;
 
         TimeSpan time = TimeSpan.FromSeconds((double)GameManager.Instance.mission.timer);
         string timeString = time.ToString("mm\\:ss");

@@ -10,7 +10,8 @@ public class stupidsh1t : MissionBase
 
     public override void StartMission(GameManager gm)
     {
-        win = true;
+        win = true; gm.currentMissionTitle = title;
+
     }
     public override void UpdateMission(GameManager gm)
     {

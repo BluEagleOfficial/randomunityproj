@@ -21,6 +21,8 @@ public class ProtectSomethingMission : MissionBase
     public int enemiesBoatLevel = 0;
     public override void StartMission(GameManager gm)
     {
+        gm.currentMissionTitle = title;
+
         timer = 0;
         win = false;
         g = Instantiate(prefabOfEnemies, Vector3.zero, Quaternion.identity);

@@ -16,6 +16,8 @@ public class SurvivalMission : MissionBase
 
     public override void StartMission(GameManager gm)
     {
+        gm.currentMissionTitle = title;
+
         spawner.instance.spawnBoats(howManyEnemies, enemiesBoatLevel);
     }
     public override void UpdateMission(GameManager gm)

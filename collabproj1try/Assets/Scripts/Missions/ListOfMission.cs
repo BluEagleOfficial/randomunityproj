@@ -24,9 +24,9 @@ public class ListOfMission : MissionBase
     {
         if (!realWin)
         {
+            gm.currentMissionTitle = missions[currentmission].title;
             timer = missions[currentmission].timer;
             howManyWins = 0;
-            gm.ListOfMissions = "";
             if (currentmission >= missions.Length)
             {
                 win = true;
@@ -44,8 +44,7 @@ public class ListOfMission : MissionBase
             }
             for (int i = 0; i < missions.Length; i++)
             {
-                gm.ListOfMissions += missions[i].title;
-                gm.ListOfMissions += Environment.NewLine;
+
                 if (missions[i].win)
                 {
                     howManyWins += 1;

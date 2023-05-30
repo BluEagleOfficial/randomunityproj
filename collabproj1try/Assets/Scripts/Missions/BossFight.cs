@@ -12,6 +12,7 @@ public class BossFight : MissionBase
     Health hp;
     public override void StartMission(GameManager gm)
     {
+        gm.currentMissionTitle = title;
         boss = Instantiate(BossPrefab, Vector3.zero, Quaternion.identity);
         hp = boss.GetComponentInChildren<Health>();
     }

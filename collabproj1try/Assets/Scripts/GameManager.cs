@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] prefabs;
 
     [SerializeField]
-    public string ListOfMissions = "";
+    public string currentMissionTitle = "";
 
     void Awake()
     {

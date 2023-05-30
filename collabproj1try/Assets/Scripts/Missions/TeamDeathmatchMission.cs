@@ -19,6 +19,9 @@ public class TeamDeathmatchMission : MissionBase
 
     public override void StartMission(GameManager gm)
     {
+        gm.currentMissionTitle = title;
+
+
         for (int i = 0; i < howManyEnemies; i++)
         {
             int randomNumber = Random.Range(0, 2);
