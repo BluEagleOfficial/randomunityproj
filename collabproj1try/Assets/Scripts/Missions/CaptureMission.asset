@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a07126c2ee2c4d99074262de62970, type: 3}
+  m_Name: CaptureMission
+  m_EditorClassIdentifier: 
+  title: Capture the enemy's flag
+  timer: 0
+  win: 0
+  timeLeft: 900
+  howManyEnemies: 5
+  howManyAllies: 4
+  minEnemyRange: {x: -200, y: 0, z: -200}
+  maxEnemyRange: {x: 200, y: 0, z: 0}
+  minAllyRange: {x: -200, y: 0, z: 200}
+  maxAllyRange: {x: 200, y: 0, z: 0}
+  enemyPrefabs: []
+  allyPrefabs: []
+  enemies: []
