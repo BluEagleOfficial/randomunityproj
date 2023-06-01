@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458a07126c2ee2c4d99074262de62970, type: 3}
   m_Name: CaptureMission
   m_EditorClassIdentifier: 
-  title: Capture the enemy's flag
+  title: 'Capture the enemy''s flag '
   timer: 0
   win: 0
   timeLeft: 900
+  enemyFlagSpawn: {fileID: 2054580308785603862, guid: 929ce03ddfce5704cba87026ce8a0261,
+    type: 3}
+  friendlyFlagSpawn: {fileID: 4613062390929264573, guid: c2fb4697879dc674ea17cae55c9557a1,
+    type: 3}
   howManyEnemies: 5
   howManyAllies: 4
   minEnemyRange: {x: -200, y: 0, z: -200}

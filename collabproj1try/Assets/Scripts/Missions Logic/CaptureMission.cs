@@ -4,8 +4,13 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "CaptureMission", menuName = "Missions/CaptureMission")]
 public class CaptureMission : MissionBase
 {
-
     public float timeLeft = 900;
+
+    public GameObject enemyFlagSpawn;
+    public GameObject friendlyFlagSpawn;
+
+    private EnemyFlag enemyFlag;
+    private FriendlyFlag friendlyFlag;
 
     public int howManyEnemies = 5;
     public int howManyAllies = 4;
@@ -17,10 +22,15 @@ public class CaptureMission : MissionBase
 
     public GameObject[] enemies;
 
+
     public override void StartMission(GameManager gm)
     {
         gm.currentMissionTitle = title;
+        GameObject ef = Instantiate(enemyFlagSpawn, new Vector3(0,0,minEnemyRange.z), Quaternion.identity);
+        GameObject ff = Instantiate(friendlyFlagSpawn, new Vector3(0,0,minAllyRange.z), Quaternion.identity);
 
+        enemyFlag = ef.GetComponentInChildren<EnemyFlag>();
+        friendlyFlag = ff.GetComponentInChildren<FriendlyFlag>();
 
         for (int i = 0; i < howManyEnemies; i++)
         {
@@ -41,9 +51,15 @@ public class CaptureMission : MissionBase
         enemies = GameObject.FindGameObjectsWithTag("boat");
 
         timer += Time.deltaTime;
-        if (enemies.Length <= 0 && gm.playerHealth.dead == false)
+
+        if (enemyFlag.flagCaptured)
         {
             win = true;
+        }
+
+        if (friendlyFlag.flagCaptured)
+        {
+            gm.playerHealth.TakeDamage(10000);
         }
 
         if (timer > timeLeft)

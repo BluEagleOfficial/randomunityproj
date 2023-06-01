@@ -10,6 +10,8 @@ TagManager:
   - item
   - GameManager
   - protect
+  - enemy base
+  - base
   layers:
   - Default
   - TransparentFX
