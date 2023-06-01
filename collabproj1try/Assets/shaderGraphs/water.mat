@@ -65,7 +65,7 @@ Material:
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
-    - _alpha: 0.9
+    - _alpha: 1
     - _amplitude: 5500
     - _depth: 0.14
     - _metallic: 1
