@@ -100,8 +100,15 @@ public class PlayerHud : MonoBehaviour
         {
             cooldown.gameObject.SetActive(true);
         }
+        try
+        {
+            missionTexts.text = GameManager.Instance.currentMissionTitle;
 
-        missionTexts.text = GameManager.Instance.currentMissionTitle;
+        }
+        catch
+        {
+
+        }
 
         TimeSpan time = TimeSpan.FromSeconds((double)GameManager.Instance.mission.timer);
         string timeString = time.ToString("mm\\:ss");
