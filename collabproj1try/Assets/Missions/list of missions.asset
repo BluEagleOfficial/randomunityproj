@@ -16,8 +16,5 @@ MonoBehaviour:
   timer: 112.386024
   win: 0
   missions:
-  - {fileID: 11400000, guid: 7a518ae8264350b4095fe1d07d03ac49, type: 2}
-  - {fileID: 11400000, guid: de52f62e8c524f447865d83230cbd572, type: 2}
-  - {fileID: 11400000, guid: cde514df42cab794fb4898c200c56cf9, type: 2}
-  - {fileID: 11400000, guid: 0e3ffb358cdfb6f489b732df49bb78b9, type: 2}
-  realWin: 0
+  - {fileID: 11400000, guid: a307b4e207b5198489605d40df7d2c2c, type: 2}
+  realWin: 1

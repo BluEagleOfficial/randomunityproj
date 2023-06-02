@@ -55,11 +55,13 @@ public class CaptureMission : MissionBase
         if (enemyFlag.flagCaptured)
         {
             win = true;
+            Debug.Log("SHOULD WIN RIGHT NOW");
         }
 
         if (friendlyFlag.flagCaptured)
         {
             gm.playerHealth.TakeDamage(10000);
+            Debug.Log("Should lose");
         }
 
         if (timer > timeLeft)

@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Friendly Flag
       objectReference: {fileID: 0}
+    - target: {fileID: 4177688928794105471, guid: 9333a63b6c812344ea4dd1627a088fa7,
+        type: 3}
+      propertyPath: m_TagString
+      value: protect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9333a63b6c812344ea4dd1627a088fa7, type: 3}
 --- !u!4 &1258442855676119407 stripped

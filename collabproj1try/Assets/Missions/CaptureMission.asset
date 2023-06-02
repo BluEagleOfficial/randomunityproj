@@ -20,12 +20,30 @@ MonoBehaviour:
     type: 3}
   friendlyFlagSpawn: {fileID: 4613062390929264573, guid: c2fb4697879dc674ea17cae55c9557a1,
     type: 3}
-  howManyEnemies: 5
-  howManyAllies: 4
+  howManyEnemies: 7
+  howManyAllies: 0
   minEnemyRange: {x: -200, y: 0, z: -200}
   maxEnemyRange: {x: 200, y: 0, z: 0}
   minAllyRange: {x: -200, y: 0, z: 200}
   maxAllyRange: {x: 200, y: 0, z: 0}
-  enemyPrefabs: []
-  allyPrefabs: []
-  enemies: []
+  enemyPrefabs:
+  - {fileID: 4177688928794105471, guid: c2667221cfe5fa043a5c2cf8aba42e8b, type: 3}
+  - {fileID: 6901477454069013964, guid: 6e6c9500adc28ef41a84d34620cc8f44, type: 3}
+  - {fileID: 6227596152277054779, guid: 0ffcbf47470613e4c83ec1bab141a175, type: 3}
+  allyPrefabs:
+  - {fileID: 4177688928794105471, guid: a24a40b9302eee74c8e0ac1a79429132, type: 3}
+  - {fileID: 6901477454069013964, guid: 3db71ce56e00727428a5be6e44d94a4f, type: 3}
+  - {fileID: 6227596152277054779, guid: 6740d9256e1afdd45826c0c5de4d5f88, type: 3}
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
