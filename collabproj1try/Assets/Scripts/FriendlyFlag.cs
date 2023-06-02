@@ -17,10 +17,10 @@ public class FriendlyFlag : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("boat"))
+        if(other.CompareTag("boat") && !flagCaptured)
         {
             this.gameObject.transform.SetParent(other.transform);
-            this.gameObject.transform.position = grabOffset;
+            this.gameObject.transform.localPosition = grabOffset;
             hasFlag = true;
         }
 
@@ -31,10 +31,10 @@ public class FriendlyFlag : MonoBehaviour
             hasFlag = false;
         }
 
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && !flagCaptured)
         {
             this.gameObject.transform.SetParent(flagSpawnPosition);
-            this.gameObject.transform.position = Vector3.zero;
+            this.gameObject.transform.localPosition = Vector3.zero;
             hasFlag = false;
         }
     }
