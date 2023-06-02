@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4613062390929264572}
   - component: {fileID: 5876822183654502916}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Friendly Flag Zone
   m_TagString: base
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4613062391756036217}
   - component: {fileID: 4613062391756036218}
   - component: {fileID: 4613062391756036219}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: visual marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

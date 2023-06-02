@@ -10,6 +10,8 @@ public class FriendlyFlag : MonoBehaviour
     public Transform flagSpawnPosition;
     public Vector3 grabOffset = new Vector3(0,32,4.5f);
 
+    private Health hp;
+
     void Start()
     {
         flagSpawnPosition = this.transform.parent;
@@ -21,6 +23,7 @@ public class FriendlyFlag : MonoBehaviour
         {
             this.gameObject.transform.SetParent(other.transform);
             this.gameObject.transform.localPosition = grabOffset;
+            hp = other.GetComponent<Health>();
             hasFlag = true;
         }
 
@@ -36,6 +39,17 @@ public class FriendlyFlag : MonoBehaviour
             this.gameObject.transform.SetParent(flagSpawnPosition);
             this.gameObject.transform.localPosition = Vector3.zero;
             hasFlag = false;
+        }
+    }
+
+    void Update()
+    {
+        if(hp == null)
+            return;
+        if(hp.dead)
+        {
+            this.gameObject.transform.SetParent(null);
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x,0,this.gameObject.transform.position.z);
         }
     }
 }

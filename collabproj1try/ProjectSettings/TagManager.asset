@@ -12,6 +12,8 @@ TagManager:
   - protect
   - enemy base
   - base
+  - friendly flag
+  - enemy flag
   layers:
   - Default
   - TransparentFX
