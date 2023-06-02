@@ -183,6 +183,9 @@ MonoBehaviour:
   - {fileID: 6227596153025507209}
   aimer: {fileID: 6227596152338515825}
   enemyTag: Player
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 49
   distanceOfFollow: 1000
   distanceOfAttack: 130
   distanceOfChange: 40

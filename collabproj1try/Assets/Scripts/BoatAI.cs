@@ -13,6 +13,8 @@ public class BoatAI : MonoBehaviour
     public Transform aimer;
 
     public string enemyTag = "Player";
+
+    public LayerMask layerMask;
     void Start()
     {
         enemy = Wyperian.FindClosestEnemy(enemyTag, transform).transform;
@@ -56,7 +58,7 @@ public class BoatAI : MonoBehaviour
     void follow()
     {
         Vector3 rot;
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanceOfChange))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanceOfChange, layerMask))
         {
             // Debug.Log("hit");
             rot = Wyperian.lookAtSlowly(transform, enemy.position, maxRotateSpeed * Time.deltaTime * 1).eulerAngles;

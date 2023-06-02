@@ -432,6 +432,9 @@ MonoBehaviour:
   - {fileID: 4177688928382178253}
   aimer: {fileID: 4177688928054017221}
   enemyTag: boat
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 49
   distanceOfFollow: 1000
   distanceOfAttack: 80
   distanceOfChange: 40
