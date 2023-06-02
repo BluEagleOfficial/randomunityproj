@@ -203,6 +203,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134510020762900001}
+  - component: {fileID: 1268502461}
+  - component: {fileID: 1268502462}
   m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
@@ -227,6 +229,35 @@ Transform:
   m_Father: {fileID: 7015519619562912426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1268502461
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511387710944982761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.006379077
+  m_Height: 0.024252566
+  m_Direction: 1
+  m_Center: {x: 0.0003721378, y: 0.009921597, z: -0.0015601364}
+--- !u!114 &1268502462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511387710944982761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51f6b87ef2780d44aad3846e4ea777a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmmount: 5
+  forceStrength: 100
+  distance: 250
 --- !u!1 &3946093152135943138
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4433941700768581976}
+  - component: {fileID: 861652871}
   m_Layer: 0
   m_Name: CRAB
   m_TagString: Untagged
@@ -252,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 3946093152135943138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.03, y: 5.18, z: -7.59}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4699597672148998598}
@@ -263,6 +295,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861652871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946093152135943138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75cf24eeca682949913a9c47c367c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 2045172121}
+  enemyTag: Player
+  dams:
+  - {fileID: 1268502462}
+  - {fileID: 1068959390}
+  objectsToStopWhenSmoking: []
+  surfaceLevel: {x: 0, y: 5, z: 0}
+  gettingUp: 0
+  speedOfMoving: 0.1
+  distanceOfAttack: 50
 --- !u!1 &4102067219212085052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,9 +5295,11 @@ GameObject:
   - component: {fileID: 5836737554401789686}
   - component: {fileID: 7620981329239911990}
   - component: {fileID: 3371991988269615698}
+  - component: {fileID: 2045172120}
+  - component: {fileID: 2045172121}
   m_Layer: 0
   m_Name: CrabBody
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5314,6 +5370,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2045172120
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582519302213687339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8508585830971652256, guid: b5b75372e63f97746b0a9dd407cd5c49, type: 3}
+--- !u!114 &2045172121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582519302213687339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a012f4643ba06a943a9b0ce95e671eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxhp: 4000
+  hp: 4000
+  dead: 0
 --- !u!1 &5678658482844594006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,6 +5594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292103873288109451}
+  - component: {fileID: 1892578756}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -5532,6 +5618,20 @@ Transform:
   m_Father: {fileID: 8986713004803668290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1892578756
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459078081403980185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0072936523
+  m_Height: 0.041606575
+  m_Direction: 1
+  m_Center: {x: -0.0026507576, y: 0.013634398, z: -0.0015601352}
 --- !u!1 &6604416137805878156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,6 +5737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7015519619562912426}
+  - component: {fileID: 390423940}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -5660,6 +5761,20 @@ Transform:
   m_Father: {fileID: 4699597672148998598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &390423940
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338501889501487894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0072936527
+  m_Height: 0.0236181
+  m_Direction: 1
+  m_Center: {x: -0.0026507748, y: 0.0046401843, z: -0.0015601374}
 --- !u!1 &8238284332956609852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,6 +5784,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5358918417513157028}
+  - component: {fileID: 1068959389}
+  - component: {fileID: 1068959390}
   m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
@@ -5693,6 +5810,35 @@ Transform:
   m_Father: {fileID: 1292103873288109451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1068959389
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238284332956609852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.006379077
+  m_Height: 0.024252566
+  m_Direction: 1
+  m_Center: {x: 0.0003721378, y: 0.009921597, z: -0.0015601364}
+--- !u!114 &1068959390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238284332956609852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51f6b87ef2780d44aad3846e4ea777a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmmount: 5
+  forceStrength: 100
+  distance: 250
 --- !u!1 &8710727987365274937
 GameObject:
   m_ObjectHideFlags: 0

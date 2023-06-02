@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Protect box
   m_EditorClassIdentifier: 
   title: Protect The Ship
-  timer: 0
-  win: 0
+  timer: 290.03357
+  win: 1
   prefabOfEnemies: {fileID: 7378403664289539275, guid: e1776d0b13a3d5d438584fa1265f420a,
     type: 3}
   enemies:
