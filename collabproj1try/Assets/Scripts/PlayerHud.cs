@@ -103,16 +103,15 @@ public class PlayerHud : MonoBehaviour
         try
         {
             missionTexts.text = GameManager.Instance.currentMissionTitle;
-
+            TimeSpan time = TimeSpan.FromSeconds((double)GameManager.Instance.mission.timer);
+            string timeString = time.ToString("mm\\:ss");
+            timerText.text = timeString;
         }
         catch
         {
 
         }
 
-        TimeSpan time = TimeSpan.FromSeconds((double)GameManager.Instance.mission.timer);
-        string timeString = time.ToString("mm\\:ss");
-        timerText.text = timeString;
 
         woodText.text = inv.wood.howMany.ToString();
         ironText.text = inv.iron.howMany.ToString();
