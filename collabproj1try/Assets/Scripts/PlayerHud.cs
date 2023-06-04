@@ -128,23 +128,29 @@ public class PlayerHud : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
                 Quit();
         }
-
-        // if(Input.GetKey(KeyCode.K))
-        if (GameManager.Instance.playerWon == true)
+        try
         {
-            winScreen.SetActive(true);
-            MenuManager.Instance.lockCursor = false;
+            // if(Input.GetKey(KeyCode.K))
+            if (GameManager.Instance.playerWon == true)
+            {
+                winScreen.SetActive(true);
+                MenuManager.Instance.lockCursor = false;
 
-            if (Input.GetKeyDown(KeyCode.R))
-                Retry();
-            if (Input.GetKeyDown(KeyCode.Escape))
-                Quit();
+                if (Input.GetKeyDown(KeyCode.R))
+                    Retry();
+                if (Input.GetKeyDown(KeyCode.Escape))
+                    Quit();
 
+            }
+            else
+            {
+                winScreen.SetActive(false);
+            }
         }
-        else
+        catch
         {
-            winScreen.SetActive(false);
         }
+
 
         // if(loot.randomEnemyData != null) // i tried making some really cool "+30" text that fades out and goes up
         // {
