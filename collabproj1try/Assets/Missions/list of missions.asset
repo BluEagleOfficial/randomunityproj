@@ -17,4 +17,4 @@ MonoBehaviour:
   win: 0
   missions:
   - {fileID: 11400000, guid: a307b4e207b5198489605d40df7d2c2c, type: 2}
-  realWin: 1
+  realWin: 0

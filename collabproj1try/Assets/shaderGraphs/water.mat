@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: ee1373394ceaace4eb94a1b2417d48ba,
     type: 3}
   m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -21,6 +22,7 @@ Material:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -52,13 +54,13 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _Cull: 0
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: -50
-    - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _ReceiveShadows: 0
+    - _Smoothness: 0.86
     - _SrcBlend: 5
     - _Surface: 1
     - _WorkflowMode: 1
@@ -69,9 +71,9 @@ Material:
     - _amplitude: 5500
     - _depth: 0.14
     - _metallic: 1
-    - _quality: 125
+    - _quality: 25
     - _strength: 2.02
-    - _strength_of_normal_map: 0.35
+    - _strength_of_normal_map: 0.2
     - _waveStrength: 0.025
     - _wave_strength: 0.05
     m_Colors:
