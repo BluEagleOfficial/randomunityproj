@@ -20,6 +20,10 @@ public class BoatController : MonoBehaviour
     public bool canMove = true;
     public bool canShoot = true;
 
+    public CameraShake cShake;
+    [SerializeField]
+    float shakeStrength = 0.25f, ShakeDuration = 0.25f;
+
     void Start()
     {
         // cameraObject = GetComponentInChildren<Camera>().gameObject; // not using it for this script at the moment
@@ -38,10 +42,13 @@ public class BoatController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
 
+
             foreach (var cannon in cannons)
             {
                 if (information.remainingAmmo > 0 && cooldownTimer >= shootingCooldown)
                 {
+                    cShake.StartShake(ShakeDuration, shakeStrength);
+
                     cannon.shoot();
                 }
             }

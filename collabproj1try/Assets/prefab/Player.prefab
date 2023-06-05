@@ -20314,6 +20314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7397930218766979963}
   - component: {fileID: 7397930218766979962}
+  - component: {fileID: 5857977232146177509}
   m_Layer: 2
   m_Name: Camera Holder
   m_TagString: Untagged
@@ -20353,6 +20354,18 @@ MonoBehaviour:
   minLimit: -90
   maxLimit: 90
   sensitivity: 100
+--- !u!114 &5857977232146177509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397930218766979960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d47bf2cc680d24c8b84b92822e0482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7397930218803348306
 GameObject:
   m_ObjectHideFlags: 0
@@ -20666,6 +20679,7 @@ MonoBehaviour:
   - {fileID: 7397930219766993751}
   canMove: 1
   canShoot: 1
+  cShake: {fileID: 5857977232146177509}
 --- !u!114 &7397930219320892807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21130,7 +21144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397930220318367614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
