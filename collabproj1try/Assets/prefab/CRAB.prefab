@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 2134510020762900001}
   - component: {fileID: 1268502461}
   - component: {fileID: 1268502462}
+  - component: {fileID: 730063167}
   m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
@@ -258,6 +259,20 @@ MonoBehaviour:
   damageAmmount: 5
   forceStrength: 100
   distance: 250
+--- !u!114 &730063167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511387710944982761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38012819b333d274b957a7f321d2cb19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: {fileID: 770604584439312975, guid: abd456abaa2a26c4fb51fdbd15a498f8, type: 3}
+  destroyOnTouch: 0
 --- !u!1 &3946093152135943138
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +283,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4433941700768581976}
   - component: {fileID: 861652871}
+  - component: {fileID: 1052711832}
+  - component: {fileID: 1052711833}
   m_Layer: 0
   m_Name: CRAB
   m_TagString: Untagged
@@ -308,15 +325,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 2045172121}
+  an: {fileID: 1052711832}
   enemyTag: Player
+  smokeOfCigars: {fileID: 4179972679653226206}
   dams:
   - {fileID: 1268502462}
   - {fileID: 1068959390}
   objectsToStopWhenSmoking: []
   surfaceLevel: {x: 0, y: 5, z: 0}
+  underSurfaceLevel: {x: 0, y: -25, z: 0}
   gettingUp: 0
-  speedOfMoving: 0.1
-  distanceOfAttack: 50
+  speedOfMoving: 100
+  distanceOfAttack: 35
+  speedOfRot: 100
+  timeToAttack: 5
+  timeToSmoke: 5
+--- !u!95 &1052711832
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946093152135943138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b5b75372e63f97746b0a9dd407cd5c49, type: 3}
+  m_Controller: {fileID: 9100000, guid: febb431cf15dfa6429d9f0d755cbc35f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1052711833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946093152135943138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232c001a6e9f0e84cb9e4464d97f964a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  h: {fileID: 2045172121}
+  timeToDestroy: 20
+  forceOfDown: 1000
+  DeathEffectsPrefab: {fileID: 359793459039629697, guid: 747838b0f5656514a8b9e2b883d90718,
+    type: 3}
 --- !u!1 &4102067219212085052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,8 +5355,8 @@ GameObject:
   - component: {fileID: 5836737554401789686}
   - component: {fileID: 7620981329239911990}
   - component: {fileID: 3371991988269615698}
-  - component: {fileID: 2045172120}
   - component: {fileID: 2045172121}
+  - component: {fileID: 1903019395}
   m_Layer: 0
   m_Name: CrabBody
   m_TagString: enemy
@@ -5370,20 +5430,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2045172120
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582519302213687339}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8508585830971652256, guid: b5b75372e63f97746b0a9dd407cd5c49, type: 3}
 --- !u!114 &2045172121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5396,9 +5442,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a012f4643ba06a943a9b0ce95e671eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhp: 4000
-  hp: 4000
+  maxhp: 500
+  hp: 500
   dead: 0
+--- !u!135 &1903019395
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582519302213687339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.023485564
+  m_Center: {x: -1.1435857e-16, y: 0.00003352029, z: 0.008986152}
 --- !u!1 &5678658482844594006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,7 +5669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6459078081403980185}
   m_LocalRotation: {x: -0.07973079, y: 0.0031550701, z: 0.96904135, w: 0.23364922}
-  m_LocalPosition: {x: 1.4210854e-16, y: 8.9928065e-17, z: -7.105427e-17}
+  m_LocalPosition: {x: 1.421085e-16, y: 8.9928065e-17, z: -7.105427e-17}
   m_LocalScale: {x: 0.9999995, y: 0.9999998, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5656,7 +5715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6604416137805878156}
   m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 2.08813, y: 0.0032009997, z: -0.033708}
+  m_LocalPosition: {x: 2.08813, y: 0.003201, z: -0.033708}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5786,6 +5845,7 @@ GameObject:
   - component: {fileID: 5358918417513157028}
   - component: {fileID: 1068959389}
   - component: {fileID: 1068959390}
+  - component: {fileID: 1368328698}
   m_Layer: 0
   m_Name: Bone.001
   m_TagString: Untagged
@@ -5839,6 +5899,20 @@ MonoBehaviour:
   damageAmmount: 5
   forceStrength: 100
   distance: 250
+--- !u!114 &1368328698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238284332956609852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38012819b333d274b957a7f321d2cb19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: {fileID: 770604584439312975, guid: abd456abaa2a26c4fb51fdbd15a498f8, type: 3}
+  destroyOnTouch: 0
 --- !u!1 &8710727987365274937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,7 +5969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9143762941726285777}
   m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -2.08813, y: 0.0032009997, z: -0.033708}
+  m_LocalPosition: {x: -2.08813, y: 0.003201, z: -0.033708}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
