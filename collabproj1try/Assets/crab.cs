@@ -51,6 +51,7 @@ public class crab : MonoBehaviour
             timerOfAttack = 0;
             stopAttack();
             gettingUp = false;
+            attacking = false;
 
         }
         Vector3 sss = new Vector3(transform.position.x, 0, transform.position.z);
