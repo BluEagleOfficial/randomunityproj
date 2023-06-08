@@ -44,12 +44,10 @@ public class PlayerHud : MonoBehaviour
 
         upgradeToggle = false;
         upgradeMenu.SetActive(false);
-
-        // Reset items on start since scriptable objects save the ammount even after exiting play mode
-        inv.wood.howMany = 0;
-        inv.iron.howMany = 0;
-        inv.gold.howMany = 0;
-        inv.gunPowder.howMany = 0;
+        inv.iron.howMany = 100;
+        inv.wood.howMany = 100;
+        inv.gold.howMany = 100;
+        inv.gunPowder.howMany = 100;
     }
 
     void Update()

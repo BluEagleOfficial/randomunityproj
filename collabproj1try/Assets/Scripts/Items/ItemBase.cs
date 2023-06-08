@@ -12,5 +12,5 @@ public class ItemBase : ScriptableObject
 
     public string description;
 
-    public int howMany = 0;
+    public int howMany = 100;
 }

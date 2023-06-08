@@ -12,7 +12,7 @@ public class crab : MonoBehaviour
     ParticleSystem smokeOfCigars;
 
     [SerializeField]
-    ParticleSystem farts;
+    ParticleSystem largeSmoke;
     public damageOnCollision[] dams;
     [SerializeField]
     GameObject[] objectsToStopWhenSmoking;
@@ -32,74 +32,93 @@ public class crab : MonoBehaviour
 
     float timerOfAttack = 0, timerOfSmoke = 0;
 
-    float normalEmission = 0, fartsEmission = 0;
+    float normalEmission = 0, largeSmokeEmission = 0;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(enemyTag).transform;
         normalEmission = smokeOfCigars.emissionRate;
-        fartsEmission = farts.emissionRate;
-        farts.emissionRate = 0;
+        largeSmokeEmission = largeSmoke.emissionRate;
+        largeSmoke.emissionRate = 0;
     }
     float distance = 0;
-
+    [SerializeField]
     bool alive = true;
     int lastHealth = 0;
     void Update()
     {
-        if (lastHealth > health.hp)
+        if (alive)
         {
-            timerOfAttack = 0;
-            stopAttack();
-            gettingUp = false;
-            attacking = false;
-
-        }
-        Vector3 sss = new Vector3(transform.position.x, 0, transform.position.z);
-        distance = Vector3.Distance(sss, player.position);
-        timerOfAttack += Time.deltaTime;
-        timerOfSmoke += Time.deltaTime;
-        alive = !health.dead;
-        if (timerOfAttack >= timeToAttack)
-        {
-            attacking = true;
-            timerOfAttack = 0;
-        }
-        if (timerOfSmoke >= timeToSmoke)
-        {
-            StartCoroutine(startSmoking());
-        }
-        if (gettingUp)
-        {
-            getUp();
-        }
-        else
-        {
-            smokeOfCigars.emissionRate = 0;
-            underSurfaceLevel = new Vector3(transform.position.x, underSurfaceLevel.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, underSurfaceLevel, Time.deltaTime * speedOfMoving);
-        }
-        if (attacking)
-        {
-            gettingUp = true;
-            if (distance < distanceOfAttack)
+            if (lastHealth > health.hp)
             {
-                StartCoroutine(startAttack());
+                timerOfAttack = 0;
+                stopAttack();
+                gettingUp = false;
+                attacking = false;
+
+            }
+            Vector3 sss = new Vector3(transform.position.x, 0, transform.position.z);
+            distance = Vector3.Distance(sss, player.position);
+            timerOfAttack += Time.deltaTime;
+            timerOfSmoke += Time.deltaTime;
+            alive = !health.dead;
+            if (timerOfAttack >= timeToAttack)
+            {
+                attacking = true;
+                timerOfAttack = 0;
+            }
+            if (timerOfSmoke >= timeToSmoke)
+            {
+                StartCoroutine(startSmoking());
+            }
+            if (gettingUp)
+            {
+                getUp();
             }
             else
             {
-                follow();
+                smokeOfCigars.emissionRate = 0;
+                underSurfaceLevel = new Vector3(transform.position.x, underSurfaceLevel.y, transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, underSurfaceLevel, Time.deltaTime * speedOfMoving);
             }
+            if (attacking)
+            {
+                gettingUp = true;
+                if (distance < distanceOfAttack)
+                {
+                    StartCoroutine(startAttack());
+                }
+                else
+                {
+                    follow();
+                }
+            }
+            else
+            {
+                stopAttack();
+                gettingUp = false;
+            }
+            lastHealth = health.hp;
         }
         else
         {
-            stopAttack();
-            gettingUp = false;
+            StopAllCoroutines();
+            transform.position = Vector3.MoveTowards(transform.position, underSurfaceLevel, Time.deltaTime * speedOfMoving);
+            transform.rotation = Wyperian.lookAtSlowly(transform, transform.position + Vector3.up * 3, speedOfRot * Time.deltaTime * 20);
+            largeSmoke.emissionRate = 0;
+            StartCoroutine(stopSmokingplz());
+
         }
-        lastHealth = health.hp;
+
+    }
+    IEnumerator stopSmokingplz()
+    {
+        yield return new WaitForSeconds(1);
+        smokeOfCigars.emissionRate = 0;
+        largeSmoke.emissionRate = 0;
     }
     void follow()
     {
-        Vector3 playerPos = new Vector3(player.position.x, transform.position.y, player.position.z);
+        Vector3 playerPos = new Vector3(player.position.x, surfaceLevel.y, player.position.z);
         transform.rotation = Wyperian.lookAtSlowly(transform, player.position, speedOfRot * Time.deltaTime * 100);
         transform.position = Vector3.MoveTowards(transform.position, playerPos, Time.deltaTime * speedOfMoving);
     }
@@ -111,13 +130,12 @@ public class crab : MonoBehaviour
     }
     IEnumerator startSmoking()
     {
-        smokeOfCigars.emissionRate = normalEmission * 50;
-        farts.emissionRate = 0;
+        largeSmoke.emissionRate = 0;
         yield return new WaitForSeconds(2);
         smokeOfCigars.emissionRate = 0;
-        farts.emissionRate = fartsEmission;
+        largeSmoke.emissionRate = largeSmokeEmission;
         yield return new WaitForSeconds(30);
-        farts.emissionRate = 0;
+        largeSmoke.emissionRate = 0;
     }
     void stopAttack()
     {
