@@ -125,6 +125,7 @@ public class crab : MonoBehaviour
     IEnumerator startAttack()
     {
         an.SetBool("attack", true);
+        an.SetInteger("attackanim", Random.RandomRange(0, 3));
         yield return new WaitForSeconds(1);
         attacking = false;
     }
