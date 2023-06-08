@@ -34,16 +34,6 @@ MonoBehaviour:
   - {fileID: 4177688928794105471, guid: a24a40b9302eee74c8e0ac1a79429132, type: 3}
   - {fileID: 6901477454069013964, guid: 3db71ce56e00727428a5be6e44d94a4f, type: 3}
   - {fileID: 6227596152277054779, guid: 6740d9256e1afdd45826c0c5de4d5f88, type: 3}
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemies: []
+  hps: []
+  goingForFlag: 0

@@ -114,7 +114,7 @@ public class CaptureMission : MissionBase
 
         if (friendlyFlag.flagCaptured)
         {
-            gm.playerHealth.TakeDamage(10000);
+            gm.playerHealth.TakeDamage(100000);
             Debug.Log("Should lose");
         }
 
