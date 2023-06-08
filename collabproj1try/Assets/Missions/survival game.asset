@@ -17,15 +17,5 @@ MonoBehaviour:
   win: 0
   winTime: 180
   howManyEnemies: 10
-  enemiesBoatLevel: 0
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemiesBoatLevel: 1
+  enemies: []
