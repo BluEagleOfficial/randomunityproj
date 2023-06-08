@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4d51e83927ae24392605a731edbb0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mission: {fileID: 11400000, guid: de52f62e8c524f447865d83230cbd572, type: 2}
+  mission: {fileID: 11400000, guid: 89f1059b0bb94504e9669e60f08c94d8, type: 2}
   playerHealth: {fileID: 0}
   playerWon: 0
   prefabs: []
