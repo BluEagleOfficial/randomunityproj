@@ -30,10 +30,10 @@ public class CaptureMission : MissionBase
     public override void StartMission(GameManager gm)
     {
         gm.currentMissionTitle = title;
-        
+
         // spawning and getting flag data
-        GameObject ef = Instantiate(enemyFlagSpawn, new Vector3(0,0,minEnemyRange.z), Quaternion.identity);
-        GameObject ff = Instantiate(friendlyFlagSpawn, new Vector3(0,0,minAllyRange.z), Quaternion.identity);
+        GameObject ef = Instantiate(enemyFlagSpawn, new Vector3(0, 0, minEnemyRange.z), Quaternion.identity);
+        GameObject ff = Instantiate(friendlyFlagSpawn, new Vector3(0, 0, minAllyRange.z), Quaternion.identity);
         enemyFlag = ef.GetComponentInChildren<EnemyFlag>();
         friendlyFlag = ff.GetComponentInChildren<FriendlyFlag>();
 
@@ -43,6 +43,11 @@ public class CaptureMission : MissionBase
             int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
             GameObject obj = Instantiate(enemyPrefabs[randomNumber], pos, Quaternion.identity);
+            obj.GetComponent<BoatAI>().enemyTag = "player";
+            if (i > howManyEnemies / 2)
+            {
+                obj.GetComponent<BoatAI>().enemyTag = "friendly base";
+            }
             enemies.Add(obj);
         }
         for (int i = 0; i < howManyAllies; i++)
@@ -67,16 +72,16 @@ public class CaptureMission : MissionBase
         // enemies = GameObject.FindGameObjectsWithTag("enemy");
         for (int i = 0; i < hps.Count; i++)
         {
-            if(hps[i].dead)
+            if (hps[i].dead)
             {
                 enemies.RemoveAt(i);
                 hps.RemoveAt(i);
             }
         }
 
-        if(goingForFlag == false)
+        if (goingForFlag == false)
         {
-            if(ai != null)
+            if (ai != null)
                 return;
             ai = enemies[0].GetComponent<BoatAI>();
             // hp = enemies[0].GetComponentInChildren<Health>();
@@ -89,12 +94,12 @@ public class CaptureMission : MissionBase
             Debug.Log("attack fucking: " + ai.enemyTag);
             goingForFlag = true;
         }
-        if(hp != null && hp.dead)
+        if (hp != null && hp.dead)
         {
             goingForFlag = false;
         }
 
-        if(friendlyFlag.hasFlag)
+        if (friendlyFlag.hasFlag)
         {
             ai.enemyTag = "enemy base";
         }

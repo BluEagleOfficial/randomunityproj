@@ -10,6 +10,9 @@ public class crab : MonoBehaviour
     public string enemyTag;
     [SerializeField]
     ParticleSystem smokeOfCigars;
+
+    [SerializeField]
+    ParticleSystem farts;
     public damageOnCollision[] dams;
     [SerializeField]
     GameObject[] objectsToStopWhenSmoking;
@@ -29,17 +32,27 @@ public class crab : MonoBehaviour
 
     float timerOfAttack = 0, timerOfSmoke = 0;
 
-    float normalEmission = 0;
+    float normalEmission = 0, fartsEmission = 0;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(enemyTag).transform;
         normalEmission = smokeOfCigars.emissionRate;
+        fartsEmission = farts.emissionRate;
+        farts.emissionRate = 0;
     }
     float distance = 0;
 
     bool alive = true;
+    int lastHealth = 0;
     void Update()
     {
+        if (lastHealth > health.hp)
+        {
+            timerOfAttack = 0;
+            stopAttack();
+            gettingUp = false;
+
+        }
         Vector3 sss = new Vector3(transform.position.x, 0, transform.position.z);
         distance = Vector3.Distance(sss, player.position);
         timerOfAttack += Time.deltaTime;
@@ -81,6 +94,7 @@ public class crab : MonoBehaviour
             stopAttack();
             gettingUp = false;
         }
+        lastHealth = health.hp;
     }
     void follow()
     {
@@ -97,8 +111,12 @@ public class crab : MonoBehaviour
     IEnumerator startSmoking()
     {
         smokeOfCigars.emissionRate = normalEmission * 50;
+        farts.emissionRate = 0;
         yield return new WaitForSeconds(2);
-        smokeOfCigars.emissionRate = normalEmission;
+        smokeOfCigars.emissionRate = 0;
+        farts.emissionRate = fartsEmission;
+        yield return new WaitForSeconds(30);
+        farts.emissionRate = 0;
     }
     void stopAttack()
     {
