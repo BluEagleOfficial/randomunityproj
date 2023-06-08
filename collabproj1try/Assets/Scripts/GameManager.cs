@@ -19,22 +19,38 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
+        try
+        {
+            Instance = this;
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Health>();
 
-        mission.resetData();
+            mission.resetData();
 
 
-        mission.StartMission(this);
+            mission.StartMission(this);
+        }
+        catch
+        {
+
+        }
+
     }
 
 
     void Update()
     {
-        mission.UpdateMission(this);
-        if (playerHealth.dead)
+        try
         {
-            mission.EndMission(this);
+            mission.UpdateMission(this);
+            if (playerHealth.dead)
+            {
+                mission.EndMission(this);
+            }
+
+        }
+        catch
+        {
+
         }
 
     }
