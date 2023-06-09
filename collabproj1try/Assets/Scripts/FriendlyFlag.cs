@@ -8,10 +8,11 @@ public class FriendlyFlag : MonoBehaviour
     public bool flagCaptured;
 
     public Transform flagSpawnPosition;
-    public Vector3 grabOffset = new Vector3(0,32,4.5f);
+    public Vector3 grabOffset = new Vector3(0, 32, 4.5f);
 
     private Health hp;
 
+    public GameObject taker;
     void Start()
     {
         flagSpawnPosition = this.transform.parent;
@@ -19,24 +20,26 @@ public class FriendlyFlag : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("boat") && !flagCaptured)
+        if (other.CompareTag("boat") && !flagCaptured)
         {
             this.gameObject.transform.SetParent(other.transform);
             this.gameObject.transform.localPosition = grabOffset;
+            taker = other.gameObject;
             hp = other.GetComponent<Health>();
             hasFlag = true;
         }
 
-        if(other.CompareTag("enemy base"))
+        if (other.CompareTag("enemy base"))
         {
             this.gameObject.transform.SetParent(other.gameObject.transform);
             flagCaptured = true;
             hasFlag = false;
         }
 
-        if(other.CompareTag("Player") && !flagCaptured)
+        if (other.CompareTag("Player") && !flagCaptured)
         {
             this.gameObject.transform.SetParent(flagSpawnPosition);
+            taker = other.gameObject;
             this.gameObject.transform.localPosition = Vector3.zero;
             hasFlag = false;
         }
@@ -44,12 +47,12 @@ public class FriendlyFlag : MonoBehaviour
 
     void Update()
     {
-        if(hp == null)
+        if (hp == null)
             return;
-        if(hp.dead)
+        if (hp.dead)
         {
             this.gameObject.transform.SetParent(null);
-            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x,0,this.gameObject.transform.position.z);
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, 0, this.gameObject.transform.position.z);
         }
     }
 }

@@ -23,7 +23,7 @@ public class BoatAI : MonoBehaviour
     float distance = 0;
 
     [SerializeField]
-    float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100, distanceOfStop = 50;
+    public float distanceOfFollow = 1000, distanceOfAttack = 100, distanceOfChange = 100, distanceOfStop = 50;
 
 
 

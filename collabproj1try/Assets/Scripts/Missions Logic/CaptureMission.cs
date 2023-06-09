@@ -30,6 +30,8 @@ public class CaptureMission : MissionBase
     private GameObject ef;
     private GameObject af;
 
+    public string flagTagOfPlayer;
+
     public override void StartMission(GameManager gm)
     {
         gm.currentMissionTitle = title;
@@ -47,7 +49,16 @@ public class CaptureMission : MissionBase
             int randomNumberEn = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
             GameObject en = Instantiate(enemyPrefabs[randomNumberEn], pos, Quaternion.identity);
+
             enemies.Add(en);
+        }
+        for (int j = 0; j < howManyEnemies / 3; j++)
+        {
+            BoatAI bi = enemies[j].GetComponent<BoatAI>();
+            bi.enemyTag = friendlyFlag.tag;
+            bi.enemy = friendlyFlag.transform;
+            bi.distanceOfAttack = 0;
+            bi.distanceOfStop = 0;
         }
         for (int i = 0; i < howManyAllies; i++)
         {
@@ -83,7 +94,7 @@ public class CaptureMission : MissionBase
         }
 
         // enemies = GameObject.FindGameObjectsWithTag("enemy");
-        if(enemies.Count < howManyEnemies)
+        if (enemies.Count < howManyEnemies)
         {
             int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
@@ -91,7 +102,7 @@ public class CaptureMission : MissionBase
             enemies.Add(obj);
             goingForFlag = false;
         }
-        if(allies.Count < howManyAllies)
+        if (allies.Count < howManyAllies)
         {
             int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minAllyRange.x, maxAllyRange.x), Random.Range(minAllyRange.y, maxAllyRange.y), Random.Range(minAllyRange.z, maxAllyRange.z));
@@ -108,21 +119,11 @@ public class CaptureMission : MissionBase
             }
         }
 
-        if (goingForFlag == false)
+        if (friendlyFlag.hasFlag)
         {
-            if (ai != null)
-                return;
-            ai = enemies[0].GetComponent<BoatAI>();
-            // hp = enemies[0].GetComponentInChildren<Health>();
-            hp = hps[0];
+            GameObject g = friendlyFlag.taker;
+            g.GetComponentInParent<BoatAI>().enemy = enemyFlagSpawn.transform;
 
-            Debug.Log("boat ai is: " + ai);
-            // Debug.Log("boat hp is: " + hp);
-
-            ai.enemy = friendlyFlag.transform;
-            ai.enemyTag = "friendly flag";
-            Debug.Log("attack fucking: " + ai.enemyTag);
-            goingForFlag = true;
         }
         if (hp != null && hp.dead)
         {
@@ -145,6 +146,10 @@ public class CaptureMission : MissionBase
     public override void EndMission(GameManager gm)
     {
         Destroy(ef);
+        foreach (var item in enemies)
+        {
+            Destroy(item);
+        }
         Destroy(af);
     }
     public override void resetData()
