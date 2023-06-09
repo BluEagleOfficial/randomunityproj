@@ -17,6 +17,8 @@ public class bullet : MonoBehaviour
 
     public string ignoreTag = "";
 
+    public LayerMask notBulleLayermask;
+
     bool done = false;
     void FixedUpdate()
     {
@@ -24,65 +26,64 @@ public class bullet : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != ignoreTag && !done)
+        if ((notBulleLayermask.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            try
+            if (other.gameObject.tag != ignoreTag && !done)
             {
-                other.gameObject.GetComponent<Health>().TakeDamage(damage);
                 try
                 {
+                    other.gameObject.GetComponent<Health>().TakeDamage(damage);
                     Vector3 forceForS = transform.forward * forceApplied;
                     other.gameObject.GetComponentInParent<Rigidbody>().AddForce(forceForS, ForceMode.Impulse);
+
                 }
                 catch
                 {
 
                 }
+                if (other.gameObject.layer == 4)
+                    Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
+                else
+                    Instantiate(hitEffects, transform.position, Quaternion.identity);
+                done = true;
+                Destroy(this);
 
             }
-            catch
-            {
-
-            }
-            if (other.gameObject.layer == 4)
-                Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
-            else
-                Instantiate(hitEffects, transform.position, Quaternion.identity);
-            done = true;
-            Destroy(this);
-
-
         }
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag != ignoreTag && !done)
+        if ((notBulleLayermask.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            try
+            if (other.gameObject.tag != ignoreTag && !done)
             {
-                other.gameObject.GetComponent<Health>().TakeDamage(damage);
                 try
                 {
-                    Vector3 forceForS = transform.forward * forceApplied;
-                    other.gameObject.GetComponentInParent<Rigidbody>().AddForce(forceForS, ForceMode.Impulse);
+                    other.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    try
+                    {
+                        Vector3 forceForS = transform.forward * forceApplied;
+                        other.gameObject.GetComponentInParent<Rigidbody>().AddForce(forceForS, ForceMode.Impulse);
+                    }
+                    catch
+                    {
+
+                    }
                 }
                 catch
                 {
 
                 }
-            }
-            catch
-            {
+                if (other.gameObject.layer == 4)
+                    Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
+                else
+                    Instantiate(hitEffects, transform.position, Quaternion.identity);
+                done = true;
+                Destroy(this);
 
             }
-            if (other.gameObject.layer == 4)
-                Instantiate(waterHitEffects, transform.position, waterHitEffects.transform.rotation);
-            else
-                Instantiate(hitEffects, transform.position, Quaternion.identity);
-            done = true;
-            Destroy(this);
-
         }
+
 
     }
 }

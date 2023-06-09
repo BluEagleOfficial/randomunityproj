@@ -44,10 +44,10 @@ public class PlayerHud : MonoBehaviour
 
         upgradeToggle = false;
         upgradeMenu.SetActive(false);
-        inv.iron.howMany = 100;
-        inv.wood.howMany = 100;
-        inv.gold.howMany = 100;
-        inv.gunPowder.howMany = 100;
+        inv.iron.howMany = 50;
+        inv.wood.howMany = 50;
+        inv.gold.howMany = 50;
+        inv.gunPowder.howMany = 50;
     }
 
     void Update()

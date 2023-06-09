@@ -145,11 +145,15 @@ MonoBehaviour:
   rb: {fileID: 3981650040965398546}
   speed: 250
   damage: 20
+  forceApplied: 5
   hitEffects: {fileID: 770604584439312975, guid: abd456abaa2a26c4fb51fdbd15a498f8,
     type: 3}
   waterHitEffects: {fileID: 770604584439312975, guid: 6df54a558f19c2c4b9cc43682ff6d6d9,
     type: 3}
   ignoreTag: 
+  notBulleLayermask:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!114 &6685217360703040108
 MonoBehaviour:
   m_ObjectHideFlags: 0

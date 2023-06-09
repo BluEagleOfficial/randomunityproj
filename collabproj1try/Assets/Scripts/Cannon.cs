@@ -6,6 +6,8 @@ public class Cannon : MonoBehaviour
 
     public Transform aimer;
 
+    public Vector3 aimerOffset = new Vector3(0, 0, 0);
+
     public Transform tip;
     public Transform cannonHead;
 
@@ -20,7 +22,7 @@ public class Cannon : MonoBehaviour
 
     void FixedUpdate()
     {
-        cannonHead.rotation = Wyperian.lookAtSlowly(cannonHead, aimer.position, Time.deltaTime * speedOfRot * 100);
+        cannonHead.rotation = Wyperian.lookAtSlowly(cannonHead, aimer.position + aimerOffset, Time.deltaTime * speedOfRot * 100);
         timeOfShoot += Time.fixedDeltaTime;
     }
 

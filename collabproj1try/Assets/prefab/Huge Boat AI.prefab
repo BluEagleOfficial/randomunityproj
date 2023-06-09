@@ -489,6 +489,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596153361042907}
   cannonHead: {fileID: 6227596153901802248}
   speedOfRot: 10
@@ -810,6 +811,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596153445440022}
   cannonHead: {fileID: 6227596152829726559}
   speedOfRot: 10
@@ -948,6 +950,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596152504033364}
   cannonHead: {fileID: 6227596153472336279}
   speedOfRot: 10
@@ -1847,6 +1850,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596152638927135}
   cannonHead: {fileID: 6227596153701015517}
   speedOfRot: 10
@@ -2069,6 +2073,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596152909563965}
   cannonHead: {fileID: 6227596153743636814}
   speedOfRot: 10
@@ -2123,6 +2128,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8822374742265376003, guid: 0e13781216323314199777876269154d,
     type: 3}
   aimer: {fileID: 6227596152338515825}
+  aimerOffset: {x: 0, y: 1, z: 0}
   tip: {fileID: 6227596153461296878}
   cannonHead: {fileID: 6227596153671997021}
   speedOfRot: 10

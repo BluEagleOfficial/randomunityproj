@@ -35,9 +35,18 @@ public class SurvivalMission : MissionBase
         {
             spawner.instance.spawnBoats(1, enemiesBoatLevel);
         }
+        if (win)
+        {
+            EndMission(gm);
+        }
     }
     public override void EndMission(GameManager gm)
     {
+        resetData();
+        foreach (var item in enemies)
+        {
+            Destroy(item);
+        }
     }
     public override void resetData()
     {
