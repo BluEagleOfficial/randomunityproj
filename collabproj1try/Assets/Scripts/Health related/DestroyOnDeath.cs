@@ -17,6 +17,8 @@ public class DestroyOnDeath : MonoBehaviour
         }
         try
         {
+            if(GameManager.Instance.playerWon)
+                return;
             if (h.dead)
             {
                 timer += Time.deltaTime;
