@@ -9,7 +9,7 @@ public class ListOfMission : MissionBase
     [SerializeField]
     bool realWin = false;
 
-    int currentmission = 0;
+    public int currentmission = 0;
     public override void StartMission(GameManager gm)
     {
         resetData();

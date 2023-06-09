@@ -16,6 +16,7 @@ public class SurvivalMission : MissionBase
 
     public override void StartMission(GameManager gm)
     {
+        resetData();
         gm.currentMissionTitle = title;
 
         spawner.instance.spawnBoats(howManyEnemies, enemiesBoatLevel);
@@ -42,7 +43,7 @@ public class SurvivalMission : MissionBase
     }
     public override void EndMission(GameManager gm)
     {
-        resetData();
+
         foreach (var item in enemies)
         {
             Destroy(item);
