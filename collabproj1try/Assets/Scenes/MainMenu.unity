@@ -468,7 +468,8 @@ ReflectionProbe:
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
   m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
+  m_CustomBakedTexture: {fileID: 8900000, guid: 3c057898904efb44eb63d7127ee69097,
+    type: 3}
 --- !u!4 &613749712
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,7 +1309,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 123
+  m_StaticEditorFlags: 122
   m_IsActive: 1
 --- !u!114 &1939507405
 MonoBehaviour:
@@ -1496,7 +1497,7 @@ PrefabInstance:
     - target: {fileID: 6401079676295500906, guid: e6d98943a93736949855b282361a1145,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6401079677469153947, guid: e6d98943a93736949855b282361a1145,
         type: 3}
@@ -1577,6 +1578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401079677521727356, guid: e6d98943a93736949855b282361a1145,
+        type: 3}
+      propertyPath: m_text
+      value: Battle of the River
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d98943a93736949855b282361a1145, type: 3}

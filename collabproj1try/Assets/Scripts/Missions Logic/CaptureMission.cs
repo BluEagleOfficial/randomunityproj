@@ -44,22 +44,30 @@ public class CaptureMission : MissionBase
         friendlyFlag = af.GetComponentInChildren<FriendlyFlag>();
 
         // spawning enemies and allies
-        for (int i = 0; i < howManyEnemies; i++)
+        if (enemies.Count <= howManyEnemies)
         {
-            int randomNumberEn = Random.Range(0, 2);
-            Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
-            GameObject en = Instantiate(enemyPrefabs[randomNumberEn], pos, Quaternion.identity);
+            for (int i = 0; i < howManyEnemies; i++)
+            {
+                int randomNumberEn = Random.Range(0, 2);
+                Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
+                GameObject en = Instantiate(enemyPrefabs[randomNumberEn], pos, Quaternion.identity);
 
-            enemies.Add(en);
+                enemies.Add(en);
+            }
+            for (int j = 0; j < howManyEnemies / 3; j++)
+            {
+                BoatAI bi = enemies[j].GetComponent<BoatAI>();
+                bi.enemyTag = friendlyFlag.tag;
+                bi.enemy = friendlyFlag.transform;
+                bi.distanceOfAttack = 0;
+                bi.distanceOfStop = 0;
+            }
         }
-        for (int j = 0; j < howManyEnemies / 3; j++)
+        else
         {
-            BoatAI bi = enemies[j].GetComponent<BoatAI>();
-            bi.enemyTag = friendlyFlag.tag;
-            bi.enemy = friendlyFlag.transform;
-            bi.distanceOfAttack = 0;
-            bi.distanceOfStop = 0;
+
         }
+
         for (int i = 0; i < howManyAllies; i++)
         {
             int randomNumberAl = Random.Range(0, 2);
@@ -91,23 +99,6 @@ public class CaptureMission : MissionBase
         {
             gm.playerHealth.hp = 0;
             Debug.Log("Should lose");
-        }
-
-        // enemies = GameObject.FindGameObjectsWithTag("enemy");
-        if (enemies.Count < howManyEnemies)
-        {
-            int randomNumber = Random.Range(0, 2);
-            Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
-            GameObject obj = Instantiate(enemyPrefabs[randomNumber], pos, Quaternion.identity);
-            enemies.Add(obj);
-            goingForFlag = false;
-        }
-        if (allies.Count < howManyAllies)
-        {
-            int randomNumber = Random.Range(0, 2);
-            Vector3 pos = new Vector3(Random.Range(minAllyRange.x, maxAllyRange.x), Random.Range(minAllyRange.y, maxAllyRange.y), Random.Range(minAllyRange.z, maxAllyRange.z));
-            GameObject obj = Instantiate(allyPrefabs[randomNumber], pos, Quaternion.identity);
-            allies.Add(obj);
         }
 
         for (int i = 0; i < hps.Count; i++)
