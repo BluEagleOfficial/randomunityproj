@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmmount: 100
-  forceStrength: 100
-  distance: 250
+  forceStrength: 10
+  distance: 10
 --- !u!114 &730063167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5900,8 +5900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmmount: 100
-  forceStrength: 100
-  distance: 250
+  forceStrength: 10
+  distance: 10
 --- !u!114 &1368328698
 MonoBehaviour:
   m_ObjectHideFlags: 0
