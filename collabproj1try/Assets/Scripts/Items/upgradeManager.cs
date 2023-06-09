@@ -28,7 +28,7 @@ public class upgradeManager : MonoBehaviour
             speedBar.value = speedLevel;
 
             bc.maxSpeed += speedLevel;
-            bc.maxRotateSpeed += speedLevel / 10; // reduced so the rotate speed is not way too fast
+            bc.maxRotateSpeed += (float)speedLevel / (float)30; // reduced so the rotate speed is not way too fast
             ConsumeItems(speedCost);
         }
     }
@@ -82,9 +82,9 @@ public class upgradeManager : MonoBehaviour
     {
         if (hasEnoughItems(repairCost))
         {
-            if(hp.hp >= hp.maxhp)
+            if (hp.hp >= hp.maxhp)
                 return;
-            if(ammount == 0)
+            if (ammount == 0)
                 ammount = 25;
             hp.healHp(ammount);
             ConsumeItems(repairCost);
