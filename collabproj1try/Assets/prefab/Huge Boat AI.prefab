@@ -187,7 +187,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 49
   distanceOfFollow: 1000
-  distanceOfAttack: 130
+  distanceOfAttack: 1000
   distanceOfChange: 40
   distanceOfStop: 80
 --- !u!114 &6227596152277054778
@@ -491,7 +491,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596153361042907}
   cannonHead: {fileID: 6227596153901802248}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
@@ -812,7 +812,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596153445440022}
   cannonHead: {fileID: 6227596152829726559}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
@@ -950,7 +950,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596152504033364}
   cannonHead: {fileID: 6227596153472336279}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
@@ -1849,7 +1849,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596152638927135}
   cannonHead: {fileID: 6227596153701015517}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
@@ -2071,7 +2071,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596152909563965}
   cannonHead: {fileID: 6227596153743636814}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
@@ -2125,7 +2125,7 @@ MonoBehaviour:
   aimer: {fileID: 6227596152338515825}
   tip: {fileID: 6227596153461296878}
   cannonHead: {fileID: 6227596153671997021}
-  speedOfRot: 5
+  speedOfRot: 10
   shootEvery: 1
   timeOfShoot: 1.1399995
   ignoreTag: enemy
