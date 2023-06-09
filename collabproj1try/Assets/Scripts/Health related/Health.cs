@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     public bool dead = false;
     public void TakeDamage(int damage)
     {
+        if(GameManager.Instance.playerWon)
+            return;
         hp -= damage;
         if (hp < 1)
         {
