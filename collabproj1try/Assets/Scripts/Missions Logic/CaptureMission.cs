@@ -43,11 +43,11 @@ public class CaptureMission : MissionBase
             int randomNumber = Random.Range(0, 2);
             Vector3 pos = new Vector3(Random.Range(minEnemyRange.x, maxEnemyRange.x), Random.Range(minEnemyRange.y, maxEnemyRange.y), Random.Range(minEnemyRange.z, maxEnemyRange.z));
             GameObject obj = Instantiate(enemyPrefabs[randomNumber], pos, Quaternion.identity);
-            obj.GetComponent<BoatAI>().enemyTag = "player";
-            if (i > howManyEnemies / 2)
-            {
-                obj.GetComponent<BoatAI>().enemyTag = "friendly base";
-            }
+            // obj.GetComponent<BoatAI>().enemyTag = "player";
+            // if (i > howManyEnemies / 2)
+            // {
+            //     obj.GetComponent<BoatAI>().enemyTag = "friendly base";
+            // }
             enemies.Add(obj);
         }
         for (int i = 0; i < howManyAllies; i++)
@@ -114,7 +114,7 @@ public class CaptureMission : MissionBase
 
         if (friendlyFlag.flagCaptured)
         {
-            gm.playerHealth.TakeDamage(10000);
+            gm.playerHealth.TakeDamage(100000);
             Debug.Log("Should lose");
         }
 
